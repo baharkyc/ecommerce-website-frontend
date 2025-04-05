@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { ToastContainer } from 'react-toastify'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <ToastContainer/>
+      <div>
+        Hello, this will soon become a project...
+      </div>
     </>
   )
 }
