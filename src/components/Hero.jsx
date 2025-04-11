@@ -12,7 +12,8 @@ const Hero = () => {
 
     return (
         
-        <Carousel activeIndex={index} onSelect={handleSelect} className='' >
+        <Carousel activeIndex={index} onSelect={handleSelect} interval={null}//remove null to make carousel auto slide
+        >
             <Carousel.Item>
                 <div className='relative w-full h-[700px] '>
                     <img
