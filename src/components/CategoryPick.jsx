@@ -2,7 +2,7 @@ import ShopCard from "./ShopCard";
 
 const CategoryPick = () => {
     return(
-        <div className="sm:grid sm:grid-rows-2 grid-flow-col mx-32 mb-16 sm:max-h-[80vh]">
+        <div className="sm:grid sm:grid-rows-2 grid-flow-col mx-32 my-16 gap-4 sm:max-h-[600px]">
             <div className="row-span-2 h-full">
                 <ShopCard 
                     imageUrl="https://images.unsplash.com/photo-1556905055-8f358a7a47b2"

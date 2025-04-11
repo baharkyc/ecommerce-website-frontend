@@ -1,7 +1,7 @@
 
 const ShopCard = ({ imageUrl, title, description }) => {
   return (
-    <div className="relative h-full overflow-hidden rounded-xl group m-8">
+    <div className="relative h-full overflow-hidden rounded-xl group ">
       <img
         src={imageUrl}
         className="w-full h-full object-cover"
