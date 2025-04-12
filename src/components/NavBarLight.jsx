@@ -12,7 +12,7 @@ const NavBarLight = () => {
         <div>
             <Navbar  className="flex flex-col sm:flex-row w-full ">
                 <div className='flex flex-1 grow-0 justify-center sm:justify-start px-4 '>
-                    <Navbar.Brand className="text-secondary-1 text-2xl font-bold tracking-widest text-center sm:text-left text-nowrap" href="/">Fizzy Store</Navbar.Brand>
+                    <Navbar.Brand className="text-color text-2xl font-bold tracking-widest text-center sm:text-left text-nowrap" href="/">Fizzy Store</Navbar.Brand>
                 </div>
                 <div className='flex flex-2 flex-grow flex-col justify-center'>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

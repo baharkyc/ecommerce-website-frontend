@@ -1,0 +1,163 @@
+[
+    {
+      "id": "1",
+      "name": "Minimalist Sofa",
+      "description": "A modern, comfortable sofa to elevate your living space.",
+      "price": 3299.99,
+      "inStock": true,
+      "imageUrl": "https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+      "id": "2",
+      "name": "Wooden Desk",
+      "description": "Ergonomic wooden desk for a stylish and productive workspace.",
+      "price": 1899.5,
+      "inStock": true,
+      "imageUrl": "https://images.pexels.com/photos/8092506/pexels-photo-8092506.jpeg"
+    },
+    {
+      "id": "3",
+      "name": "Vintage Rug",
+      "description": "Add warmth and character to your home with a retro-style rug.",
+      "price": 799.0,
+      "inStock": false,
+      "imageUrl": "https://images.pexels.com/photos/13722068/pexels-photo-13722068.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": "4",
+      "name": "Boho Lamp",
+      "description": "Modern LED lamp for ambient lighting in any room.",
+      "price": 299.9,
+      "inStock": true,
+      "imageUrl": "https://images.pexels.com/photos/31579489/pexels-photo-31579489/free-photo-of-cozy-living-room-with-warm-glowing-lamp.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "id": "5",
+      "name": "Decorative Plant",
+      "description": "Low-maintenance indoor plant to liven up your space.",
+      "price": 149.0,
+      "inStock": true,
+      "imageUrl": "https://images.pexels.com/photos/3125195/pexels-photo-3125195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },
+    {
+      "id": "6",
+      "name": "Modern Wall Art",
+      "description": "Abstract canvas art to give your walls a stylish and contemporary look.",
+      "price": 379.0,
+      "inStock": true,
+      "imageUrl": "https://images.pexels.com/photos/383568/pexels-photo-383568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    },    
+    {
+      "id": "7",
+      "name": "Wall Clock",
+      "description": "Sleek and silent wall clock with a minimalist design.",
+      "price": 179.0,
+      "inStock": false,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?clock"
+    },
+    {
+      "id": "8",
+      "name": "Classic Bookshelf",
+      "description": "Timeless wooden bookshelf to organize your favorite books.",
+      "price": 1399.0,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?bookshelf"
+    },
+    {
+      "id": "9",
+      "name": "Office Chair",
+      "description": "Ergonomic office chair designed for all-day comfort.",
+      "price": 899.99,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?office-chair"
+    },
+    {
+      "id": "10",
+      "name": "Floor Lamp",
+      "description": "Create a cozy ambiance with this modern floor lamp.",
+      "price": 459.0,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?floor-lamp"
+    },
+    {
+      "id": "11",
+      "name": "Kitchen Chair",
+      "description": "Elegant and durable chairs perfect for your dining area.",
+      "price": 349.0,
+      "inStock": false,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?chair"
+    },
+    {
+      "id": "12",
+      "name": "Glass Coffee Table",
+      "description": "Stylish glass table that adds openness to any room.",
+      "price": 799.99,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?coffee-table"
+    },
+    {
+      "id": "13",
+      "name": "Storage Boxes",
+      "description": "Organize your belongings with these compact storage boxes.",
+      "price": 129.0,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?storage"
+    },
+    {
+      "id": "14",
+      "name": "Bedding Set",
+      "description": "Soft and elegant bedding to enhance your bedroom aesthetic.",
+      "price": 549.0,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?bedding"
+    },
+    {
+      "id": "15",
+      "name": "Ceramic Vase",
+      "description": "Perfect for displaying fresh or dried flowers in any space.",
+      "price": 179.0,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?vase"
+    },
+    {
+      "id": "16",
+      "name": "Wall Shelves",
+      "description": "Floating shelves for a modern and functional storage solution.",
+      "price": 399.0,
+      "inStock": false,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?shelf"
+    },
+    {
+      "id": "17",
+      "name": "Bamboo Laundry Basket",
+      "description": "Natural bamboo design that blends storage and decor.",
+      "price": 219.9,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?laundry"
+    },
+    {
+      "id": "18",
+      "name": "Bathroom Set",
+      "description": "Stylish set with soap dish, toothbrush holder, and dispenser.",
+      "price": 159.0,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?bathroom"
+    },
+    {
+      "id": "19",
+      "name": "Rustic Candle Holder",
+      "description": "Handmade candle holder to add a cozy, romantic vibe.",
+      "price": 99.0,
+      "inStock": true,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?candle"
+    },
+    {
+      "id": "20",
+      "name": "Electric Fireplace Heater",
+      "description": "Stylish heater with a fireplace effect to warm your space.",
+      "price": 2499.99,
+      "inStock": false,
+      "imageUrl": "https://source.unsplash.com/random/400x400/?fireplace"
+    }
+  ]
+  

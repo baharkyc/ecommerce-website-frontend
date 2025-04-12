@@ -25,9 +25,3 @@ function App() {
 
 export default App;
 
-/*
-Router eklendi. Ama homepage için router ekle denmiş, bunu anla.
-HomePage2 adı deneme için.
-Header'a butonları ekle bootstrapten.
-
-*/
