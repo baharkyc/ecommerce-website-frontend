@@ -1,4 +1,4 @@
-import ShopCard from "./ShopCard";
+import ShopCard from "./Cards/ShopCard";
 
 const CategoryPick = () => {
     return(
