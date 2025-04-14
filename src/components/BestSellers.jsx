@@ -21,9 +21,13 @@ const BestSellers = () => {
       };
 
     return(
-        
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 justify-items-center py-4 mx-8 md:mx-16 xl:mx-64">
-            
+        <div className="flex flex-col py-16 px-32 place-items-center md:grid md:grid-cols-3 gap-4 md:mx-0 lg:mx-16 xl:mx-64">
+            <div className="col-span-3 flex justify-center w-full text-md tracking-widest ">
+                Featured Products
+            </div>
+            <div className="col-span-3 flex justify-center w-full text-xl font-bold tracking-widest">
+                BESTSELLERS
+            </div>
             {products.slice(0, visibleProducts).map(product => (
                 <ProductCard key={product.id} product={product} />
             ))}

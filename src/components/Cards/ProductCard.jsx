@@ -2,7 +2,7 @@ const ProductCard = ({product}) => {
 
 
     return (
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg p-4  hover:shadow-md transition-shadow">
+        <div className="w-full h-full max-w-sm bg-white border border-gray-200 rounded-lg p-4  hover:shadow-md transition-shadow">
             <img
                 className="w-full h-64 object-cover rounded-md mb-4"
                 src={product.imageUrl}
