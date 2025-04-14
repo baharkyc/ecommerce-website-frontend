@@ -9,6 +9,7 @@ import Footer from "../layout/Footer.jsx";
 import CategoryPick from "../components/CategoryPick.jsx";
 import BestSellers from "../components/BestSellers.jsx"
 
+
 const HomePage = () => {
 
     return (

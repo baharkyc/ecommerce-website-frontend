@@ -1,4 +1,4 @@
-import ClientLogo from "./ClientLogo";
+import ClientLogo from "./Cards/ClientLogo";
 
 const Clients = () => {
 
