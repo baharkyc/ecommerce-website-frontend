@@ -1,8 +1,9 @@
 import { ToastContainer } from 'react-toastify'
-import HomePage from './pages/HomePage'
 import { Route, Switch } from 'react-router-dom';
-import HomePage2 from './pages/HomePage2';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ShopPage from './pages/ShopPage';
+import HomePage from './pages/HomePage'
+
 
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
         <Route path="/" exact>
           <HomePage/>
         </Route>
-        <Route path="/2" >
-          <HomePage2/>
+        <Route path="/shop" >
+          <ShopPage/>
         </Route>
       </Switch>
       

@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "name": "Dresses",
+      "imageUrl": "https://images.pexels.com/photos/995978/pexels-photo-995978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "href": "/shop",
+      "count": 10
+    },
+    {
+      "id": 2,
+      "name": "Tops",
+      "imageUrl": "https://images.pexels.com/photos/2914284/pexels-photo-2914284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "href": "/shop",
+      "count": 7
+    },
+    {
+      "id": 3,
+      "name": "Pants",
+      "imageUrl": "https://images.pexels.com/photos/30723831/pexels-photo-30723831/free-photo-of-fashionable-adult-in-modern-white-outfit.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "href": "/shop",
+      "count": 26
+    },
+    {
+      "id": 4,
+      "name": "Accessories",
+      "imageUrl": "https://images.pexels.com/photos/9120151/pexels-photo-9120151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "href": "/shop",
+      "count": 9
+    },
+    {
+      "id": 5,
+      "name": "Outerwear",
+      "imageUrl": "https://images.pexels.com/photos/31603974/pexels-photo-31603974/free-photo-of-couple-walking-under-an-umbrella-in-snowy-city.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "href": "/shop",
+      "count": 13
+    },
+    {
+      "id": 6,
+      "name": "Shoes",
+      "imageUrl": "https://images.pexels.com/photos/3076787/pexels-photo-3076787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "href": "/shop",
+      "count": 21
+    }
+]
+  
