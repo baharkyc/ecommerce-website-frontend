@@ -1,5 +1,5 @@
-import ProductCard from "./Cards/ProductCard"
-import products from "../../products.json"
+import {ProductCardBordered} from "./Cards/ProductCard"
+import products from "../data/products.json"
 import { useState } from "react";
 import ButtonMd from "./Buttons/ButtonMd";
 
@@ -10,11 +10,11 @@ const BestSellers = () => {
 
     const loadMore = () => {
         const remaining = products.length - visibleProducts;
-        const toAdd = Math.min(3, remaining); // En fazla 3, ama kalan ne kadarsa o
+        const toAdd = Math.min(3, remaining); 
 
         setVisibleProducts(prev => prev + toAdd);
 
-        // Yeni görünür ürün sayısı, toplam ürün sayısına ulaşırsa disable et
+        
         if (visibleProducts + toAdd >= products.length) {
             setDisabled(true);
         }
@@ -29,7 +29,7 @@ const BestSellers = () => {
                 BESTSELLERS
             </div>
             {products.slice(0, visibleProducts).map(product => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCardBordered key={product.id} product={product} />
             ))}
             <div className="col-span-3 flex justify-center w-full">
                 <ButtonMd onClick={loadMore} isDisabled={isDisabled}>

@@ -1,61 +1,46 @@
 import HeaderMenuRight from './HeaderMenuRight';
+import NavMenu from './Menus/NavMenu';
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
 
 const NavBarLight = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="w-full flex flex-col sm:flex-row items-center justify-between px-4 py-4 shadow-sm">
-            {/* Logo */}
-            <div className="flex justify-between items-center w-full sm:w-auto">
-                <a href="/" className="text-2xl font-bold tracking-widest text-second-text-color">Fizzy Store</a>
+        <nav className="w-full h-16 md:flex md:flex-row ">
+            <div className="flex items-center justify-between flex-nowrap h-full w-full">
+                {/* Logo */}
+                <a
+                    href="/"
+                    className="mx-4 text-2xl font-bold tracking-widest text-second-text-color whitespace-nowrap flex-shrink-0"
+                >
+                    Fizzy Store
+                </a>
+
+                {/* Menu */}
+                <div className="hidden md:flex md:flex-grow md:justify-center md:items-center h-full">
+                    <NavMenu isOpen={true} />
+                </div>
+
+                {/* Menu Right */}
+                <div className="hidden md:flex md:items-center flex-shrink-0 h-full">
+                    <HeaderMenuRight />
+                </div>
+
+                {/* Mobil Menu Button */}
                 <button
-                    className="sm:hidden text-primary-color"
+                    className="md:hidden text-primary-color px-6 text-2xl"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     ☰
                 </button>
             </div>
 
-            {/* Navigation */}
-            <div className={`${isOpen ? 'flex' : 'hidden'} sm:flex flex-col sm:flex-row gap-4 sm:items-center mt-4 sm:mt-0 w-full sm:w-auto`}>
-                <a href="/" className="text-second-text-color text-sm font-semibold">Menu</a>
-                
-                {/* Shop Dropdown */}
-                <div className="relative group">
-                    <button className="flex items-center text-second-text-color text-sm font-semibold">
-                        Shop
-                        <ChevronDown className="w-4 h-4 ml-1" />
-                    </button>
-                    <div className="absolute left-0 mt-2 hidden group-hover:flex bg-white shadow-lg p-4 rounded-md gap-8 z-10">
-                        <div>
-                            <p className="text-xs font-bold mb-2">Women</p>
-                            <a href="#" className="block text-xs text-second-text-color hover:text-primary-color">Dress</a>
-                            <a href="#" className="block text-xs text-second-text-color hover:text-primary-color">Pants</a>
-                            <a href="#" className="block text-xs text-second-text-color hover:text-primary-color">Tshirt</a>
-                            <a href="#" className="block text-xs text-second-text-color hover:text-primary-color">Top</a>
-                        </div>
-                        <div>
-                            <p className="text-xs font-bold mb-2">Men</p>
-                            <a href="#" className="block text-xs text-second-text-color hover:text-primary-color">Trousers</a>
-                            <a href="#" className="block text-xs text-second-text-color hover:text-primary-color">Shirt</a>
-                            <a href="#" className="block text-xs text-second-text-color hover:text-primary-color">Outer Wear</a>
-                            <a href="#" className="block text-xs text-second-text-color hover:text-primary-color">Tshirt</a>
-                        </div>
-                    </div>
+            {/* Mobile Navigation */}
+            {isOpen && (
+                <div className="md:hidden mt-4">
+                    <NavMenu isOpen={true} />
                 </div>
-
-                <a href="/" className="text-second-text-color text-sm font-semibold">About</a>
-                <a href="/" className="text-second-text-color text-sm font-semibold">Blog</a>
-                <a href="/" className="text-second-text-color text-sm font-semibold">Contact</a>
-                <a href="/" className="text-second-text-color text-sm font-semibold">Pages</a>
-            </div>
-
-            {/* Header Right */}
-            <div className="hidden sm:flex">
-                <HeaderMenuRight />
-            </div>
+            )}
         </nav>
     );
 };

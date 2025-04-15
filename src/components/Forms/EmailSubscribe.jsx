@@ -16,6 +16,7 @@ const EmailSubscribe = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-row gap-2 mt-4">
       <input
+      autoComplete="true"
         type="email"
         placeholder="Enter your email"
         className={`px-4 py-2 border ${
