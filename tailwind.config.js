@@ -10,6 +10,7 @@ export default {
         "light-text-color": "#FFFFFF",
         "text-color": "#252B42",
         "second-text-color": "#737373",
+        "light-gray-2": "#ECECEC"
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
