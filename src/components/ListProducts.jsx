@@ -23,9 +23,6 @@ const ListProducts = ({category, products}) => {
 
     return (
         <div className="flex flex-col py-16 px-8 md:px-16 lg:px-32 xl:px-56 place-items-center">
-            <div className="text-xl font-bold tracking-widest mb-8 text-center">
-                {category.name}
-            </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-y-4">
                 {visibleProducts.map(product => (

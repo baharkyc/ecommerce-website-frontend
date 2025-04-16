@@ -1,8 +1,42 @@
-const ProductFilterRow = () => {
+import { LayoutGrid, List, Menu } from "lucide-react";
+import ButtonSm from "./Buttons/ButtonSm";
+import { useState } from "react";
+
+const ProductFilterRow = ({products}) => {
+
+    const [isGridView, setGridView] = useState(true);
+    const [isListView, setListView] = useState(false);
+
+    const handleGridViewClick = () => {
+        setGridView(true);
+        setListView(false);
+    }
+
+    const handleListViewClick = () => {
+        setGridView(false);
+        setListView(true);
+    }
+   
+
     return (
-        <div className="bg-orange-100 h-16 flex w-full justify-center items-center">
-            ProductFilterRow
+        <div className="px-8 sm:mx-10 md:px-20 lg:px-32 xl:px-52 ">
+            <div className="h-full flex flex-col gap-y-8 py-4 justify-between items-center sm:flex-row font-bold text-second-text-color text-sm">
+                <div className="flex-1 ">
+                    Showing {products.length + " products."}
+                </div>
+                <div className="flex-1  flex flex-row gap-4 items-center justify-center ">
+                    Views:
+                    <ButtonSm disabled={isGridView} onClick={handleGridViewClick}>
+                        <LayoutGrid fill={true} className="h-4"/>
+                    </ButtonSm>
+                    <ButtonSm disabled={isListView} onClick={handleListViewClick}>
+                        <List className="h-4"/>
+                    </ButtonSm>
+                </div>
+                <div className="flex-1 flex sm:justify-end">Filter</div>
+            </div>
         </div>
+       
     )
 }
 

@@ -15,7 +15,7 @@ const ShopPage = () => {
             <Header/>
             <PageContent>
                 <CategoryBanner/>
-                <ProductFilterRow/>
+                <ProductFilterRow products={clothes} visibleProducts={12}/>
                 <ListProducts products={clothes} category={categories[0]}/>
                 <Clients/>
                 
