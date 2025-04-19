@@ -1,4 +1,3 @@
-import ButtonMd from "../Buttons/ButtonMd";
 import LearnMoreMd from "../Buttons/LearnMoreMd";
 
 const PostCard = ({department, name, description, imageUrl}) => {

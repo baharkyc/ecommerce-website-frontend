@@ -1,0 +1,54 @@
+[
+    {
+        "id": "1",
+        "name": "Basic T-Shirt",
+        "category": "Clothing",
+        "description": "Experience everyday comfort with this soft cotton t-shirt, crafted for a timeless fit that never goes out of style. Its breathable fabric and durable stitching make it perfect for both casual wear and layering. Available in a range of versatile colors to suit every mood and outfit, this wardrobe essential blends simplicity with effortless style.",
+        "price": 149.99,
+        "inStock": true,
+        "rating":3.5,
+        "reviews":23,
+        "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+        "images": [
+            {
+                "id":"1",
+                "imageUrl":"https://images.pexels.com/photos/8532607/pexels-photo-8532607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            },
+            {
+                "id":"2",
+                "imageUrl":"https://images.pexels.com/photos/5480690/pexels-photo-5480690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            },
+            {
+                "id":"3",
+                "imageUrl":"https://images.pexels.com/photos/8532611/pexels-photo-8532611.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            },
+            {
+                "id":"4",
+                "imageUrl":"https://images.pexels.com/photos/8148576/pexels-photo-8148576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            },
+            {
+                "id":"5",
+                "imageUrl":"https://images.pexels.com/photos/9775894/pexels-photo-9775894.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            },
+            {
+                "id":"6",
+                "imageUrl":"https://images.pexels.com/photos/18186105/pexels-photo-18186105/free-photo-of-basic-black-and-white-t-shirts.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            },
+            {
+                "id":"7",
+                "imageUrl":"https://images.pexels.com/photos/9594692/pexels-photo-9594692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            },
+            {
+                "id":"8",
+                "imageUrl":"https://images.pexels.com/photos/30710033/pexels-photo-30710033/free-photo-of-close-up-of-white-t-shirt-on-adult-arm.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            }
+        ]
+    }
+]

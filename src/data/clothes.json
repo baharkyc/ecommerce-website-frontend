@@ -6,6 +6,19 @@
       "description": "Soft cotton t-shirt with a timeless fit.",
       "price": 149.99,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        34,
+        36,
+        38
+      ],
       "imageUrl": "https://images.pexels.com/photos/1304647/pexels-photo-1304647.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -15,6 +28,16 @@
       "description": "Stylish and durable denim jacket for everyday wear.",
       "price": 399.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        34,
+        36,
+        40
+      ],
       "imageUrl": "https://images.pexels.com/photos/3538010/pexels-photo-3538010.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -24,6 +47,20 @@
       "description": "Flattering fit with stretch for all-day comfort.",
       "price": 299.0,
       "inStock": false,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        34,
+        36,
+        40,
+        42
+      ],
       "imageUrl": "https://images.pexels.com/photos/8053690/pexels-photo-8053690.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -33,6 +70,15 @@
       "description": "Comfortable hoodie with fleece lining.",
       "price": 259.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA"              
+        ],
+      "sizes": [
+        36,
+        40,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/8147449/pexels-photo-8147449.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -42,6 +88,18 @@
       "description": "Stretchy and breathable leggings for active or casual wear.",
       "price": 199.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        38,
+        40
+      ],
       "imageUrl": "https://images.pexels.com/photos/7894389/pexels-photo-7894389.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -51,6 +109,17 @@
       "description": "Cozy button-up shirt with a vintage flannel pattern.",
       "price": 229.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        36
+      ],
       "imageUrl": "https://images.pexels.com/photos/31593958/pexels-photo-31593958/free-photo-of-contemplative-woman-in-casual-attire-by-white-wall.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -60,6 +129,17 @@
       "description": "Faux leather biker jacket for a bold style.",
       "price": 499.0,
       "inStock": false,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        38
+      ],
       "imageUrl": "https://images.pexels.com/photos/1539935/pexels-photo-1539935.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -69,6 +149,19 @@
       "description": "Light and breezy dress perfect for sunny days.",
       "price": 319.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        36,
+        40,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/31617984/pexels-photo-31617984/free-photo-of-woman-in-summer-dress-amidst-tall-grass-and-trees.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -78,6 +171,16 @@
       "description": "Modern tailored suit for formal occasions.",
       "price": 849.99,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        34,
+        36,
+        38
+      ],
       "imageUrl": "https://images.pexels.com/photos/450212/pexels-photo-450212.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -87,6 +190,16 @@
       "description": "Lightweight and breathable shorts for warm weather.",
       "price": 189.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        34,
+        36,
+        38
+      ],
       "imageUrl": "https://images.pexels.com/photos/31638565/pexels-photo-31638565/free-photo-of-young-woman-posing-by-riverside-skyline.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -96,6 +209,16 @@
       "description": "Soft knit cardigan for cozy layering.",
       "price": 269.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        34,
+        36,
+        38
+      ],
       "imageUrl": "https://images.pexels.com/photos/5709867/pexels-photo-5709867.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -105,6 +228,16 @@
       "description": "Insulated jacket to keep you warm in cold climates.",
       "price": 559.0,
       "inStock": false,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes": [
+        34,
+        36,
+        38
+      ],
       "imageUrl": "https://images.pexels.com/photos/5370666/pexels-photo-5370666.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -114,6 +247,19 @@
       "description": "Trendy t-shirt featuring a bold print design.",
       "price": 159.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/2062324/pexels-photo-2062324.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -123,6 +269,19 @@
       "description": "Flowy and elegant skirt for casual chic outfits.",
       "price": 249.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/7164962/pexels-photo-7164962.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -132,6 +291,19 @@
       "description": "Chunky knit sweater to stay cozy all winter.",
       "price": 299.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/5493786/pexels-photo-5493786.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -141,6 +313,19 @@
       "description": "Versatile and comfortable chino pants for smart casual looks.",
       "price": 279.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/19071478/pexels-photo-19071478/free-photo-of-person-wearing-pants-and-a-braided-leather-belt.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -150,6 +335,19 @@
       "description": "Basic tank top made with breathable fabric.",
       "price": 99.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/1741240/pexels-photo-1741240.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -159,6 +357,19 @@
       "description": "Two-piece tracksuit for workout or lounge comfort.",
       "price": 349.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/6982621/pexels-photo-6982621.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -168,6 +379,15 @@
       "description": "Button-up shirt perfect for work or formal settings.",
       "price": 219.0,
       "inStock": false,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/3760137/pexels-photo-3760137.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -177,6 +397,19 @@
       "description": "Flexible and flattering yoga pants for active wear.",
       "price": 229.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/7346628/pexels-photo-7346628.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -186,6 +419,19 @@
       "description": "Water-resistant coat with hood for rainy days.",
       "price": 319.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        38,
+        40,
+        42,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/8499232/pexels-photo-8499232.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -195,6 +441,16 @@
       "description": "Light blouse with classic polka dot pattern.",
       "price": 209.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/31625656/pexels-photo-31625656/free-photo-of-young-woman-with-camera-at-art-display-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -204,6 +460,16 @@
       "description": "Vintage-style denim dungarees for casual comfort.",
       "price": 329.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/10013530/pexels-photo-10013530.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -213,6 +479,16 @@
       "description": "Double-breasted coat with classic tailoring.",
       "price": 649.0,
       "inStock": false,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/7251059/pexels-photo-7251059.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -222,6 +498,16 @@
       "description": "Elegant accessory made from smooth silk.",
       "price": 139.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/6110066/pexels-photo-6110066.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -231,6 +517,16 @@
       "description": "One-piece swimsuit with supportive structure.",
       "price": 189.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/1391421/pexels-photo-1391421.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -240,6 +536,16 @@
       "description": "Utility pants with multiple functional pockets.",
       "price": 289.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/15883360/pexels-photo-15883360/free-photo-of-young-man-in-a-trendy-outfit-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -249,6 +555,16 @@
       "description": "Adjustable cap with breathable panels.",
       "price": 89.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",    
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/2606089/pexels-photo-2606089.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -258,6 +574,19 @@
       "description": "Soft matching pajama top and bottom.",
       "price": 259.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/5849325/pexels-photo-5849325.jpeg?auto=compress&cs=tinysrgb&w=1200"
     },
     {
@@ -267,6 +596,19 @@
       "description": "Warm and breathable fleece jacket with zip closure.",
       "price": 319.0,
       "inStock": true,
+      "colors": [
+            "#F1A7B4",  
+            "#A3D2CA",  
+            "#D5C6E0",  
+            "#FFE156",  
+            "#B2D7A1",  
+            "#F7A8B8"   
+        ],
+      "sizes":[
+        34,
+        36,
+        44
+      ],
       "imageUrl": "https://images.pexels.com/photos/8005509/pexels-photo-8005509.jpeg?auto=compress&cs=tinysrgb&w=1200"
     }
   ]

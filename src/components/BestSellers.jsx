@@ -21,7 +21,7 @@ const BestSellers = () => {
       };
 
     return(
-        <div className="flex flex-col py-16 px-32 place-items-center md:grid md:grid-cols-3 gap-4 md:mx-0 lg:mx-16 xl:mx-64">
+        <div className="flex flex-col py-16 px-32 place-items-center md:grid md:grid-cols-3 gap-4 md:mx-0 lg:mx-16 xl:mx-32">
             <div className="col-span-3 flex justify-center w-full text-md tracking-widest ">
                 Featured Products
             </div>

@@ -1,4 +1,4 @@
-import ButtonMd from "./Buttons/ButtonMd";
+import ButtonMd from "../Buttons/ButtonMd";
 
 const ClickToAction = () => {
 

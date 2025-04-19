@@ -1,4 +1,4 @@
-import CategoryCard from "../Cards/CategoryCard";
+import CategoryCard from "../cards/CategoryCard";
 import categories from "../../data/categories.json"
 
 

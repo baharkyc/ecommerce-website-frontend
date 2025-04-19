@@ -1,5 +1,5 @@
 import { Mail, Phone } from "lucide-react"
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "./buttons/SocialLinks";
 
 const NavBarDark = () => {
     return (

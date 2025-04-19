@@ -1,4 +1,4 @@
-import PostCard from "./Cards/PostCard";
+import PostCard from "../Cards/PostCard";
 
 
 const Blog = () => {

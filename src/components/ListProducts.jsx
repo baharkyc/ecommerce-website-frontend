@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProductCardNoBorder} from "./Cards/ProductCard";
+import ProductCardNoBorder from "./cards/ProductCardNoBorder";
 import PaginationButton from "./Buttons/PaginationButton";
 import clothes from "../data/clothes.json";
 
