@@ -1,8 +1,6 @@
 
 const PaginationButton = ({totalPages, handleClick, pageNumber}) => {
 
-    
-
     return (
         <div className="flex justify-center gap-2 mt-8">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (

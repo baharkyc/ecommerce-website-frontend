@@ -1,4 +1,3 @@
-import { Circle } from "lucide-react"
 import AddToCartButton from "../buttons/AddToCartButton"
 
 export const ProductCardBordered = ({product}) => {

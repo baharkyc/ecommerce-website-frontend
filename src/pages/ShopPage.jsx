@@ -8,21 +8,31 @@ import clothes from "../data/clothes.json"
 import categories from "../data/categories.json"
 import ProductFilterRow from "../components/ProductFilterRow";
 
+import { useState } from "react";
+
 const ShopPage = () => {
+    const [viewMode, setViewMode] = useState("grid");
 
     return (
-        <div >
-            <Header/>
+        <div>
+            <Header />
             <PageContent>
-                <CategoryBanner/>
-                <ProductFilterRow products={clothes} visibleProducts={12}/>
-                <ListProducts products={clothes} category={categories[0]}/>
-                <Clients/>
-                
-            </PageContent> 
-            <Footer/>
+                <CategoryBanner />
+                <ProductFilterRow
+                    products={clothes}
+                    onViewChange={(mode) => setViewMode(mode)}
+                />
+                <ListProducts
+                    products={clothes}
+                    category={categories[0]}
+                    viewMode={viewMode}
+                />
+                <Clients />
+            </PageContent>
+            <Footer />
         </div>
-    )
-}
+    );
+};
+
 
 export default ShopPage;
