@@ -12,7 +12,7 @@
   }
 
   * {
-    @apply font-sans; /* Tüm elementlere Montserrat fontunu uygular */
+    @apply font-sans;
   }
 
 .dropdown-menu,
