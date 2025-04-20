@@ -6,12 +6,11 @@ import NavBarDark from "../components/NavBarDark";
 const Header = () =>{
 
     return (
-        <Navbar>
-            <div className="w-full  bg-white">
-                <NavBarDark/>
-                <NavBarLight/>
-            </div>
-        </Navbar>
+        <div className="w-full ">
+            <NavBarDark/>
+            <NavBarLight/>
+        </div>
+
     )
 
 }

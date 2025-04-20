@@ -17,7 +17,7 @@ const NavBarDark = () => {
             </div>
 
             {/* Middle - Message */}
-            <div className="hidden md:block px-2 py-2 text-left">
+            <div className="hidden md:block px-2 text-left">
                 Follow us and get 10% off!
             </div>
 

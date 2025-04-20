@@ -1,5 +1,6 @@
 import { LayoutGrid, List, Menu } from "lucide-react";
-import ButtonSm from "./Buttons/ButtonSm";
+import ButtonMd from "./buttons/ButtonMd";
+import ButtonSm from "./buttons/ButtonSm";
 import { useState } from "react";
 
 const ProductFilterRow = ({ products, onViewChange }) => {
@@ -30,7 +31,13 @@ const ProductFilterRow = ({ products, onViewChange }) => {
                         <List className="h-4" />
                     </ButtonSm>
                 </div>
-                <div className="flex-1 flex sm:justify-end">Filter</div>
+                <div className="flex-1 flex sm:justify-end">
+                    <ButtonMd>
+                        Filter
+                    </ButtonMd>
+                        
+                  
+                </div>
             </div>
         </div>
     );

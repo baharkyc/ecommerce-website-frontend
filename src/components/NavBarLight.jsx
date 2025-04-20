@@ -7,7 +7,7 @@ const NavBarLight = () => {
 
     return (
         <nav className="w-full h-16 md:flex md:flex-row ">
-            <div className="flex items-center justify-between flex-nowrap h-full w-full">
+            <div className="flex items-center justify-between  flex-nowrap h-full w-full">
                 {/* Logo */}
                 <a
                     href="/"
@@ -37,7 +37,7 @@ const NavBarLight = () => {
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden mt-4">
+                <div className="md:hidden absolute top-16 left-0 w-screen z-50">
                     <NavMenu isOpen={true} />
                 </div>
             )}

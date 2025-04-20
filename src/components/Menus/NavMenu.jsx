@@ -1,13 +1,21 @@
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import DropdownMenu from "./DropdownMenu";
 
 const NavMenu = ({ isOpen }) => {
+
+    const categories = [ 
+        {"Women": ["Dress", "Pants", "Tshirt", "Top",]}, 
+        {"Men": ["Trousers", "Shirts", "Outer Wear", "Tshirt"]   
+        }];
+
+
     return (
-        <div className={`${isOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-3 md:items-center md:mt-0 w-auto h-full px-4 text-second-text-color text-sm font-semibold `}>
-            <a href="/" className="">Menu</a>
+        <div className={`${isOpen ? 'flex' : 'hidden'} flex-col md:flex-row gap-3 items-center justify-center md:items-center md:mt-0 sm:w-auto w-full h-full px-4 text-second-text-color text-sm font-semibold bg-white`}>
+            <a href="/" >Menu</a>
 
             {/* Shop */}
-            <div className="relative group cursor-pointer md:h-full md:flex md:items-center">
+            <div className="relative group cursor-pointer md:h-full md:flex items-center place-items-center w-full">
                 <div className=" h-full flex items-center text-second-text-color text-sm font-semibold ">
                     <Link to="/shop" className="flex items-center">
                     Shop
@@ -16,24 +24,7 @@ const NavMenu = ({ isOpen }) => {
                 </div>
 
                 {/* Shop Dropdown */}
-                <div >
-                    <div className="absolute left-0 mt-4 p-4 hidden group-hover:flex flex-row bg-white shadow-lg rounded-md gap-8 z-10 whitespace-nowrap">
-                        <div className='text-s font-semibold space-y-2'>
-                            <p className="mb-2">Women</p>
-                            <a href="#" className="block font-medium text-second-text-color hover:text-primary-color">Dress</a>
-                            <a href="#" className="block font-medium text-second-text-color hover:text-primary-color">Pants</a>
-                            <a href="#" className="block font-medium  text-second-text-color hover:text-primary-color">Tshirt</a>
-                            <a href="#" className="block font-medium text-second-text-color hover:text-primary-color">Top</a>
-                        </div>
-                        <div className='text-s font-semibold space-y-2'>
-                            <p className="mb-2">Men</p>
-                            <a href="#" className="block font-medium text-second-text-color hover:text-primary-color">Trousers</a>
-                            <a href="#" className="block font-medium text-second-text-color hover:text-primary-color">Shirt</a>
-                            <a href="#" className="block font-medium text-second-text-color hover:text-primary-color">Outer Wear</a>
-                            <a href="#" className="block font-medium text-second-text-color hover:text-primary-color">Tshirt</a>
-                        </div>
-                    </div>
-                </div>
+                <DropdownMenu menuItems={categories}/>
                 
             </div>      
 
