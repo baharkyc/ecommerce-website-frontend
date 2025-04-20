@@ -5,6 +5,7 @@ import Footer from "../layout/Footer"
 import Header from "../layout/Header"
 import PageContent from "../layout/PageContent"
 import clothes from "../data/clothes.json"
+import ProductDetailPane from "../components/ProductDetailPane"
 
 const ProductDetailPage = () => {
 
@@ -13,6 +14,7 @@ const ProductDetailPage = () => {
             <Header/>
             <PageContent>
                 <ProductDetailCard product={clothes[7]}/>
+                <ProductDetailPane/>
                 <BestSellers/>
                 <Clients/>
             </PageContent>

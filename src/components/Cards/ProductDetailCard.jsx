@@ -11,7 +11,8 @@ const ProductDetailCard = () => {
 
   return (
 
-    <div className="flex flex-col md:flex-row sm:gap-8 gap-4 py-8 px-8 sm:px-16 w-full max-w-6xl mx-auto">
+    <div className="w-full h-full bg-gray-50">
+        <div className="flex flex-col md:flex-row sm:gap-8 gap-4 py-8 px-8 sm:px-16 w-full max-w-6xl mx-auto ">
         {/* Slider */}
         <div className="flex-1 flex justify-center">
             <Slider images={images} />
@@ -30,6 +31,8 @@ const ProductDetailCard = () => {
                 <ColorSelection colors={product.colors}/>
             </div>
         </div>
+    </div>
+    
 
   );
 };

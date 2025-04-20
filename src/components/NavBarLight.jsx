@@ -1,4 +1,4 @@
-import HeaderMenuRight from './HeaderMenuRight';
+import HeaderMenuRight from './menus/HeaderMenuRight';
 import NavMenu from './Menus/NavMenu';
 import { useState } from 'react';
 

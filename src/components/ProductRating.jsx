@@ -34,7 +34,7 @@ const ProductRating = ({ rating, reviews, max = 5, size = 20, showReviews = true
         />
       ))}
       {showReviews && (
-        <span className="ml-2 text-sm font-semibold text-gray-600">{reviews}</span>
+        <span className="ml-2 text-sm font-semibold text-gray-600">{reviews.length}</span>
       )}
     </div>
   );
