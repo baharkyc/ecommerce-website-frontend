@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Fiona Butler",
+    "imageUrl": "https://images.pexels.com/photos/6980996/pexels-photo-6980996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "Software Developer"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "imageUrl": "https://images.pexels.com/photos/7550887/pexels-photo-7550887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "Product Manager"
+  },
+  {
+    "id": 3,
+    "name": "Mike Johnson",
+    "imageUrl": "https://images.pexels.com/photos/8278839/pexels-photo-8278839.jpeg?auto=compress&cs=tinysrgb&w=1200", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "UX/UI Designer"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "imageUrl": "https://images.pexels.com/photos/8192249/pexels-photo-8192249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "Data Scientist"
+  },
+  {
+    "id": 5,
+    "name": "Sarah Wilson",
+    "imageUrl": "https://images.pexels.com/photos/5990271/pexels-photo-5990271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "Marketing Specialist"
+  },
+  {
+    "id": 6,
+    "name": "David Brown",
+    "imageUrl": "https://images.pexels.com/photos/31670085/pexels-photo-31670085/free-photo-of-thoughtful-man-in-dark-sweater-portrait.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "Web Developer"
+  },
+  {
+    "id": 7,
+    "name": "Chris Lee",
+    "imageUrl": "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "Digital Marketer"
+  },
+  {
+    "id": 8,
+    "name": "Anna Miller",
+    "imageUrl": "https://images.pexels.com/photos/8636600/pexels-photo-8636600.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "Product Designer"
+  },
+  {
+    "id": 9,
+    "name": "James Taylor",
+    "imageUrl": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "Systems Architect"
+  },
+  {
+    "id": 10,
+    "name": "Laura Martinez",
+    "imageUrl": "https://images.pexels.com/photos/6592547/pexels-photo-6592547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    "socialLinks": {
+      "instagram": "https://www.instagram.com/",
+      "facebook": "https://www.facebook.com/",
+      "linkedin": "https://www.linkedin.com/"
+    },
+    "profession": "HR Specialist"
+  }
+]
