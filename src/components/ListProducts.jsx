@@ -20,8 +20,11 @@ const ListProducts = ({ category, products, viewMode = "grid" }) => {
     };
 
     useEffect(() => {
-        window.scrollTo(0, 350); // Scroll to page start
-    }, [pageNumber]); // When pageNumber changes
+        if(pageNumber == 1) {
+            window.scrollTo(0, 200);
+        }else
+            window.scrollTo(0, 350); // Scroll to page start
+        }, [pageNumber]); // When pageNumber changes
 
     return (
         <div className={`flex flex-col place-items-center mt-8 ${
