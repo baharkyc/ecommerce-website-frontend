@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ShopPage from './pages/ShopPage';
 import HomePage from './pages/HomePage'
 import ProductDetailPage from './pages/ProductDetailPage';
+import ContactPage from './pages/ContactPage';
+import TeamPage from './pages/TeamPage';
+import AboutPage from './pages/AboutPage';
 
 
 
@@ -20,6 +23,15 @@ function App() {
         </Route>
         <Route path="/product" >
           <ProductDetailPage/>
+        </Route>
+        <Route path="/contact">
+          <ContactPage/>
+        </Route>
+        <Route path="/team">
+          <TeamPage/>
+        </Route>
+        <Route path="/about">
+          <AboutPage/>
         </Route>
       </Switch>
       
