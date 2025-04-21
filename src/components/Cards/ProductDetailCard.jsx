@@ -1,9 +1,11 @@
 // components/ProductDetailCard.jsx
-import { Star } from "lucide-react";
+import { Heart, Eye, ShoppingCart } from "lucide-react";
 import exampleProduct from "../../data/exampleProduct.json";
 import Slider from "../sliders/Slider";
 import ProductRating from "../ProductRating";
 import ColorSelection from "../buttons/ColorSelection";
+import RoundButtonSm from "../buttons/RoundButtonSm";
+import ButtonMd from "../buttons/ButtonMd";
 
 const ProductDetailCard = () => {
   const product = exampleProduct[0];
@@ -27,8 +29,26 @@ const ProductDetailCard = () => {
                 <p className="text-xl font-bold mt-2">₺{product.price}</p>
                 <p className="text-gray-400 text-md font-semibold mt-1">{product.description}</p>
                 <hr className="border-t border-text-color" />
+
+                <ColorSelection colors={product.colors} text={false}/>
                 
-                <ColorSelection colors={product.colors}/>
+                <div className="flex flex-row gap-16 mt-4 place-items-end">
+                    <ButtonMd >
+                        Select Options
+                    </ButtonMd>
+                    <div className="">
+                        <RoundButtonSm>
+                            <Heart/>
+                        </RoundButtonSm>
+                        <RoundButtonSm>
+                            <ShoppingCart/>
+                        </RoundButtonSm>
+                        <RoundButtonSm>
+                            <Eye/>
+                        </RoundButtonSm>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>

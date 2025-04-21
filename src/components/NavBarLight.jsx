@@ -6,8 +6,8 @@ const NavBarLight = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="w-full h-16 md:flex md:flex-row ">
-            <div className="flex items-center justify-between  flex-nowrap h-full w-full">
+        <nav className="w-full md:h-16 md:flex-row flex-col  place-content-center">
+            <div className="flex items-center justify-between  flex-nowrap h-full w-full min-h-16">
                 {/* Logo */}
                 <a
                     href="/"
@@ -37,7 +37,7 @@ const NavBarLight = () => {
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden absolute top-16 left-0 w-screen z-50">
+                <div className="md:hidden w-full mb-4 ">
                     <NavMenu isOpen={true} />
                 </div>
             )}

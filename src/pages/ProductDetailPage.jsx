@@ -6,6 +6,7 @@ import Header from "../layout/Header"
 import PageContent from "../layout/PageContent"
 import clothes from "../data/clothes.json"
 import ProductDetailPane from "../components/ProductDetailPane"
+import Breadcrumb from "../components/menus/Breadcrumb"
 
 const ProductDetailPage = () => {
 
@@ -13,6 +14,7 @@ const ProductDetailPage = () => {
         <div>
             <Header/>
             <PageContent>
+                <Breadcrumb />
                 <ProductDetailCard product={clothes[7]}/>
                 <ProductDetailPane/>
                 <BestSellers/>

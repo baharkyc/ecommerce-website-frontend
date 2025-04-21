@@ -11,7 +11,7 @@ const NavMenu = ({ isOpen }) => {
 
 
     return (
-        <div className={`${isOpen ? 'flex' : 'hidden'} flex-col md:flex-row gap-3 items-center justify-center md:items-center md:mt-0 sm:w-auto w-full h-full px-4 text-second-text-color text-sm font-semibold bg-white`}>
+        <div className={`${isOpen ? 'flex' : 'hidden'} flex-col md:flex-row gap-3 items-center justify-center md:items-center md:mt-0 sm:w-auto w-full h-full px-4 text-second-text-color text-sm font-semibold `}>
             <a href="/" >Menu</a>
 
             {/* Shop */}
@@ -28,10 +28,10 @@ const NavMenu = ({ isOpen }) => {
                 
             </div>      
 
-            <a href="/" >About</a>
+            <a href="/about">About</a>
             <a href="/" >Blog</a>
-            <a href="/" >Contact</a>
-            <a href="/" >Pages</a>
+            <a href="/contact" >Contact</a>
+            <a href="/team" >Team</a>
         </div>
     );
 };

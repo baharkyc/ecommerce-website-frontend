@@ -9,6 +9,7 @@ import categories from "../data/categories.json"
 import ProductFilterRow from "../components/ProductFilterRow";
 
 import { useState } from "react";
+import Breadcrumb from "../components/menus/Breadcrumb";
 
 const ShopPage = () => {
     const [viewMode, setViewMode] = useState("grid");
@@ -17,6 +18,7 @@ const ShopPage = () => {
         <div>
             <Header />
             <PageContent>
+                <Breadcrumb/>
                 <CategoryBanner />
                 <ProductFilterRow
                     products={clothes}

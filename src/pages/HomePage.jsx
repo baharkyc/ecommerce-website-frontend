@@ -17,7 +17,6 @@ const HomePage = () => {
             <Header/>
             <PageContent>
                 <Hero/>
-                
                 <CategoryPick/>
                 <Clients/>
                 <BestSellers/>
