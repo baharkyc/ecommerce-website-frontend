@@ -32,14 +32,14 @@ const TeamBanner = () => {
               <div className="overflow-hidden">
                 <img
                   className="h-64 w-full md:h-full object-cover"
-                  src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  src="https://images.pexels.com/photos/6794043/pexels-photo-6794043.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   alt="Team 2"
                 />
               </div>
               <div className="overflow-hidden">
                 <img
                   className="h-64 w-full md:h-full object-cover"
-                  src="https://images.pexels.com/photos/6276046/pexels-photo-6276046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  src="https://images.pexels.com/photos/3131981/pexels-photo-3131981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   alt="Team 3"
                 />
               </div>
@@ -49,15 +49,15 @@ const TeamBanner = () => {
             <div className="grid grid-cols-2 md:grid-rows-2 md:grid-cols-1 gap-2 w-full h-full">
               <div className="overflow-hidden">
                 <img
-                  className="h-64 md:h-full object-cover overflow-hidden"
-                  src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  className="h-64 w-full md:h-full object-cover overflow-hidden"
+                  src="https://images.pexels.com/photos/3392937/pexels-photo-3392937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   alt="Team 4"
                 />
               </div>
               <div className="overflow-hidden">
                 <img
-                  className="h-64 md:h-full object-cover overflow-hidden"
-                  src="https://images.pexels.com/photos/3153201/pexels-photo-3153201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  className="h-64 w-full md:h-full object-cover overflow-hidden"
+                  src="https://images.pexels.com/photos/6202036/pexels-photo-6202036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   alt="Team 5"
                 />
               </div>

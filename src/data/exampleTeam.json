@@ -8,7 +8,7 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "Software Developer"
+    "profession": "Fashion Designer"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "Product Manager"
+    "profession": "Product Manager - Apparel"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "UX/UI Designer"
+    "profession": "Textile Designer"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "Data Scientist"
+    "profession": "Pattern Maker"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "Marketing Specialist"
+    "profession": "Fashion Marketing Specialist"
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "Web Developer"
+    "profession": "Fashion Web Developer"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "Digital Marketer"
+    "profession": "Digital Fashion Marketer"
   },
   {
     "id": 9,
@@ -85,7 +85,7 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "Systems Architect"
+    "profession": "Fashion Systems Architect"
   },
   {
     "id": 10,
@@ -96,6 +96,6 @@
       "facebook": "https://www.facebook.com/",
       "linkedin": "https://www.linkedin.com/"
     },
-    "profession": "HR Specialist"
+    "profession": "HR Specialist - Fashion Industry"
   }
 ]
