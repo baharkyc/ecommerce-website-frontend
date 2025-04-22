@@ -5,9 +5,9 @@ const Footer = () => {
 
     return (
         <footer className="">
-            <div className=" px-6 py-10 md:px-32">
+            <div className="px-12 py-10 md:px-32 ">
                 {/* Brand & Socials */}
-                <div className="my-16 flex flex-col sm:flex-row justify-between">
+                <div className="md:my-16 my-4 flex flex-col sm:flex-row justify-between border-b">
                     <p className="text-2xl font-bold tracking-widest mb-4">FizzyStore</p>
                     <SocialLinks color="#23A6F0" />
                 </div>

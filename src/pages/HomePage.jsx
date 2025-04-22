@@ -2,7 +2,7 @@ import Hero from "../components/Hero.jsx";
 import Header from "../layout/Header.jsx";
 import PageContent from "../layout/PageContent.jsx";
 import Clients from "../components/banners/Clients.jsx";
-import ClickToAction from "../components/banners/ClickToAction.jsx";
+import ClickToActionBlog from "../components/banners/ClickToActionBlog.jsx";
 import Features from "../components/banners/Features.jsx";
 import Blog from "../components/banners/Blog.jsx";
 import Footer from "../layout/Footer.jsx";
@@ -20,7 +20,7 @@ const HomePage = () => {
                 <CategoryPick/>
                 <Clients/>
                 <BestSellers/>
-                <ClickToAction/>
+                <ClickToActionBlog/>
                 <Features/>
                 <Blog/>
             </PageContent> 

@@ -5,6 +5,7 @@ import Header from "../layout/Header"
 import PageContent from "../layout/PageContent"
 import exampleTeam from "../data/exampleTeam";
 import TeamBanner from "../components/banners/TeamBanner";
+import ClickToAction from "../components/banners/ClickToAction";
 
 const TeamPage = () => {
     return (
@@ -13,6 +14,11 @@ const TeamPage = () => {
             <PageContent>
                 <TeamBanner/>
                 <TeamMembersList team={exampleTeam}/>
+                <ClickToAction
+                    header={"Start 14 days free trial"}
+                    description={"Meet our global fashion solutions, create your inspiration from scratch."}
+                    buttonText={"Try now free"}
+                />
             </PageContent>
             <Footer/>
         </div>

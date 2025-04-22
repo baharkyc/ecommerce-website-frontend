@@ -77,17 +77,6 @@
     "profession": "Digital Marketer"
   },
   {
-    "id": 8,
-    "name": "Anna Miller",
-    "imageUrl": "https://images.pexels.com/photos/8636600/pexels-photo-8636600.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
-    "socialLinks": {
-      "instagram": "https://www.instagram.com/",
-      "facebook": "https://www.facebook.com/",
-      "linkedin": "https://www.linkedin.com/"
-    },
-    "profession": "Product Designer"
-  },
-  {
     "id": 9,
     "name": "James Taylor",
     "imageUrl": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
