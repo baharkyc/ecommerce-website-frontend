@@ -12,7 +12,6 @@ const TeamPage = () => {
             <Header/>
             <PageContent>
                 <TeamBanner/>
-                <Breadcrumb itemAlignment="justify-center"/>
                 <TeamMembersList team={exampleTeam}/>
             </PageContent>
             <Footer/>
