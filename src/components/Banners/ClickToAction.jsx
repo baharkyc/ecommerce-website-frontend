@@ -1,4 +1,4 @@
-import ButtonMd from "../Buttons/ButtonMd";
+import ButtonMd from "../buttons/ButtonMd";
 import SocialLinks from "../buttons/SocialLinks";
 
 const ClickToAction = ({header, description, buttonText, children}) => {

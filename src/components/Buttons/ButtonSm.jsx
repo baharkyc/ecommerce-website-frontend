@@ -1,4 +1,4 @@
-const ButtonSm = ({children, onClick, disabled}) => {
+export const ButtonSm = ({children, onClick, disabled}) => {
 
     return(
         <button
@@ -13,4 +13,16 @@ const ButtonSm = ({children, onClick, disabled}) => {
     )
 }
 
-export default ButtonSm;
+export const ButtonSmWhite = ({children, onClick, disabled}) => {
+
+    return(
+        <button
+            onClick={onClick}
+            disabled={disabled}
+            className={`flex items-center justify-center p-2 border-1 h-[46px] w-[150px] border-white rounded-md hover:shadow-xs transition-all duration-300 hover:border-text-color hover:fill-text-color'}`}
+            >
+            {children}
+        </button>
+    )
+}
+
