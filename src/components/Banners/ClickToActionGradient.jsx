@@ -14,7 +14,7 @@ const ClickToActionGradient = () => {
                 <div className="md:w-1/3 h-[500px] md:h-full ">
                     <img
                         className="w-full h-full object-cover"
-                        src="https://images.pexels.com/photos/6214383/pexels-photo-6214383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        src="https://images.pexels.com/photos/9594432/pexels-photo-9594432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         />
                 </div>
             </div>

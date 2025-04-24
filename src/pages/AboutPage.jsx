@@ -6,6 +6,7 @@ import Header from "../layout/Header";
 import PageContent from "../layout/PageContent";
 import Stats from "../components/banners/Stats";
 import ClickToActionGradient from "../components/banners/ClickToActionGradient";
+import Clients from "../components/banners/Clients";
 
 const AboutPage = () => {
 
@@ -22,7 +23,7 @@ const AboutPage = () => {
                 />
                 <Stats/>
                 <ClickToActionGradient/>
-                
+                <Clients/>
             </PageContent>
             <Footer/>
         </div>

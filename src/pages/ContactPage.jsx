@@ -9,7 +9,6 @@ const ContactPage = () => {
         <div>
             <Header/>
             <PageContent>
-                <Breadcrumb/>
                 <ContactBanner/>
             </PageContent>
             <Footer/>

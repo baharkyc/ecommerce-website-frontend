@@ -1,6 +1,6 @@
 import { LayoutGrid, List, Menu } from "lucide-react";
 import ButtonMd from "./buttons/ButtonMd";
-import ButtonSm from "./buttons/ButtonSm";
+import {ButtonSm} from "./buttons/ButtonSm";
 import { useState } from "react";
 
 const ProductFilterRow = ({ products, onViewChange }) => {
