@@ -11,8 +11,8 @@ const ContactBanner = ()=> {
                 src="https://images.pexels.com/photos/1487835/pexels-photo-1487835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 />
             <div className="w-full py-24 z-10 flex flex-col md:flex-row gap-y-16 items-center justify-around">
-                <div className="flex flex-col gap-y-8 items-center font-bold">
-                    <h1 className="text-3xl">CONTACT US</h1>
+                <div className="flex flex-col gap-y-8 items-center ">
+                    <h1 className="text-3xl font-bold">CONTACT US</h1>
                     <p className="text-sm font-medium">Reach us anywhere anytime.</p>
                     <ButtonMd isFilled="true">
                         CONTACT US

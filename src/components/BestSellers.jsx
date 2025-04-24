@@ -32,7 +32,7 @@ const BestSellers = () => {
                 <ProductCardBordered key={product.id} product={product} />
             ))}
             <div className="col-span-3 flex justify-center w-full">
-                <ButtonMd onClick={loadMore} isDisabled={isDisabled}>
+                <ButtonMd onClick={loadMore} isHidden={isDisabled}>
                 LOAD MORE PRODUCTS
                 </ButtonMd>
             </div>
