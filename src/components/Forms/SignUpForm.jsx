@@ -8,7 +8,7 @@ const SignUpForm = () => {
     watch,
     formState: { errors, isValid },
     } = useForm(
-        {mode: "onChange"}
+        { mode: "onChange" }
     );
 
   const onSubmit = (data) => {
@@ -29,7 +29,7 @@ const SignUpForm = () => {
             <div>
                 <input
                 placeholder="Name"
-                className="w-full p-2 border-b"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color focus:border-b-2"
                 {...register("name", { required: "Name is required" })}
                 />
                 {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
@@ -38,7 +38,7 @@ const SignUpForm = () => {
             <div>
                 <input
                 placeholder="Email"
-                className="w-full p-2 border-b"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color focus:border-b-2"
                 {...register("email", {
                     required: "Email is required",
                     pattern: {
@@ -55,7 +55,7 @@ const SignUpForm = () => {
                 <input
                 placeholder="Password"
                 type="password"
-                className="w-full p-2 border-b"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color focus:border-b-2"
                 {...register("password", {
                     required: "Password is required",
                     minLength: { value: 6, message: "Minimum 6 characters" },
@@ -69,7 +69,7 @@ const SignUpForm = () => {
                 <input
                 placeholder="Enter password again"
                 type="password"
-                className="w-full p-2 border-b"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color focus:border-b-2"
                 {...register("confirmPassword", {
                     validate: (value) =>
                     value === password || "Passwords do not match",
