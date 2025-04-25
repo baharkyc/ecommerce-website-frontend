@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import ButtonMd from "../buttons/ButtonMd";
 
 const EmailSubscribe = () => {
   const {
@@ -30,17 +31,15 @@ const EmailSubscribe = () => {
           },
         })}
       />
+
+      <ButtonMd>
+        Subscribe
+      </ButtonMd>
       {errors.email && (
         <p className="text-sm text-red-500 -mt-1">{errors.email.message}</p>
       )}
-
-      <button
-        type="submit"
-        className=" bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
-      >
-        Subscribe
-      </button>
     </form>
+
   );
 };
 

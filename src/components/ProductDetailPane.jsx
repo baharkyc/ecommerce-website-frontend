@@ -14,7 +14,7 @@ const ProductDetailPane = () => {
     const product = exampleProduct[0];
 
     return (
-        <div className="w-full h-full text-second-text-color sm:px-16 max-w-6xl mx-auto mt-8 px-14">
+        <div className="w-full h-full text-second-text-color sm:px-16 max-w-6xl mx-auto mt-8 px-14 pb-24">
             {/* Tab navigation */}
             <TabMenu activeTab={activeTab} 
                 handleTabClick={handleTabClick} 

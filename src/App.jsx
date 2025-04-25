@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage';
 import TeamPage from './pages/TeamPage';
 import AboutPage from './pages/AboutPage';
 import SignUpPage from './pages/SignUpPage';
+import LoginPage from './pages/LoginPage';
 
 
 
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path="/signup">
           <SignUpPage/>
+        </Route>
+        <Route path="/login">
+          <LoginPage/>
         </Route>
       </Switch>
       

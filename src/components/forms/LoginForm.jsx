@@ -1,11 +1,10 @@
 import { useForm } from "react-hook-form";
 import ButtonMd from "../buttons/ButtonMd";
 
-const SignUpForm = () => {
+const LoginForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors, isValid },
     } = useForm(
         { mode: "onChange" }
@@ -16,23 +15,12 @@ const SignUpForm = () => {
     // API call will be added
   };
 
-  const password = watch("password");
-
   return (
     <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white rounded px-8 pt-6 pb-8 w-full max-w-md space-y-4"
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-md space-y-4"
         >
-        <h2 className="text-primary-color text-2xl font-bold mb-4 text-center">Sign Up</h2>
-
-        <div>
-            <input
-            placeholder="Name"
-            className="w-full p-2 border-b focus:outline-none focus:border-primary-color focus:border-b-2"
-            {...register("name", { required: "Name is required" })}
-            />
-            {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
-        </div>
+        <h2 className="text-primary-color text-2xl font-bold mb-4 text-center">Login</h2>
 
         <div>
             <input
@@ -63,32 +51,24 @@ const SignUpForm = () => {
             {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
         </div>
 
-        <div>
-            
-            <input
-            placeholder="Enter password again"
-            type="password"
-            className="w-full p-2 border-b focus:outline-none focus:border-primary-color focus:border-b-2"
-            {...register("confirmPassword", {
-                validate: (value) =>
-                value === password || "Passwords do not match",
-            })}
-            />
-            {errors.confirmPassword && (
-            <p className="text-red-500 text-sm">{errors.confirmPassword.message}</p>
-            )}
-        </div>
-
-        <div className="flex justify-center w-full">
+        <div className="flex justify-center w-full py-2">
             <ButtonMd 
                 isFilled={isValid}
                 isDisabled={!isValid}>
-                Sign Up
+                Login
             </ButtonMd>
         </div>
+        <div className="text-second-text-color text-center mt-4 flex flex-col gap-y-2">
+          <span>Don't have an account?   </span>
+          <a 
+          href="./signup"
+          className="underline text-primary-color">
+            Sign up here!
+          </a>
+        </div>
     </form>
-
+   
   );
 };
 
-export default SignUpForm;
+export default LoginForm;

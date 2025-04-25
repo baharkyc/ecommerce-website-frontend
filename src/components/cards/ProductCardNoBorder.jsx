@@ -31,9 +31,12 @@ export const ProductCardNoBorder = ({ product }) => {
             </div>
 
             {/* Product Name */}
-            <h2 className="text-center text-lg font-semibold text-text-color leading-tight pb-4">
+            <a 
+                className="text-center text-lg font-semibold text-text-color leading-tight pb-4"
+                href="./product"
+            >
                 {product.name}
-            </h2>
+            </a>
 
             {/* Esnek alan - boşluğu ismin altına bırakıyoruz */}
             <div className="flex-grow" />
