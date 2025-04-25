@@ -1,5 +1,4 @@
-import React from "react"
-import Navbar from 'react-bootstrap/Navbar';
+import React from "react";
 import NavBarLight from "../components/NavBarLight";
 import NavBarDark from "../components/NavBarDark";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ProductDescription from "./cards/ProductDescription";
-import TabMenu from "./menuss/TabMenu";
+import TabMenu from "./menus/TabMenu";
 import ReviewsList from "./ReviewsList";
 import exampleProduct from "../data/exampleProduct.json";
 
