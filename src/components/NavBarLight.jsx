@@ -1,5 +1,5 @@
-import HeaderMenuRight from './menus/HeaderMenuRight';
-import NavMenu from './Menus/NavMenu';
+import HeaderMenuRight from './menuss/HeaderMenuRight';
+import NavMenu from './menuss/NavMenu';
 import { useState } from 'react';
 
 const NavBarLight = () => {

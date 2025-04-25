@@ -1,5 +1,5 @@
 import SocialLinks from "../components/buttons/SocialLinks";
-import FooterMenu from "../components/Menus/FooterMenu";
+import FooterMenu from "../components/menuss/FooterMenu";
 
 const Footer = () => {
 

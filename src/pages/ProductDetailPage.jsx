@@ -6,7 +6,7 @@ import Header from "../layout/Header";
 import PageContent from "../layout/PageContent";
 import clothes from "../data/clothes.json";
 import ProductDetailPane from "../components/ProductDetailPane";
-import Breadcrumb from "../components/menus/Breadcrumb";
+import Breadcrumb from "../components/menuss/Breadcrumb";
 
 const ProductDetailPage = () => {
 

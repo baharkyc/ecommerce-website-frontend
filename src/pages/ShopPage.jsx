@@ -9,7 +9,7 @@ import categories from "../data/categories.json"
 import ProductFilterRow from "../components/ProductFilterRow";
 
 import { useState } from "react";
-import Breadcrumb from "../components/menus/Breadcrumb";
+import Breadcrumb from "../components/menuss/Breadcrumb";
 
 const ShopPage = () => {
     const [viewMode, setViewMode] = useState("grid");
