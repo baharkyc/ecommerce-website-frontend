@@ -37,8 +37,6 @@ export const ProductCardNoBorder = ({ product }) => {
             >
                 {product.name}
             </a>
-
-            {/* Esnek alan - boşluğu ismin altına bırakıyoruz */}
             <div className="flex-grow" />
 
             {/* Price & Colors */}

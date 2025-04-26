@@ -1,9 +1,8 @@
 
-const ButtonMd = ({children, onClick, isDisabled, isHidden, isFilled = false}) => {
+const ButtonMd = ({children, onClick, isDisabled, isHidden, isFilled = false, isLoading}) => {
 
     return(
         <button
-
             onClick={onClick}
             disabled={isDisabled}
             className={`text-s col-span-3 py-2 px-4 border-1   rounded-md  hover:shadow-xs transition-all duration-300 
@@ -13,7 +12,15 @@ const ButtonMd = ({children, onClick, isDisabled, isHidden, isFilled = false}) =
                 ${isFilled ? 'bg-primary-color text-white' : ''} 
                  `}
             >
-            {children}
+            {isLoading ? (
+            <div className="flex items-center justify-center w-full h-full">
+            <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin">
+
+            </div>
+          </div>
+        ) : (
+            children
+        )}
         </button>
     )
 }
