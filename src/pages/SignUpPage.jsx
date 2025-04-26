@@ -9,7 +9,7 @@ const SignUpPage = () => {
     <div>
         <Header/>
         <PageContent>
-          <div className="h-[600px] w-full flex items-center justify-center bg-gray-50 p-4">
+          <div className="h-full w-full flex items-center justify-center bg-gray-50 py-8">
             <SignUpForm/>
           </div>
         </PageContent>
