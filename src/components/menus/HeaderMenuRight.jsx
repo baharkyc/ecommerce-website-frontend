@@ -34,7 +34,7 @@ const HeaderMenuRight = () => {
 
                 {showForm && token === null && (
                     <div className="text-text-color absolute top-full right-0 w-72 border border-gray-200 rounded-lg z-50 shadow-lg bg-transparent">
-                        <div className="rounded-lg bg-white overflow-hidden">
+                        <div className="overflow-hidden">
                             <LoginForm />
                         </div>
                     </div>
