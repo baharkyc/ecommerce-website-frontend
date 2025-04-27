@@ -1,10 +1,13 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useHistory } from "react-router-dom"
+import { useDispatch } from "react-redux";
+
 import ButtonMd from "../buttons/ButtonMd";
 import axiosInstance from "../../api/axiosInstance";
-
 import { toast } from "react-toastify";
+import { setUser } from "../../store/actions/clientActions";
+
 
 const LoginForm = () => {
   const {
@@ -18,14 +21,25 @@ const LoginForm = () => {
 
   const [isLoading, setLoading] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
+
 
   const onSubmit = (data) => {
 
     setLoading(true);
     axiosInstance.post("/login", data)
       .then((res) => {
-        console.log("Submitted successfully", res.data);
+
+        console.log("Login successful", res.data);
+
+        dispatch(setUser(res.data));
+
+        const token = res.data.token; //session token
+        
+        localStorage.setItem("userToken", token)
+
         history.push("/");
+
         toast.success("Login successful", {
           autoClose: 4000,
       })
@@ -42,6 +56,7 @@ const LoginForm = () => {
       })
       })
       .finally(() => {
+        reset();
         setLoading(false);
       })
   };
