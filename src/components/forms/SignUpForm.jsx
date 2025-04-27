@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useState, useEffect } from "react";
 import ButtonMd from "../buttons/ButtonMd";
-import axiosInstance from "../../api/AxiosInstance";
+import axiosInstance from "../../api/axiosInstance";
 import { toast } from "react-toastify";
 
 const SignUpForm = () => {
@@ -13,17 +13,18 @@ const SignUpForm = () => {
     watch,
     formState: { errors, isValid },
     } = useForm(
-        { mode: "onBlur" }
+        { mode: "onChange" }
     );
 
     const [roles, setRoles] = useState([]);
-    const [isLoading, setLoading] = useState(true);
+    const [isLoading, setLoading] = useState(false);
     const [selectedRoleId, setSelectedRoleId] = useState(3); //default id is customer, 3.
 
     const password = watch("password");
     const history = useHistory();
 
     function fetchRoles() { //get roles with axios
+        setLoading(true);
         axiosInstance.get('/roles')
           .then((response) => {
             setRoles(response.data);
@@ -48,8 +49,6 @@ const SignUpForm = () => {
             ...restOfData,
             role_id: selectedRoleId,
         };
-        
-        console.log("Form Data:", formData);
 
         axiosInstance.post('/signup', formData)
             .then((response) => {
@@ -74,11 +73,11 @@ const SignUpForm = () => {
 
 
   return (
-    <div className="max-w-[400px]">
-        <h2 className="text-primary-color text-2xl font-bold mb-4 text-center">Sign Up</h2>
+    <div className="w-[400px] bg-white rounded-2xl shadow-md">
+        <h2 className="text-primary-color text-2xl font-bold mb-2 pt-4 text-center">Sign Up</h2>
         
         {/* Role Tabs */}
-        <div className="bg-white rounded-2xl ">
+        <div className="">
             <div className="flex justify-center px-4">
                 {roles.map((role) => (
                     <button
