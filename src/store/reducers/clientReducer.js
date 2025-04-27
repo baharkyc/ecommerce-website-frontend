@@ -1,3 +1,9 @@
+import {
+    SET_USER,
+    SET_ROLE,
+    SET_THEME,
+    SET_LANGUAGE
+}   from "../actions/clientActions";
 
 const clientInitial = {
     user: {
