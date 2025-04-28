@@ -1,4 +1,4 @@
-import EmailSubscribe from "../Forms/EmailSubscribe";
+import EmailSubscribe from "../forms/EmailSubscribe";
 
 
 const FooterMenu = () => {

@@ -1,5 +1,5 @@
 import BestSellers from "../components/BestSellers";
-import ProductDetailCard from "../components/Cards/ProductDetailCard";
+import ProductDetailCard from "../components/cards/ProductDetailCard";
 import Clients from "../components/banners/Clients";
 import Footer from "../layout/Footer";
 import Header from "../layout/Header";

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { Sun } from 'lucide-react';
 
 const Hero = () => {
     

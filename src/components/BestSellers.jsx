@@ -1,7 +1,7 @@
-import {ProductCardBordered} from "./Cards/ProductCard"
+import {ProductCardBordered} from "./cards/ProductCard"
 import products from "../data/products.json"
 import { useState } from "react";
-import ButtonMd from "./Buttons/ButtonMd";
+import ButtonMd from "./buttons/ButtonMd";
 
 const BestSellers = () => {
 

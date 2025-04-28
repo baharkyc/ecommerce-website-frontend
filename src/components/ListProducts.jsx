@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductCardNoBorder from "./cards/ProductCardNoBorder";
-import PaginationButton from "./Buttons/PaginationButton";
+import PaginationButton from "./buttons/PaginationButton";
 import ProductCardList from "./cards/ProductCardList";
-import clothes from "../data/clothes.json";
 
 const PRODUCTS_PER_PAGE = 12;
 

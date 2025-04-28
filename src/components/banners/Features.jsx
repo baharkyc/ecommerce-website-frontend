@@ -1,5 +1,5 @@
 import { Ear, Earth, Leaf, Turtle } from "lucide-react";
-import FeatureCard from "../Cards/FeatureCard";
+import FeatureCard from "../cards/FeatureCard";
 
 const Features = () => {
 
