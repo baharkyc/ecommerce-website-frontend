@@ -4,9 +4,7 @@ import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux";
 
 import ButtonMd from "../buttons/ButtonMd";
-import axiosInstance from "../../api/axiosInstance";
-import { toast } from "react-toastify";
-import { setUser } from "../../store/actions/clientActions";
+import { loginUser } from "../../store/actions/clientAsyncActions";
 
 
 const LoginForm = () => {
@@ -24,42 +22,24 @@ const LoginForm = () => {
   const dispatch = useDispatch();
 
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
 
     setLoading(true);
-    axiosInstance.post("/login", data)
-      .then((res) => {
 
-        console.log("Login successful", res.data);
+    try {
+      await dispatch(loginUser(data, history));
 
-        dispatch(setUser(res.data));
-
-        const token = res.data.token; //session token
-        
-        localStorage.setItem("userToken", token)
-
-        history.push("/");
-
-        toast.success("Login successful", {
-          autoClose: 4000,
-      })
-
-      })
-      .catch((err) => {
-        console.log(err.message);
-        reset((formValues) => ({
-          ...formValues,
-          password: "",
-          }));
-        toast.error("Please check your email or password", {
-          autoClose: 4000,
-      })
-      })
-      .finally(() => {
+    } catch (err) {
+      reset((formValues) => ({
+        ...formValues,
+        password: "",
+        }));
+    } finally {
         reset();
         setLoading(false);
-      })
+    };
   };
+
 
   return (
     <div className="w-full bg-white rounded-2xl shadow-md">

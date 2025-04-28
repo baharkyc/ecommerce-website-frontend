@@ -2,19 +2,23 @@ import { User, Search, Heart, ShoppingCart } from "lucide-react";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import LoginForm from "../forms/LoginForm";
+import { useSelector } from "react-redux";
 
 const HeaderMenuRight = () => {
 
     const history = useHistory();
 
     const [showForm, setShowForm] = useState(false);
-    const token =  localStorage.getItem("token");
+    const user = useSelector((state) => state.client.user); //retrieve user from store
+    const isLoggedIn = Boolean(user?.name);  //logged in if there is user in store
 
     const handleClick = () => {
-        if(token === null) {  //Check if there is session token.
-            history.push("./login");
+        if (!isLoggedIn) {
+          history.push("/login");
+        } else {
+          setShowForm(false);
         }
-    }
+      };
 
     return (
         <div className="flex items-center space-x-4 mx-4 text-sm ">
@@ -29,16 +33,21 @@ const HeaderMenuRight = () => {
                     onClick={handleClick}
                 >
                     <User className=" text-primary-color w-5 h-5" />
-                    <span className="hidden lg:inline text-primary-color">Login / Signup</span>
+                    <span className="hidden lg:inline text-primary-color">
+                        {isLoggedIn ? user.name : "Login / Signup"}
+                    </span>
                 </button>
 
-                {showForm && token === null && (
+                {showForm && !isLoggedIn && (
                     <div className="text-text-color absolute top-full right-0 w-72 border border-gray-200 rounded-lg z-50 shadow-lg bg-transparent">
                         <div className="overflow-hidden">
                             <LoginForm />
                         </div>
                     </div>
                 )}
+
+
+
                 
             </div>
             <button className=" text-primary-color rounded-full hover:bg-gray-100">
