@@ -2,6 +2,7 @@ import PageContent from "../layout/PageContent";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import Clients from "../components/banners/Clients";
+import CategoryBanner from "../components/banners/CategoryBanner";
 import ListProducts from "../components/ListProducts"
 import clothes from "../data/clothes.json"
 import categories from "../data/categories.json"
