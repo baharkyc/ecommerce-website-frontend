@@ -1,9 +1,14 @@
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useState, useEffect } from "react";
-import ButtonMd from "../buttons/ButtonMd";
-import axiosInstance from "../../api/axiosInstance";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+
+import axiosInstance from "../../api/axiosInstance";
+import ButtonMd from "../buttons/ButtonMd";
+import { fetchRoles } from "../../store/actions/globalActions";
+
+
 
 const SignUpForm = () => {
 
@@ -16,31 +21,23 @@ const SignUpForm = () => {
         { mode: "onChange" }
     );
 
-    const [roles, setRoles] = useState([]);
     const [isLoading, setLoading] = useState(false);
     const [selectedRoleId, setSelectedRoleId] = useState(3); //default id is customer, 3.
 
     const password = watch("password");
     const history = useHistory();
-
-    function fetchRoles() { //get roles with axios
-        setLoading(true);
-        axiosInstance.get('/roles')
-          .then((response) => {
-            setRoles(response.data);
-            console.log('Roles fetched')
-          })
-          .catch((err) => {
-            console.log('Fetch roles error', err.response.data);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
-      }
-
-    useEffect(() => {fetchRoles()}, []); //fetchRoles when page is loaded.
+    const dispatch = useDispatch();
+    const roles = useSelector((state) => state.global?.roles || []);
+    const isRolesFetched = useSelector((state) => state.global.isRolesFetched);
 
 
+    useEffect(() => {
+        if(roles.length === 0 && !isRolesFetched){
+            dispatch(fetchRoles());
+        }
+    }, [dispatch, roles, isRolesFetched]); //fetchRoles when page is loaded.
+
+    
     const onSubmit = (data) => {
         setLoading(true);
         // remove confirmPassword, add role_id
