@@ -2,7 +2,7 @@ import { setUser } from "../actions/clientActions";
 import axiosInstance from "../../api/axiosInstance";
 import { toast } from "react-toastify";
 
-// thunk function (asenkron)
+// thunk function (async)
 export const loginUser = (data, history) => async (dispatch) => {
     
   try {
@@ -10,15 +10,18 @@ export const loginUser = (data, history) => async (dispatch) => {
 
     console.log("Login successful", response.data);
 
-    dispatch(setUser(response.data)); // Save use data to redux
+    dispatch(setUser(response.data)); // Save user data to redux
 
     const token = response.data.token; 
-    localStorage.setItem("userToken", token);
+    
+    if(data.remember)
+      localStorage.setItem("userToken", token);
 
     history.push("/"); 
 
     toast.success("Login successful", {
       autoClose: 4000,
+
     });
   } catch (error) {
     console.error("Login error", error.message);
@@ -30,3 +33,6 @@ export const loginUser = (data, history) => async (dispatch) => {
     throw error; // throw error to component for form reset
   }
 };
+
+
+
