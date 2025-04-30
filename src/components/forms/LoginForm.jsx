@@ -78,6 +78,19 @@ const LoginForm = () => {
               {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
           </div>
 
+          {/* Remember Me checkbox */}
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="remember"
+              className="w-4 h-4"
+              {...register("remember")}
+            />
+            <label htmlFor="remember" className="text-sm text-gray-600">
+              Remember me
+            </label>
+          </div>
+
           <div className="flex justify-center w-full pt-2">
               <ButtonMd 
                   isLoading={isLoading}
