@@ -7,9 +7,10 @@ import ListProducts from "../components/ListProducts"
 import clothes from "../data/clothes.json"
 import categories from "../data/categories.json"
 import ProductFilterRow from "../components/ProductFilterRow";
+import Breadcrumb from "../components/menus/Breadcrumb";
 
 import { useState } from "react";
-import Breadcrumb from "../components/menus/Breadcrumb";
+
 
 const ShopPage = () => {
     const [viewMode, setViewMode] = useState("grid");
