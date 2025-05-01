@@ -3,6 +3,7 @@ import { SET_ROLES, SET_ROLES_FETCHED } from "../actions/globalActions";
 const globalInitial = {
     roles: [],
     isRolesFetched: false,
+    categories: [],
 }
 
 const globalReducer = (state = globalInitial, action) => {

@@ -1,3 +1,5 @@
+import axiosInstance from "../../api/axiosInstance";
+
 export const SET_CATEGORIES = "SET_CATEGORIES";
 export const SET_PRODUCT_LIST = "SET_PRODUCT_LIST";
 export const SET_TOTAL = "SET_TOTAL";
@@ -55,4 +57,26 @@ export const setFilter = (filter) => {
         payload: filter,
     }
 }
+
+
+export const fetchCategories = () => async (dispatch, getState) => {
+    const state = getState();
+    const categories = state.product.categories;
+    
+    if(categories.length === 0) {
+      try {
+        const response = await axiosInstance.get("/categories");
+    
+        dispatch(setCategories(response.data)); // Save user data to redux
+        console.log("Categories fetched");
+        
+      } catch (error) {
+        console.error("Fetch categories error", error.message);        
+        throw error; // throw error to component for form reset
+  
+      }
+    } else {
+      console.log("Categories already exist, skipped fetch.")
+    }
+  }
 
