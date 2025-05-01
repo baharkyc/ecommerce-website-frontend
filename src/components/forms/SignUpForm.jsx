@@ -33,12 +33,17 @@ const SignUpForm = () => {
 
     useEffect(() => {
         if(roles.length === 0 && !isRolesFetched){
+            console.log("Roles fetched.")
             dispatch(fetchRoles());
+        } else {
+            console.log("Roles already fetched.")
         }
     }, [dispatch]); //fetchRoles when page is loaded.
 
     
-    const onSubmit = (data) => {
+    const onSubmit = (data, event) => {
+        event.preventDefault();
+
         setLoading(true);
         // remove confirmPassword, add role_id
         const { confirmPassword, ...restOfData } = data;
@@ -66,8 +71,6 @@ const SignUpForm = () => {
             });
         
     };
-
-
 
   return (
     <div className="w-[400px] bg-white rounded-2xl shadow-md">

@@ -30,11 +30,8 @@ export const fetchRoles = () => async (dispatch, getState) => {
     } catch (error) {
       console.error("Fetch roles error", error.message);        
       throw error; // throw error to component for form reset
-
-    } finally {
-      const newState = getState();
-      console.log(newState.global.roles, newState.global.isRolesFetched);
     }
+    
   } else {
     console.log("Roles already exist, skipped fetch.")
   }

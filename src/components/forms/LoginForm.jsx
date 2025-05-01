@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 import ButtonMd from "../buttons/ButtonMd";
 import { loginUser } from "../../store/actions/clientAsyncActions";
@@ -22,9 +23,10 @@ const LoginForm = () => {
   const dispatch = useDispatch();
 
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data, event) => {
 
     setLoading(true);
+    event.preventDefault();
 
     try {
       await dispatch(loginUser(data, history));
@@ -103,11 +105,11 @@ const LoginForm = () => {
       </form>
       <div className="text-second-text-color text-center  pb-8 flex flex-col gap-y-2">
             <span>Don't have an account?   </span>
-            <a 
-            href="./signup"
+            <Link 
+            to="./signup"
             className="underline text-primary-color">
               Sign up here!
-            </a>
+            </Link>
           </div>
     </div>
    
