@@ -3,10 +3,9 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { loginUser } from "../../store/actions/authActions";
 
 import ButtonMd from "../buttons/ButtonMd";
-import { loginUser } from "../../store/actions/clientAsyncActions";
-
 
 const LoginForm = () => {
   const {
@@ -62,6 +61,7 @@ const LoginForm = () => {
                   message: "Invalid email address",
                   },
               })}
+              autoComplete="email"
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
           </div>
@@ -84,11 +84,11 @@ const LoginForm = () => {
           <div className="flex items-center space-x-2">
             <input
               type="checkbox"
-              id="remember"
+              id="rememberBox"
               className="w-4 h-4"
               {...register("remember")}
             />
-            <label htmlFor="remember" className="text-sm text-gray-600">
+            <label htmlFor="rememberBox" className="text-sm text-gray-600">
               Remember me
             </label>
           </div>
