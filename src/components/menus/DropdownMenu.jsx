@@ -27,20 +27,22 @@ const DropdownMenu = ({ categories }) => {
     };
 
     return (
-        <div className="absolute top-full left-0 bg-white shadow-lg py-6 px-8 hidden group-hover:flex flex-row gap-8 z-50 min-w-[200px] justify-between text-nowrap">
+        <div className="absolute top-full left-[-50px] bg-white shadow-lg py-6 px-12 hidden group-hover:flex flex-row gap-32 z-50 min-w-[200px] justify-between text-nowrap">
             {Object.entries(categoriesGrouped).map(([mainCategory, categories], index) => {
                 
                 return (
-                    <div key={index} className="text-s font-semibold space-y-2">
-                        <p className="mb-2">{mainCategory}</p>
+                    <div key={index} className="text-s space-y-4 ">
+                        <p className="mb-2 font-bold ">{mainCategory}</p>
                         {categories.map((category) => {
+
                             const genderPath = category.gender === "k" ? "kadin" : "erkek";
                             const categoryPath = category.code.split(":")[1];
+                            
                             return ( 
                                 <Link
                                     key={category.id}
                                     to={`/shop/${genderPath}/${categoryPath}/${category.id}`}
-                                    className="block font-medium text-second-text-color hover:text-primary-color"
+                                    className="block font-semibold text-second-text-color hover:text-primary-color"
                                 >
                                     {categoryTranslations[category.title] || category.title}
                                 </Link>)

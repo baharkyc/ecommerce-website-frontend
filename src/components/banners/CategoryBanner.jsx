@@ -13,15 +13,23 @@ const CategoryBanner = () => {
   return (
     <section className="w-full px-8 md:px-16 lg:px-32 xl:px-56 py-10">
       <div className="grid grid-cols-2 sm:grid-cols-6 gap-2">
-        {topCategories.map((category) => (
-          <CategoryCard
-            key={category.id}
-            gender={category.gender === "k" ? "Women" : "Men"}
-            name={category.title}
-            to={"/"}
-            imageUrl={category.img}
-          />
-        ))}
+
+        {topCategories.map((category) => {
+
+          const genderPath = category.gender === "k" ? "kadin" : "erkek";
+          const categoryPath = category.code.split(":")[1];
+
+          return (
+            <CategoryCard
+              key={category.id}
+              gender={category.gender === "k" ? "Women" : "Men"}
+              name={category.title}
+              to={`/shop/${genderPath}/${categoryPath}/${category.id}`}
+              imageUrl={category.img}
+            />
+          )
+        })}
+
       </div>
     </section>
   );

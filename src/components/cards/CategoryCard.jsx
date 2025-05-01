@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CategoryCard = ({ name, imageUrl, gender, to }) => {
+
+  
     return (
       <Link
         to={to}
