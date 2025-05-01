@@ -42,4 +42,4 @@ FizzyStore is a modern e-commerce platform designed to provide users with a seam
 
 ## API Integration
 
-The website communicates with a RESTful API hosted at:
+
