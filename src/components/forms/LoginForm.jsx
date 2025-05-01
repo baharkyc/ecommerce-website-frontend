@@ -42,7 +42,7 @@ const LoginForm = () => {
 
 
   return (
-    <div className="w-full bg-white rounded-2xl shadow-md">
+    <div className="w-full bg-white rounded-xl shadow-lg">
       <form
           onSubmit={handleSubmit(onSubmit)}
           className="px-8 pt-6 pb-8 w-full space-y-4"

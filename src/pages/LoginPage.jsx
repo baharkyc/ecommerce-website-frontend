@@ -9,7 +9,7 @@ const LoginPage = () => {
     <div>
         <Header/>
         <PageContent>
-            <div className="w-full h-[500px] flex items-center justify-center bg-gray-50 p-4">
+            <div className="w-full h-[500px] flex items-center justify-center  p-4">
               <div className="w-[400px]">
                 <LoginForm/>  
               </div>

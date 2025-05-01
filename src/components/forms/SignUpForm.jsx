@@ -35,7 +35,7 @@ const SignUpForm = () => {
         if(roles.length === 0 && !isRolesFetched){
             dispatch(fetchRoles());
         }
-    }, [dispatch, roles, isRolesFetched]); //fetchRoles when page is loaded.
+    }, [dispatch]); //fetchRoles when page is loaded.
 
     
     const onSubmit = (data) => {

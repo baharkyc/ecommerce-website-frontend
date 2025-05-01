@@ -17,7 +17,7 @@ export const setRolesFetched = (status) => ({
 export const fetchRoles = () => async (dispatch, getState) => {
   const state = getState();
   const roles = state.global.roles;
-  const isRolesFetched = state.global.isRolesFetched;
+  const isRolesFetched = state.global.isRolesFetched; 
 
   if(!isRolesFetched && roles.length === 0) {
     try {
@@ -25,11 +25,14 @@ export const fetchRoles = () => async (dispatch, getState) => {
   
       dispatch(setRoles(response.data)); // Save user data to redux
       dispatch(setRolesFetched(true)); 
-      console.log("Roles saved to store");
+      
     
     } catch (error) {
       console.error("Fetch roles error", error.message);        
       throw error; // throw error to component for form reset
+    } finally {
+      const newState = getState();
+      console.log(newState.global.roles, newState.global.isRolesFetched);
     }
   } else {
     console.log("Roles alreaady exist, skipped fetch.")
