@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import EmailSubscribe from "../forms/EmailSubscribe";
 
 
@@ -8,13 +9,13 @@ const FooterMenu = () => {
                 <h4 className="font-semibold text-lg">Company</h4>
                 <ul className="space-y-1 text-sm text-gray-700">
                     <li>
-                        <a href="/about" className="hover:underline">About Us</a>
+                        <Link to="/about" className="hover:underline">About Us</Link>
                     </li>
                     <li>
-                        <a href="/careers" className="hover:underline">Careers</a>
+                        <Link to="/careers" className="hover:underline">Careers</Link>
                     </li>
                     <li>
-                        <a href="/press" className="hover:underline">Press</a>
+                        <Link to="/press" className="hover:underline">Press</Link>
                     </li>
                 </ul>
             </div>
@@ -24,13 +25,13 @@ const FooterMenu = () => {
                 <h4 className="font-semibold text-lg">Support</h4>
                 <ul className="space-y-1 text-sm text-gray-700">
                     <li>
-                        <a href="/contact" className="hover:underline">Contact</a>
+                        <Link to="/contact" className="hover:underline">Contact</Link>
                     </li>
                     <li>
-                        <a href="/faq" className="hover:underline">FAQ</a>
+                        <Link to="/faq" className="hover:underline">FAQ</Link>
                     </li>
                     <li>
-                        <a href="/shipping" className="hover:underline">Shipping Info</a>
+                        <Link to="/shipping" className="hover:underline">Shipping Info</Link>
                     </li>
                 </ul>
             </div>
