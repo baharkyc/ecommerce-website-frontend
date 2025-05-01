@@ -2,11 +2,14 @@ import { User, Search, Heart, ShoppingCart } from "lucide-react";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import LoginForm from "../forms/LoginForm";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../../store/actions/authActions";
+import ButtonMd from "../buttons/ButtonMd";
 
 const HeaderMenuRight = () => {
 
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const [showForm, setShowForm] = useState(false);
     const user = useSelector((state) => state.client.user); //retrieve user from store
@@ -14,11 +17,17 @@ const HeaderMenuRight = () => {
 
     const handleClick = () => {
         if (!isLoggedIn) {
-          history.push("/login");
-        } else {
-          setShowForm(false);
-        }
-      };
+            history.push("/login");
+        } 
+    };
+
+    const handleLogout = () => {
+        dispatch(logoutUser());
+        setShowForm(false);
+        history.push("/");
+        console.log("User logged out")
+    };
+
 
     return (
         <div className="flex items-center space-x-4 mx-4 text-sm ">
@@ -38,17 +47,25 @@ const HeaderMenuRight = () => {
                     </span>
                 </button>
 
-                {showForm && !isLoggedIn && (
-                    <div className="text-text-color absolute top-full right-0 w-72  z-50 shadow-lg bg-transparent">
-                        <div className="overflow-hidden">
-                            <LoginForm />
-                        </div>
+                {showForm && (
+                    <div className="text-text-color absolute top-full right-0 w-72  z-50 bg-transparent">
+                        {!isLoggedIn ? (
+                            <div className="overflow-hidden shadow-lg ">
+                                <LoginForm />
+                            </div>
+                        ): (
+                            <div className="w-full flex justify-end py-2">
+                                <ButtonMd
+                                    onClick={handleLogout}
+                                    isFilled={true}
+                                >
+                                    Logout
+                                </ButtonMd>
+                            </div>
+                            
+                          )}
                     </div>
                 )}
-
-
-
-                
             </div>
             <button className=" text-primary-color rounded-full hover:bg-gray-100">
                 <Search className="w-5 h-5" />
