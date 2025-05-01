@@ -1,6 +1,7 @@
 import HeaderMenuRight from './menus/HeaderMenuRight';
 import NavMenu from './menus/NavMenu';
 import { useState } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const NavBarLight = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,12 +10,12 @@ const NavBarLight = () => {
         <nav className="w-full md:h-16 md:flex-row flex-col  place-content-center">
             <div className="flex items-center justify-between  flex-nowrap h-full w-full min-h-16">
                 {/* Logo */}
-                <a
-                    href="/"
+                <Link
+                    to="/"
                     className="mx-4 text-2xl font-bold tracking-widest text-second-text-color whitespace-nowrap flex-shrink-0"
                 >
                     Fizzy Store
-                </a>
+                </Link>
 
                 {/* Menu */}
                 <div className="hidden md:flex md:flex-grow md:justify-center md:items-center h-full">
