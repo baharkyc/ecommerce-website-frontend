@@ -12,10 +12,11 @@ export const reducers = combineReducers({
     global: globalReducer,
     client: clientReducer,
     product: productReducer,
-    shoppingCart: shoppingCartReducer
+    shoppingCart: shoppingCartReducer,
 })
 
-export const store = createStore(reducers,
+export const store = createStore(
+    reducers,
     applyMiddleware(thunk)
 );
 
