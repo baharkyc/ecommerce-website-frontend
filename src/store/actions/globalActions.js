@@ -13,7 +13,6 @@ export const setRolesFetched = (status) => ({
   payload: status,
 });
 
-
 export const fetchRoles = () => async (dispatch, getState) => {
   const state = getState();
   const roles = state.global.roles;
@@ -36,6 +35,8 @@ export const fetchRoles = () => async (dispatch, getState) => {
     console.log("Roles already exist, skipped fetch.")
   }
 }
+
+
 
 
 
