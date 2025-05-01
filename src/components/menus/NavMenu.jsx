@@ -1,18 +1,23 @@
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import DropdownMenu from "./DropdownMenu";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCategories } from '../../store/actions/productActions';
 
 const NavMenu = ({ isOpen }) => {
 
-    const categories = [ 
-        {"Women": ["Dress", "Pants", "Tshirt", "Top",]}, 
-        {"Men": ["Trousers", "Shirts", "Outer Wear", "Tshirt"]   
-        }];
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(fetchCategories());
+    }, []);
 
+    const categories = useSelector((state) => state.product.categories);
+    
     return (
         <div className={`${isOpen ? 'flex' : 'hidden'} flex-col md:flex-row gap-3 items-center justify-center md:items-center md:mt-0 sm:w-auto w-full h-full px-4 text-second-text-color text-sm font-semibold `}>
-            <a href="/" >Menu</a>
+            <Link to="/" >Menu</Link>
 
             {/* Shop */}
             <div className="relative group cursor-pointer md:h-full md:flex items-center place-items-center w-full">
@@ -24,14 +29,19 @@ const NavMenu = ({ isOpen }) => {
                 </div>
 
                 {/* Shop Dropdown */}
-                <DropdownMenu menuItems={categories}/>
+                {categories.length !== 0 && (
+                    <DropdownMenu 
+                    categories={categories}
+                    />
+                )}
+                
                 
             </div>      
 
-            <a href="/about">About</a>
-            <a href="/" >Blog</a>
-            <a href="/contact" >Contact</a>
-            <a href="/team" >Team</a>
+            <Link to="/about">About</Link>
+            <Link to="/" >Blog</Link>
+            <Link to="/contact" >Contact</Link>
+            <Link to="/team" >Team</Link>
         </div>
     );
 };

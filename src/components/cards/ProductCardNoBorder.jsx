@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import AddToCartButtonNoBorder from "../buttons/AddToCartButtonNoBorder";
 import ColorSelection from "../buttons/ColorSelection";
 
@@ -31,12 +32,12 @@ export const ProductCardNoBorder = ({ product }) => {
             </div>
 
             {/* Product Name */}
-            <a 
+            <Link 
                 className="text-center text-lg font-semibold text-text-color leading-tight pb-4"
-                href="./product"
+                to="./product"
             >
                 {product.name}
-            </a>
+            </Link>
             <div className="flex-grow" />
 
             {/* Price & Colors */}
