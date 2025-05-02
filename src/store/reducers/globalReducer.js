@@ -1,9 +1,9 @@
-import { SET_ROLES, SET_ROLES_FETCHED } from "../actions/globalActions";
+import { SET_ROLES, SET_ROLES_FETCHED, SET_LOADING } from "../actions/globalActions";
 
 const globalInitial = {
     roles: [],
     isRolesFetched: false,
-    categories: [],
+    isLoading: false,
 }
 
 const globalReducer = (state = globalInitial, action) => {
@@ -19,6 +19,11 @@ const globalReducer = (state = globalInitial, action) => {
                 ...state,
                 isRolesFetched: action.payload
             };
+        case SET_LOADING:
+            return {
+                ...state,
+                isLoading: action.payload
+            }
         default:
             return state;
     }

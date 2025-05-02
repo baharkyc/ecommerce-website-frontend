@@ -1,6 +1,7 @@
 import axiosInstance from "../../api/axiosInstance";
 import { setUser } from "./clientActions";
 import { toast } from "react-toastify";
+import { setLoading } from "./globalActions";
 
 export const LOGOUT_USER = "LOGOUT_USER";
 
@@ -49,36 +50,41 @@ export const logoutUser = () => {
     };
 };
 
-export const setUserByToken = () => {
-return async (dispatch) => {
+export const setUserByToken = () => {return async (dispatch) => {
     const token = localStorage.getItem("token");
 
     if (token) {
-    try {
-        const response = await axiosInstance.get("/verify", {
-        headers: {
-            Authorization: token,
-        },
-        });
 
-        console.log("Token verified, user set");
-        const user = response.data;
-        const newToken = response.data.token;
+      dispatch(setLoading(true));
 
-        localStorage.setItem("token", newToken);
-        axiosInstance.defaults.headers["Authorization"] = newToken;
-        dispatch(setUser(user));
+      try {
+          const response = await axiosInstance.get("/verify", {
+          headers: {
+              Authorization: token,
+          },
+          });
 
-    } catch (err) {
+          console.log("Token verified, user set");
+          const user = response.data;
+          const newToken = response.data.token;
 
-        console.log("Error verifying token:", err);
-        localStorage.removeItem("token");
-        delete axiosInstance.defaults.headers["Authorization"];
-    }
+          localStorage.setItem("token", newToken);
+          axiosInstance.defaults.headers["Authorization"] = newToken;
+          dispatch(setUser(user));
+
+      } catch (err) {
+
+          console.log("Error verifying token:", err);
+          localStorage.removeItem("token");
+          delete axiosInstance.defaults.headers["Authorization"];
+      } finally {
+        dispatch(setLoading(false));
+      }
+
     } else {
-    console.log("No token found.");
+      console.log("No token found.");
     }
-};
+  };
 };
 
 
