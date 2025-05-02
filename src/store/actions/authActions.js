@@ -1,7 +1,6 @@
 import axiosInstance from "../../api/axiosInstance";
 import { setUser } from "./clientActions";
 import { toast } from "react-toastify";
-import { jwtDecode } from "jwt-decode";
 
 export const LOGOUT_USER = "LOGOUT_USER";
 
@@ -71,7 +70,7 @@ return async (dispatch) => {
         dispatch(setUser(user));
 
     } catch (err) {
-        
+
         console.log("Error verifying token:", err);
         localStorage.removeItem("token");
         delete axiosInstance.defaults.headers["Authorization"];
