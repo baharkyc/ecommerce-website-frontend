@@ -9,11 +9,23 @@ import categories from "../data/categories.json"
 import ProductFilterRow from "../components/ProductFilterRow";
 import Breadcrumb from "../components/menus/Breadcrumb";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../store/actions/productActions";
+import Loading from "../components/Loading";
 
 
 const ShopPage = () => {
+
     const [viewMode, setViewMode] = useState("grid");
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, []);
+
+    const productList = useSelector((state) => state.product.productList);
+    const isLoading = useSelector((state) => state.global.isLoading);
 
     return (
         <div>
@@ -22,14 +34,16 @@ const ShopPage = () => {
                 <Breadcrumb/>
                 <CategoryBanner />
                 <ProductFilterRow
-                    products={clothes}
                     onViewChange={(mode) => setViewMode(mode)}
                 />
-                <ListProducts
-                    products={clothes}
-                    category={categories[0]}
-                    viewMode={viewMode}
-                />
+                {isLoading ? (
+                    <Loading />
+                ) : (
+                    <ListProducts
+                        products={productList}
+                        viewMode={viewMode}
+                />)
+                }
                 <Clients />
             </PageContent>
             <Footer />

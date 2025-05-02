@@ -5,7 +5,7 @@ import ProductCardList from "./cards/ProductCardList";
 
 const PRODUCTS_PER_PAGE = 12;
 
-const ListProducts = ({ category, products, viewMode = "grid" }) => {
+const ListProducts = ({ products, viewMode = "grid" }) => {
     const [pageNumber, setPageNumber] = useState(1);
 
     const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);

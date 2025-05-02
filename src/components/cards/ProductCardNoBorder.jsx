@@ -9,7 +9,7 @@ export const ProductCardNoBorder = ({ product }) => {
             <div className="group relative w-full aspect-[3/4] flex-shrink-0 overflow-hidden mb-4">
                 <img
                     className="w-full h-full object-cover"
-                    src={product.imageUrl}
+                    src={product.images[0]?.url}
                     alt={product.name}
                 />
 
@@ -44,9 +44,12 @@ export const ProductCardNoBorder = ({ product }) => {
             <div className="text-center text-lg font-semibold text-secondary-1">
                 {product.price.toFixed(2)} ₺
             </div>
-            <div className="pt-4 flex justify-center">
-                <ColorSelection colors={product.colors} text={false} size={20}/>
-            </div>
+            {product.colors && (
+                <div className="pt-4 flex justify-center">
+                    <ColorSelection colors={product.colors} text={false} size={20}/>
+                </div>
+            )}
+            
         </div>
     );
 };

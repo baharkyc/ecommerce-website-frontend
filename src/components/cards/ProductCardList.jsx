@@ -8,7 +8,7 @@ const ProductCardList = ({ product }) => {
             <div className="flex-shrink-0 w-1/4 group relative">
                 <img
                     className="w-full h-full object-cover aspect-[2/3]"
-                    src={product.imageUrl}
+                    src={product.images[0]?.url}
                     alt={product.name}
                 />
 
@@ -39,7 +39,10 @@ const ProductCardList = ({ product }) => {
                 <div className="text-xl font-bold text-secondary-1 mb-4">
                     {product.price.toFixed(2)} ₺
                 </div>
-                <ColorSelection colors={product.colors}/>
+                {product.colors && (
+                    <ColorSelection colors={product.colors}/>
+                )}
+                
             </div>
 
             {/* Add To Cart */}

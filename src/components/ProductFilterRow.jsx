@@ -2,9 +2,12 @@ import { LayoutGrid, List, Menu } from "lucide-react";
 import ButtonMd from "./buttons/ButtonMd";
 import {ButtonSm} from "./buttons/ButtonSm";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-const ProductFilterRow = ({ products, onViewChange }) => {
+const ProductFilterRow = ({ onViewChange }) => {
+
     const [isGridView, setGridView] = useState(true);
+    const totalProducts = useSelector((state) => state.product.total);
 
     const handleGridViewClick = () => {
         setGridView(true);
@@ -20,7 +23,7 @@ const ProductFilterRow = ({ products, onViewChange }) => {
         <div className="px-8 sm:mx-10 md:px-20 lg:px-32 xl:px-52">
             <div className="h-full flex flex-col gap-y-8 py-4 justify-between items-center sm:flex-row font-bold text-second-text-color text-sm">
                 <div className="flex-1">
-                    Showing {products.length + " products."}
+                    Total of  {totalProducts + " products."}
                 </div>
                 <div className="flex-1 flex flex-row gap-4 items-center justify-center">
                     Views:
@@ -35,8 +38,6 @@ const ProductFilterRow = ({ products, onViewChange }) => {
                     <ButtonMd>
                         Filter
                     </ButtonMd>
-                        
-                  
                 </div>
             </div>
         </div>
