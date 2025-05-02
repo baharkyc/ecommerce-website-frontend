@@ -1,6 +1,7 @@
 import axiosInstance from "../../api/axiosInstance";
 import { setUser } from "./clientActions";
 import { toast } from "react-toastify";
+import { jwtDecode } from "jwt-decode";
 
 export const LOGOUT_USER = "LOGOUT_USER";
 
@@ -47,52 +48,38 @@ export const logoutUser = () => {
       // Clear user from Redux
       dispatch(setUser(null));
     };
-  };
+};
 
-  export const setUserByToken = () => {
+export const setUserByToken = () => {
+return async (dispatch) => {
+    const token = localStorage.getItem("token");
 
-    return async (dispatch) => {
+    if (token) {
+    try {
+        const response = await axiosInstance.get("/verify", {
+        headers: {
+            Authorization: token,
+        },
+        });
 
-      const token = localStorage.getItem("token");
-  
-      if (token) {
-        try {
-          // Decode token to check expiration
-          const decoded = jwtDecode(token);
-          const currentTime = Date.now() / 1000; // in seconds
-  
-          if (decoded.exp && decoded.exp < currentTime) {
-            // Token expired
-            console.log("Token expired");
-            localStorage.removeItem("token");
-            delete axiosInstance.defaults.headers['Authorization'];
-            return;
-          }
-  
-          // Verify token with backend
-          const response = await axiosInstance.get("/verify", {
-            headers: {
-              Authorization: token,
-            },
-          });
-  
-          console.log("Token verified, user set");
-          const user = response.data;
-          const newToken = response.data.token;
-  
-          localStorage.setItem("token", newToken);
-          axiosInstance.defaults.headers['Authorization'] = newToken;
-          dispatch(setUser(user));
-  
-        } catch (err) {
-          console.log("Error verifying token:", err);
-          localStorage.removeItem("token");
-          delete axiosInstance.defaults.headers['Authorization'];
-        }
-      } else {
-        console.log("No token found.");
-      }
-    };
-  };
+        console.log("Token verified, user set");
+        const user = response.data;
+        const newToken = response.data.token;
+
+        localStorage.setItem("token", newToken);
+        axiosInstance.defaults.headers["Authorization"] = newToken;
+        dispatch(setUser(user));
+
+    } catch (err) {
+        
+        console.log("Error verifying token:", err);
+        localStorage.removeItem("token");
+        delete axiosInstance.defaults.headers["Authorization"];
+    }
+    } else {
+    console.log("No token found.");
+    }
+};
+};
 
 
