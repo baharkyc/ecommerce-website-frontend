@@ -29,27 +29,39 @@ function App() {
         <Route path="/" exact>
           <HomePage/>
         </Route>
-        <Route path="/shop" >
+
+        <Route path="/shop" exact>
           <ShopPage/>
         </Route>
+
+        <Route path="/shop/:gender/:categoryPath/:categoryId">
+          <ShopPage/>
+        </Route>
+
         <Route path="/product" >
           <ProductDetailPage/>
         </Route>
+
         <Route path="/contact">
           <ContactPage/>
         </Route>
+
         <Route path="/team">
           <TeamPage/>
         </Route>
+
         <Route path="/about">
           <AboutPage/>
         </Route>
+
         <Route path="/signup">
           <SignUpPage/>
         </Route>
+
         <Route path="/login">
           <LoginPage/>
         </Route>
+
       </Switch>
       
       <ToastContainer/>

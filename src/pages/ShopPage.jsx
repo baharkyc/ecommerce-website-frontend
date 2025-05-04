@@ -13,19 +13,24 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../store/actions/productActions";
 import Loading from "../components/Loading";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const ShopPage = () => {
 
+    const { gender, categoryPath, categoryId } = useParams(); //get URL parameters to fetch products based on selected category.
+
     const [viewMode, setViewMode] = useState("grid");
+    const [ sort, setSort ] = useState("");
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchProducts());
-    }, []);
+        dispatch(fetchProducts(categoryId, sort));
+    }, [categoryId, sort]);
 
     const productList = useSelector((state) => state.product.productList);
     const isLoading = useSelector((state) => state.global.isLoading);
+
 
     return (
         <div>
@@ -35,6 +40,7 @@ const ShopPage = () => {
                 <CategoryBanner />
                 <ProductFilterRow
                     onViewChange={(mode) => setViewMode(mode)}
+                    onSortChange={(newSort) => setSort(newSort)}
                 />
                 {isLoading ? (
                     <Loading />
