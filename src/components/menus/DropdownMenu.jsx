@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -26,6 +27,7 @@ const DropdownMenu = ({ categories }) => {
         Men: categories.filter((cat) => cat.gender === "e"),
     };
 
+
     return (
         <div className="absolute top-full left-[-50px] bg-white shadow-lg py-6 px-12 hidden group-hover:flex flex-row gap-32 z-50 min-w-[200px] justify-between text-nowrap">
             {Object.entries(categoriesGrouped).map(([mainCategory, categories], index) => {
@@ -33,8 +35,8 @@ const DropdownMenu = ({ categories }) => {
                 return (
                     <div key={index} className="text-s space-y-4 ">
                         <p className="mb-2 font-bold ">{mainCategory}</p>
-                        {categories.map((category) => {
 
+                        {categories.map((category) => {
                             const genderPath = category.gender === "k" ? "kadin" : "erkek";
                             const categoryPath = category.code.split(":")[1];
                             
