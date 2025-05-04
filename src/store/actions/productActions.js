@@ -86,32 +86,44 @@ export const fetchCategories = () => async (dispatch, getState) => {
     }
   }
 
-  export const fetchProducts = () => async (dispatch, getState) => {
+  export const fetchProducts = (categoryId, sort) => async (dispatch, getState) => {
+
     const state = getState();
     const products = state.product.productList;
     const total = state.product.total;
 
-    if(products.length === 0 || products === null) {
+    let url = "/products";
+    const queryParams = [];
 
-        dispatch(setLoading(true));
+    if (categoryId) {
+        queryParams.push(`category=${categoryId}`);
+    } 
 
-        try {
-            const response = await axiosInstance.get("/products");
+    if (sort) {
+        queryParams.push(`sort=${sort}`);
+    }
 
-            dispatch(setProductList(response.data.products)); //Save product list to redux
-            dispatch(setTotal(response.data.total)); //Save total to redux.
-            console.log("Product list fetched. Total products: ", response.data.total);
+    if (queryParams.length > 0) {
+        url += `?${queryParams.join("&")}`;
+    }
 
-        } catch (error) {
-            console.error("Fetch products error" , error.message);
-            throw error;
+    dispatch(setLoading(true));
 
-        }
-        finally {
-            dispatch(setLoading(false));
-        }
-    } else {
-        console.log("Products already fetched, skipped fetch.")
+    try {
+        console.log(url);
+        const response = await axiosInstance.get(url);
+
+        dispatch(setProductList(response.data.products)); //Save product list to redux
+        dispatch(setTotal(response.data.total)); //Save total to redux.
+        console.log("Product list fetched. Total products: ", response.data.total);
+
+    } catch (error) {
+        console.error("Fetch products error" , error.message);
+        throw error;
+    }
+    
+    finally {
+        dispatch(setLoading(false));
     }
   }
 
