@@ -86,7 +86,7 @@ export const fetchCategories = () => async (dispatch, getState) => {
     }
   }
 
-  export const fetchProducts = (categoryId, sort) => async (dispatch, getState) => {
+  export const fetchProducts = (categoryId, sort, filter= {}) => async (dispatch, getState) => {
 
     const state = getState();
     const products = state.product.productList;
@@ -101,6 +101,10 @@ export const fetchCategories = () => async (dispatch, getState) => {
 
     if (sort) {
         queryParams.push(`sort=${sort}`);
+    }
+
+    if (filter.color) {
+        queryParams.push(`filter=${filter.color}`)
     }
 
     if (queryParams.length > 0) {

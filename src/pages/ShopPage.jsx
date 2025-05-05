@@ -4,15 +4,13 @@ import Footer from "../layout/Footer";
 import Clients from "../components/banners/Clients";
 import CategoryBanner from "../components/banners/CategoryBanner";
 import ListProducts from "../components/ListProducts"
-import clothes from "../data/clothes.json"
-import categories from "../data/categories.json"
 import ProductFilterRow from "../components/ProductFilterRow";
 import Breadcrumb from "../components/menus/Breadcrumb";
+import Loading from "../components/Loading";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../store/actions/productActions";
-import Loading from "../components/Loading";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 
@@ -21,15 +19,23 @@ const ShopPage = () => {
     const { gender, categoryPath, categoryId } = useParams(); //get URL parameters to fetch products based on selected category.
 
     const [viewMode, setViewMode] = useState("grid");
-    const [ sort, setSort ] = useState("");
+    const [ sort, setSort ] = useState(null);
+    const [ filter, setFilter ] = useState({});
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchProducts(categoryId, sort));
-    }, [categoryId, sort]);
+        dispatch(fetchProducts(categoryId, sort, filter));
+    }, [categoryId, sort, filter]);
 
     const productList = useSelector((state) => state.product.productList);
     const isLoading = useSelector((state) => state.global.isLoading);
+
+
+    const filteredProductsByPrice = filter?.maxPrice
+    ? productList.filter(product => product.price <= filter.maxPrice)
+    : productList;
+
+    /* { color: selectedColor, maxPrice: maxPrice }*/
 
 
     return (
@@ -41,12 +47,13 @@ const ShopPage = () => {
                 <ProductFilterRow
                     onViewChange={(mode) => setViewMode(mode)}
                     onSortChange={(newSort) => setSort(newSort)}
+                    onFilterChange={(newFilter) => setFilter(newFilter)}
                 />
                 {isLoading ? (
                     <Loading />
                 ) : (
                     <ListProducts
-                        products={productList}
+                        products={filteredProductsByPrice}
                         viewMode={viewMode}
                 />)
                 }
