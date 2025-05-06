@@ -86,11 +86,12 @@ export const fetchCategories = () => async (dispatch, getState) => {
     }
   }
 
-  export const fetchProducts = (categoryId, sort, filter= {}) => async (dispatch, getState) => {
+  export const fetchProducts = (categoryId, sort, filter= {}, offset) => async (dispatch, getState) => {
 
     const state = getState();
     const products = state.product.productList;
     const total = state.product.total;
+    const {limit, offset} = state.product;
 
     let url = "/products";
     const queryParams = [];
@@ -107,11 +108,20 @@ export const fetchCategories = () => async (dispatch, getState) => {
         queryParams.push(`filter=${filter.color}`)
     }
 
+    if (limit) {
+        queryParams.push(`limit=${limit}`);
+    }
+
+    if(offset) {
+        queryParams.push(`offset=${offset}`);
+    }
+
     if (queryParams.length > 0) {
         url += `?${queryParams.join("&")}`;
     }
 
     dispatch(setLoading(true));
+    console.log("offset:", offset)
 
     try {
         console.log(url);

@@ -21,8 +21,6 @@ const ProductFilterRow = ({ onViewChange, onSortChange, onFilterChange }) => {
 
     const [maxPrice, setMaxPrice] = useState(highestPrice);
 
-    console.log(highestPrice);
-
     const handleColorTranslate = (color) => {
         const colorMap = {
             red: "Kirmizi",

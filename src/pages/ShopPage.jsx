@@ -10,7 +10,7 @@ import Loading from "../components/Loading";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../store/actions/productActions";
+import { fetchProducts, setOffset } from "../store/actions/productActions";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 
@@ -21,15 +21,24 @@ const ShopPage = () => {
     const [viewMode, setViewMode] = useState("grid");
     const [ sort, setSort ] = useState(null);
     const [ filter, setFilter ] = useState({});
+
+    const [pageNumber, setPageNumber] = useState(1);
+
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchProducts(categoryId, sort, filter));
-    }, [categoryId, sort, filter]);
-
-    const productList = useSelector((state) => state.product.productList);
+    const {productList, limit, offset} = useSelector((state) => state.product);
     const isLoading = useSelector((state) => state.global.isLoading);
 
+    useEffect(() => {
+        if(!limit) return;
+        const calculatedOffset = (pageNumber - 1) * limit; 
+        dispatch(setOffset(calculatedOffset));
+
+        dispatch(fetchProducts(categoryId, sort, filter, calculatedOffset));
+
+    }, [categoryId, sort, filter, pageNumber, limit]);
+
+    
 
     const filteredProductsByPrice = filter?.maxPrice
     ? productList.filter(product => product.price <= filter.maxPrice)
@@ -46,8 +55,14 @@ const ShopPage = () => {
                 <CategoryBanner />
                 <ProductFilterRow
                     onViewChange={(mode) => setViewMode(mode)}
-                    onSortChange={(newSort) => setSort(newSort)}
-                    onFilterChange={(newFilter) => setFilter(newFilter)}
+                    onSortChange={(newSort) => {
+                        setSort(newSort)
+                        setPageNumber(1);
+                    }}
+                    onFilterChange={(newFilter) => {
+                        setFilter(newFilter);
+                        setPageNumber(1);
+                    }}
                 />
                 {isLoading ? (
                     <Loading />
@@ -55,6 +70,8 @@ const ShopPage = () => {
                     <ListProducts
                         products={filteredProductsByPrice}
                         viewMode={viewMode}
+                        pageNumber={pageNumber}
+                        setPageNumber={setPageNumber}
                 />)
                 }
                 <Clients />

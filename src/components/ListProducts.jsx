@@ -2,17 +2,15 @@ import { useState, useEffect } from "react";
 import ProductCardNoBorder from "./cards/ProductCardNoBorder";
 import PaginationButton from "./buttons/PaginationButton";
 import ProductCardList from "./cards/ProductCardList";
+import { useSelector } from "react-redux";
 
-const PRODUCTS_PER_PAGE = 12;
 
-const ListProducts = ({ products, viewMode = "grid" }) => {
-    const [pageNumber, setPageNumber] = useState(1);
 
-    const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);
+const ListProducts = ({ products, viewMode = "grid", pageNumber, setPageNumber }) => {
 
-    const startIndex = (pageNumber - 1) * PRODUCTS_PER_PAGE;
-    const endIndex = startIndex + PRODUCTS_PER_PAGE;
-    const visibleProducts = products.slice(startIndex, endIndex);
+    const {limit, total} = useSelector(state => state.product)
+
+    const totalPages = Math.ceil(total / limit);
 
     const handlePageChange = (page) => {
         setPageNumber(page);
@@ -39,7 +37,7 @@ const ListProducts = ({ products, viewMode = "grid" }) => {
                         : "flex flex-col gap-y-6"
                 }`}
             >
-                {visibleProducts.map((product) => (
+                {products.map((product) => (
                     viewMode === "grid" ? (
                         <ProductCardNoBorder key={product.id} product={product} />
                     ) : (

@@ -4,7 +4,7 @@ const productInitialState = {
     categories: [],           
     productList: [],         
     total: 0,                 
-    limit: 25,                 // product count on page
+    limit: 20,                 // product count on page
     offset: 0,                 // for pagination
     filter: "",                
     fetchState: "NOT_FETCHED", 
