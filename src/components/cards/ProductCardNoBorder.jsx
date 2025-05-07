@@ -1,8 +1,33 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import AddToCartButtonNoBorder from "../buttons/AddToCartButtonNoBorder";
 import ColorSelection from "../buttons/ColorSelection";
+import { useSelector } from "react-redux";
 
 export const ProductCardNoBorder = ({ product }) => {
+
+    const { categories } = useSelector(state => state.product);
+    const productCategory = categories.find(category => category.id === product.category_id);
+
+    if (!productCategory) return null;
+
+    const gender = productCategory.gender.toLowerCase();
+    const categoryName = productCategory.title.toLowerCase();
+    const categoryId = product.category_id;
+    const productId = product.id;
+
+    const slugify = (text) =>
+        text
+          .toString()
+          .toLowerCase()
+          .trim()
+          .replace(/\s+/g, '-')       // spaces to -
+          .replace(/[^\w\-]+/g, '')   
+          .replace(/\-\-+/g, '-');  
+    
+    const productNameSlug = slugify(product.name);
+
+    const productUrl = `/shop/${gender}/${categoryName}/${categoryId}/${productNameSlug}/${productId}`;
+
     return (
         <div className="relative w-full h-full p-4 flex flex-col">
             {/* Image */}
@@ -31,10 +56,10 @@ export const ProductCardNoBorder = ({ product }) => {
                 </div>
             </div>
 
-            {/* Product Name */}
+            {/* Product Name and Click*/}
             <Link 
                 className="text-center text-lg font-semibold text-text-color leading-tight pb-4"
-                to="./product"
+                to={productUrl}  
             >
                 {product.name}
             </Link>

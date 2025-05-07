@@ -1,9 +1,12 @@
 // components/Rating.jsx
 import { Star, StarHalf, StarOff } from "lucide-react";
 
-const ProductRating = ({ rating, reviews, max = 5, size = 20, showReviews = true }) => {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.5;
+const ProductRating = ({ rating = 0, reviews, max = 5, size = 20, showReviews = true }) => {
+
+  const safeRating = typeof rating === 'number' && !isNaN(rating) && rating >= 0 ? rating : 0;
+
+  const fullStars = Math.floor(safeRating);
+  const hasHalfStar = safeRating % 1 >= 0.5;
   const emptyStars = max - fullStars - (hasHalfStar ? 1 : 0);
 
   const iconSize = `${size}px`;
@@ -11,7 +14,7 @@ const ProductRating = ({ rating, reviews, max = 5, size = 20, showReviews = true
   return (
     <div
       className="flex items-center gap-1"
-      aria-label={`Rated ${rating} out of ${max}`}
+      aria-label={`Rated ${safeRating} out of ${max}`}
     >
       {[...Array(fullStars)].map((_, i) => (
         <Star
@@ -22,7 +25,7 @@ const ProductRating = ({ rating, reviews, max = 5, size = 20, showReviews = true
       ))}
       {hasHalfStar && (
         <StarHalf
-          className="text-yellow-500 fill-yellow-500 "
+          className="text-yellow-500 fill-yellow-500"
           style={{ width: iconSize, height: iconSize }}
         />
       )}
@@ -34,7 +37,9 @@ const ProductRating = ({ rating, reviews, max = 5, size = 20, showReviews = true
         />
       ))}
       {showReviews && (
-        <span className="ml-2 text-sm font-semibold text-gray-600">{reviews.length}</span>
+        <span className="ml-2 text-sm font-semibold text-gray-600">
+          {Array.isArray(reviews) ? reviews.length : 0}
+        </span>
       )}
     </div>
   );

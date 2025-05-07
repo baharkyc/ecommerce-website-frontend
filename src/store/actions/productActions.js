@@ -8,6 +8,7 @@ export const SET_FETCH_STATE = "SET_FETCH_STATE";
 export const SET_LIMIT = "SET_LIMIT";
 export const SET_OFFSET = "SET_OFFSET";
 export const SET_FILTER = "SET_FILTER";
+export const SET_SELECTED_PRODUCT = "SET_SELECTED_PRODUCT";
 
 
 export const setCategories = (categories) => {
@@ -21,6 +22,13 @@ export const setProductList = (productList) => {
     return {
         type: SET_PRODUCT_LIST,
         payload: productList,
+    }
+}
+
+export const setProduct = (product) => {
+    return {
+        type: SET_SELECTED_PRODUCT,
+        payload: product,
     }
 }
 
@@ -86,7 +94,7 @@ export const fetchCategories = () => async (dispatch, getState) => {
     }
   }
 
-  export const fetchProducts = (categoryId, sort, filter= {}, offset) => async (dispatch, getState) => {
+export const fetchProducts = (categoryId, sort, filter= {}, offset) => async (dispatch, getState) => {
 
     const state = getState();
     const products = state.product.productList;
@@ -121,10 +129,9 @@ export const fetchCategories = () => async (dispatch, getState) => {
     }
 
     dispatch(setLoading(true));
-    console.log("offset:", offset)
 
     try {
-        console.log(url);
+
         const response = await axiosInstance.get(url);
 
         dispatch(setProductList(response.data.products)); //Save product list to redux
@@ -139,5 +146,26 @@ export const fetchCategories = () => async (dispatch, getState) => {
     finally {
         dispatch(setLoading(false));
     }
-  }
+}
+
+export const fetchProduct = ( productId ) => async(dispatch, getState) => {
+
+    dispatch(setLoading(true));
+
+    try {
+
+        const response = await axiosInstance.get(`/products/${productId}`);
+        dispatch(setProduct(response.data));
+
+        console.log("Product with id: " + productId + " fetched.");
+
+    } catch (error) {
+        console.error("Fetch product error" , error.message);
+        throw error;
+    }
+    
+    finally {
+        dispatch(setLoading(false));
+    }
+}
 

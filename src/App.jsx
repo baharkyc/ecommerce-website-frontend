@@ -26,6 +26,11 @@ function App() {
   return (
     <div>
       <Switch>
+
+        <Route path="/shop/:gender/:categoryName/:categoryId/:productNameSlug/:productId" >
+          <ProductDetailPage/>
+        </Route>
+
         <Route path="/" exact>
           <HomePage/>
         </Route>
@@ -34,12 +39,8 @@ function App() {
           <ShopPage/>
         </Route>
 
-        <Route path="/shop/:gender/:categoryPath/:categoryId">
+        <Route path="/shop/:gender/:categoryPath/:categoryId" exact>
           <ShopPage/>
-        </Route>
-
-        <Route path="/product" >
-          <ProductDetailPage/>
         </Route>
 
         <Route path="/contact">

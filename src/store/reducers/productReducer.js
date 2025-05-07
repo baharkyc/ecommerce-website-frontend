@@ -1,8 +1,9 @@
-import { SET_CATEGORIES, SET_FETCH_STATE, SET_FILTER, SET_LIMIT, SET_OFFSET, SET_PRODUCT_LIST, SET_TOTAL } from "../actions/productActions";
+import { SET_CATEGORIES, SET_FETCH_STATE, SET_FILTER, SET_LIMIT, SET_OFFSET, SET_PRODUCT_LIST, SET_TOTAL, SET_SELECTED_PRODUCT} from "../actions/productActions";
 
 const productInitialState = {
     categories: [],           
-    productList: [],         
+    productList: [],  
+    selectedProduct: {},       
     total: 0,                 
     limit: 20,                 // product count on page
     offset: 0,                 // for pagination
@@ -23,6 +24,11 @@ const productReducer = (state = productInitialState, action) => {
                 ...state,
                 productList: action.payload
             };
+        case SET_SELECTED_PRODUCT:
+            return {
+                ...state,
+                selectedProduct: action.payload
+            };        
         case SET_TOTAL:
             return {
                 ...state,
