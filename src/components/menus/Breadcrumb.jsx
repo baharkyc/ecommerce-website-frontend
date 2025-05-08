@@ -7,7 +7,7 @@ const Breadcrumb = ({itemAlignment = "justify-start"}) => {
 
     return (
         <nav className="text-sm text-gray-600 my-4 ">
-            <ol className={`flex ${itemAlignment} space-x-2 px-16 lg:px-32 xl:px-56`}>
+            <ol className={`hidden md:flex ${itemAlignment} text-nowrap space-x-2 px-16 lg:px-32 xl:px-56`}>
                 <li>
                     <Link to="/" className="hover:text-primary-color">Home</Link>
                 </li>
