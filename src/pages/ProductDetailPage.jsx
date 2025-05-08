@@ -7,16 +7,18 @@ import PageContent from "../layout/PageContent";
 import clothes from "../data/clothes.json";
 import ProductDetailPane from "../components/ProductDetailPane";
 import Breadcrumb from "../components/menus/Breadcrumb";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../store/actions/productActions";
 import Loading from "../components/Loading";
+import { ChevronLeft } from "lucide-react";
 
 const ProductDetailPage = () => {
 
     const { productId } = useParams();
     const dispatch = useDispatch();
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
@@ -25,8 +27,12 @@ const ProductDetailPage = () => {
     const { selectedProduct } = useSelector(state => state.product);
     const { isLoading } = useSelector(state => state.global);
 
-    if (isLoading) {
-        return (<Loading/>);
+    const handleBackClick = () => {
+        history.goBack();
+    }
+
+    if (isLoading || !selectedProduct) {
+        return <Loading/>;
     }
 
     return (
@@ -34,8 +40,20 @@ const ProductDetailPage = () => {
             <Header/>
             <PageContent>
                 <Breadcrumb />
-                <ProductDetailCard product={selectedProduct}/>
-                <ProductDetailPane/>
+                { /* Back Button */}
+                <button 
+                    className="hidden fixed w-full xl:pl-16 pl-6 pt-8 lg:flex flex-row"
+                    onClick={handleBackClick}
+                    >
+                        <ChevronLeft/>
+                        Back
+                </button>
+
+                {selectedProduct ? (
+                    <ProductDetailCard product={selectedProduct}/>
+                ) : <Loading/>}
+                
+                <ProductDetailPane product={selectedProduct}/>
                 <BestSellers/>
                 <Clients/>
             </PageContent>
