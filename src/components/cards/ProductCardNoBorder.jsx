@@ -43,7 +43,7 @@ export const ProductCardNoBorder = ({ product, onAddToCart }) => {
                 />
 
                 {/* Sizes + AddToCart on Hover */}
-                <div className="absolute bottom-0 w-full hidden group-hover:flex group-hover:bg-white/40 backdrop-blur-sm items-center z-10 px-4 py-2">
+                <div className="absolute bottom-0 w-full hidden group-hover:flex group-hover:bg-white/40 backdrop-blur-md items-center z-10 px-4 py-2">
                     <div className="flex flex-wrap justify-center items-center gap-2 flex-grow">
                         {product.sizes?.map((size, index) => (
                             <button
@@ -54,7 +54,7 @@ export const ProductCardNoBorder = ({ product, onAddToCart }) => {
                             </button>
                         ))}
                     </div>
-                    <div className="flex w-full justify-center  ml-4">
+                    <div className="flex w-full justify-center ml-4">
                         <AddToCartButtonNoBorder onClick={onAddToCart}/>
                     </div>
                 </div>
