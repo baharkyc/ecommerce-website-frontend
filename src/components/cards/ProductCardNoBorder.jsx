@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import AddToCartButtonNoBorder from "../buttons/AddToCartButtonNoBorder";
 import ColorSelection from "../buttons/ColorSelection";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import AddToCartButton from "../buttons/AddToCartButton";
 
-export const ProductCardNoBorder = ({ product }) => {
+export const ProductCardNoBorder = ({ product, onAddToCart }) => {
 
     const { categories } = useSelector(state => state.product);
     const productCategory = categories.find(category => category.id === product.category_id);
+
+    const dispatch = useDispatch();
 
     if (!productCategory) return null;
 
@@ -27,6 +30,7 @@ export const ProductCardNoBorder = ({ product }) => {
     const productNameSlug = slugify(product.name);
 
     const productUrl = `/shop/${gender}/${categoryName}/${categoryId}/${productNameSlug}/${productId}`;
+
 
     return (
         <div className="relative w-full h-full p-4 flex flex-col">
@@ -50,8 +54,8 @@ export const ProductCardNoBorder = ({ product }) => {
                             </button>
                         ))}
                     </div>
-                    <div className="flex-shrink-0 ml-4">
-                        <AddToCartButtonNoBorder />
+                    <div className="flex w-full justify-center  ml-4">
+                        <AddToCartButtonNoBorder onClick={onAddToCart}/>
                     </div>
                 </div>
             </div>
@@ -73,7 +77,7 @@ export const ProductCardNoBorder = ({ product }) => {
                 <div className="pt-4 flex justify-center">
                     <ColorSelection colors={product.colors} text={false} size={20}/>
                 </div>
-            )}
+            )}            
             
         </div>
     );

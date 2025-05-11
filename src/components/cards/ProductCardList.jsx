@@ -1,7 +1,7 @@
 import AddToCartButtonNoBorder from "../buttons/AddToCartButtonNoBorder";
 import ColorSelection from "../buttons/ColorSelection";
 
-const ProductCardList = ({ product }) => {
+const ProductCardList = ({ product, onAddToCart }) => {
     return (
         <div className="flex flex-row gap-4 lg:mx-32 relative">
             {/* Product Image */}
@@ -47,7 +47,7 @@ const ProductCardList = ({ product }) => {
 
             {/* Add To Cart */}
             <div className="flex flex-row justify-end w-1/4">
-                <AddToCartButtonNoBorder />
+                <AddToCartButtonNoBorder onClick={onAddToCart}/>
             </div>
         </div>
     );

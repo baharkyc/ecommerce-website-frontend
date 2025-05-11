@@ -26,10 +26,12 @@ const HeaderMenuRight = () => {
     };
 
     const handleLogout = () => {
+
         dispatch(logoutUser());
         setShowForm(false);
         history.push("/");
         console.log("User logged out")
+
     };
 
 
@@ -37,7 +39,7 @@ const HeaderMenuRight = () => {
         <div className="flex items-center space-x-4 mx-4 text-sm ">
             <div
                 className="relative"
-                onMouseEnter={() => setShowForm(true)}
+                onMouseEnter={() => !showCart && setShowForm(true)}
                 onMouseLeave={() => setShowForm(false)}
             >
                 
@@ -77,8 +79,8 @@ const HeaderMenuRight = () => {
             </button>
 
             <div className="relative"
-                onMouseEnter={() => setShowCart(true)}
-                onMouseLeave={() => setShowCart(false)}>
+                onClick={() => setShowCart(!showCart)}
+                >
 
                 <button className=" text-primary-color rounded-full hover:bg-gray-100 relative">
                     <ShoppingCart className="w-5 h-5" />

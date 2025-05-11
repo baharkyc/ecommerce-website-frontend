@@ -30,6 +30,7 @@ const ShopPage = () => {
     const isLoading = useSelector((state) => state.global.isLoading);
 
     useEffect(() => {
+        
         if(!limit) return;
         const calculatedOffset = (pageNumber - 1) * limit; 
         dispatch(setOffset(calculatedOffset));
@@ -38,7 +39,6 @@ const ShopPage = () => {
 
     }, [categoryId, sort, filter, pageNumber, limit]);
 
-    
 
     const filteredProductsByPrice = filter?.maxPrice
     ? productList.filter(product => product.price <= filter.maxPrice)
