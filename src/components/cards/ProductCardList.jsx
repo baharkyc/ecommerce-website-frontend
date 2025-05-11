@@ -46,7 +46,7 @@ const ProductCardList = ({ product, onAddToCart }) => {
             </div>
 
             {/* Add To Cart */}
-            <div className="flex flex-row justify-end w-1/4">
+            <div className="flex flex-row justify-end place-items-center w-1/4">
                 <AddToCartButtonNoBorder onClick={onAddToCart}/>
             </div>
         </div>
