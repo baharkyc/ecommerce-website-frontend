@@ -94,17 +94,20 @@ const LoginForm = () => {
           </div>
 
           <div className="flex justify-center w-full pt-2">
-              <ButtonMd 
-                  isLoading={isLoading}
-                  isFilled={isValid}
-                  isDisabled={!isValid}>
-                  Login
-              </ButtonMd>
+              <div className="w-32">
+                <ButtonMd 
+                    isLoading={isLoading}
+                    isFilled={isValid}
+                    isDisabled={!isValid}>
+                    Login
+                </ButtonMd>
+              </div>
+                
           </div>
           
       </form>
       <div className="text-second-text-color text-center  pb-8 flex flex-col gap-y-2">
-            <span>Don't have an account?   </span>
+            <span>Don't have an account?</span>
             <Link 
             to="./signup"
             className="underline text-primary-color">

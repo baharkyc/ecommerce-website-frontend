@@ -54,7 +54,7 @@ const HeaderMenuRight = () => {
                                 <LoginForm />
                             </div>
                         ): (
-                            <div className="w-full flex justify-end py-2">
+                            <div className="w-full pl-48 flex justify-center py-2">
                                 <ButtonMd
                                     onClick={handleLogout}
                                     isFilled={true}

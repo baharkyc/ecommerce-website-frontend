@@ -230,12 +230,14 @@ const SignUpForm = () => {
                 )}
 
                 <div className="flex justify-center w-full py-4">
-                    <ButtonMd 
-                        isFilled={isValid}
-                        isDisabled={!isValid}
-                        isLoading={isLoading}>
-                        Sign Up
-                    </ButtonMd>
+                    <div className="w-32">
+                        <ButtonMd 
+                            isFilled={isValid}
+                            isDisabled={!isValid}
+                            isLoading={isLoading}>
+                            Sign Up
+                        </ButtonMd>
+                    </div>
                 </div>
 
                 
