@@ -5,6 +5,7 @@ import LoginForm from "../forms/LoginForm";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../store/actions/authActions";
 import ButtonMd from "../buttons/ButtonMd";
+import ShoppingCartDropdown from "./ShoppingCartDropdown";
 
 const HeaderMenuRight = () => {
 
@@ -12,8 +13,11 @@ const HeaderMenuRight = () => {
     const dispatch = useDispatch();
 
     const [showForm, setShowForm] = useState(false);
+    const [ showCart, setShowCart ] = useState(false);
+
     const user = useSelector((state) => state.client.user); //retrieve user from store
     const isLoggedIn = Boolean(user?.name);  //logged in if there is user in store
+    const {cart} = useSelector(state => state.shoppingCart) ;
 
     const handleClick = () => {
         if (!isLoggedIn) {
@@ -67,12 +71,33 @@ const HeaderMenuRight = () => {
                     </div>
                 )}
             </div>
-            <button className=" text-primary-color rounded-full hover:bg-gray-100">
+
+            <button className="text-primary-color rounded-full hover:bg-gray-100">
                 <Search className="w-5 h-5" />
             </button>
-            <button className=" text-primary-color rounded-full hover:bg-gray-100">
-                <ShoppingCart className="w-5 h-5" />
-            </button>
+
+            <div className="relative"
+                onMouseEnter={() => setShowCart(true)}
+                onMouseLeave={() => setShowCart(false)}>
+
+                <button className=" text-primary-color rounded-full hover:bg-gray-100 relative">
+                    <ShoppingCart className="w-5 h-5" />
+                    { cart.length > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                            {cart.length}
+                        </span>
+                    )}
+                </button>
+
+                {showCart && (
+                    <div className="absolute top-full right-0 mt-2 w-72 z-50 bg-white">
+                        <ShoppingCartDropdown/>
+                    </div>
+                    
+                )}
+            </div>
+            
+
             <button className=" text-primary-color rounded-full hover:bg-gray-100">
                 <Heart className="w-5 h-5" />
             </button>
