@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import ProductCardNoBorder from "./cards/ProductCardNoBorder";
 import PaginationButton from "./buttons/PaginationButton";
 import ProductCardList from "./cards/ProductCardList";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../store/actions/shoppingCartActions";
 
 
 
 const ListProducts = ({ products, viewMode = "grid", pageNumber, setPageNumber }) => {
+
+    const dispatch = useDispatch();
 
     const {limit, total} = useSelector(state => state.product)
 
@@ -15,6 +18,11 @@ const ListProducts = ({ products, viewMode = "grid", pageNumber, setPageNumber }
     const handlePageChange = (page) => {
         setPageNumber(page);
     };
+
+    const handleAddToCart = (product) => {
+        dispatch(addToCart(product));
+
+    }
 
     useEffect(() => {
         if(pageNumber == 1) {
@@ -39,9 +47,15 @@ const ListProducts = ({ products, viewMode = "grid", pageNumber, setPageNumber }
             >
                 {products.map((product) => (
                     viewMode === "grid" ? (
-                        <ProductCardNoBorder key={product.id} product={product} />
+                        <ProductCardNoBorder 
+                            key={product.id} 
+                            product={product} 
+                            onAddToCart={() => handleAddToCart(product)} />
                     ) : (
-                        <ProductCardList key={product.id} product={product} />
+                        <ProductCardList 
+                            key={product.id} 
+                            product={product} 
+                            onAddToCart={() => handleAddToCart(product)}/>
                     )
                 ))}
             </div>

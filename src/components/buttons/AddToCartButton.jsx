@@ -1,6 +1,6 @@
 import { ShoppingCart } from "lucide-react";
 
-const AddToCartButton = ({ onClick }) => {
+const AddToCartButton = ({ onClick, children }) => {
     return (
         <button
             onClick={onClick}
@@ -8,6 +8,7 @@ const AddToCartButton = ({ onClick }) => {
             aria-label="Add To Cart"
         >
             <ShoppingCart className="w-5 h-5" />
+            {children}
         </button>
     );
 };
