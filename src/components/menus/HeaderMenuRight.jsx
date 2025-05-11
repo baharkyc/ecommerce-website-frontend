@@ -5,7 +5,7 @@ import LoginForm from "../forms/LoginForm";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../store/actions/authActions";
 import ButtonMd from "../buttons/ButtonMd";
-import ShoppingCartDropdown from "./ShoppingCartDropdown";
+import ShoppingCartDropdown from "../ShoppingCartDropdown";
 
 const HeaderMenuRight = () => {
 
@@ -78,11 +78,11 @@ const HeaderMenuRight = () => {
                 <Search className="w-5 h-5" />
             </button>
 
-            <div className="relative"
-                onClick={() => setShowCart(!showCart)}
+            <div className="relative top-0 z-50">
+                <button 
+                    className=" text-primary-color rounded-full hover:bg-gray-100 relative"
+                    onClick={() => setShowCart(!showCart)}
                 >
-
-                <button className=" text-primary-color rounded-full hover:bg-gray-100 relative">
                     <ShoppingCart className="w-5 h-5" />
                     { cart.length > 0 && (
                         <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
@@ -92,7 +92,7 @@ const HeaderMenuRight = () => {
                 </button>
 
                 {showCart && (
-                    <div className="absolute top-full right-0 mt-2 w-72 z-50 bg-white">
+                    <div className="absolute top-full right-0 mt-6 w-96 z-50 bg-white">
                         <ShoppingCartDropdown/>
                     </div>
                     
