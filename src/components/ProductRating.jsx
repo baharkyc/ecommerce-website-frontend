@@ -38,7 +38,7 @@ const ProductRating = ({ rating = 0, reviews, max = 5, size = 20, showReviews = 
       ))}
       {showReviews && (
         <span className="ml-2 text-sm font-semibold text-gray-600">
-          {Array.isArray(reviews) ? reviews.length : 0}
+          {Array.isArray(reviews) ? reviews.length : 0} reviews
         </span>
       )}
     </div>
