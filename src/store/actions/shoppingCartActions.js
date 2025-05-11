@@ -24,3 +24,37 @@ export const setAddress = (address) => {
         payload: address,
     }
 }
+
+export const addToCart = (product) => (dispatch, getState) => {
+
+    const state = getState();
+    const cart = state.shoppingCart.cart;
+
+    let updatedCart;
+
+    const existingIndex = cart.findIndex(item => item.product.id === product.id);
+
+    if(existingIndex !== -1) { //item already in cart, increase count.
+
+        updatedCart = cart.map((item, index) => 
+        index === existingIndex
+            ? {...item, count : item.count + 1}
+            : item
+        );
+
+    } else { //item not in cart, add to cart.
+
+        updatedCart = [
+            ...cart, 
+            {
+                count :1,
+                checked: true,
+                product,
+            }
+        ]
+
+    } 
+    console.log("cart: ", updatedCart);
+
+    dispatch(setCart(updatedCart));
+}

@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../store/actions/productActions";
 import Loading from "../components/Loading";
 import { ChevronLeft } from "lucide-react";
+import { addToCart } from "../store/actions/shoppingCartActions";
 
 const ProductDetailPage = () => {
 
@@ -29,6 +30,11 @@ const ProductDetailPage = () => {
 
     const handleBackClick = () => {
         history.goBack();
+    }
+
+    const handleAddToCart = () => {
+        dispatch(addToCart(selectedProduct));
+        
     }
 
     if (isLoading || !selectedProduct) {
@@ -50,7 +56,7 @@ const ProductDetailPage = () => {
                 </button>
 
                 {selectedProduct ? (
-                    <ProductDetailCard product={selectedProduct}/>
+                    <ProductDetailCard product={selectedProduct} addToCart= {handleAddToCart}/>
                 ) : <Loading/>}
                 
                 <ProductDetailPane product={selectedProduct}/>
