@@ -6,7 +6,7 @@ const Hero = () => {
     const [index, setIndex] = useState(0);
 
     const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
+        setIndex(selectedIndex);
     };
 
     return (
