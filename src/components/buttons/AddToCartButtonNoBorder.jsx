@@ -18,8 +18,8 @@ const AddToCartButtonNoBorder = ({ onClick }) => {
         <div className="relative flex flex-col items-center">
             <button
                 onClick={handleClick}
-                className={`p-2 text-gray-700 hover:text-primary transition-transform duration-200 ${
-                    isClicked ? "scale-125 text-primary" : ""
+                className={`p-2 text-second-text-color hover:text-primary-color transition-transform duration-200 ${
+                    isClicked ? "scale-125 text-primary-color" : ""
                 }`}
                 aria-label="Add To Cart"
             >
@@ -27,7 +27,7 @@ const AddToCartButtonNoBorder = ({ onClick }) => {
             </button>
 
             {showMessage && (
-                <div className="absolute -top-16 text-xs whitespace-nowrap text-white font-semibold bg-primary px-8 py-2 rounded-lg shadow-lg opacity-90">
+                <div className="absolute -top-12 text-xs whitespace-nowrap text-white font-semibold bg-primary-color px-8 py-2 rounded-lg shadow-lg opacity-80">
                     Added to cart
                 </div>
             )}
