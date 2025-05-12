@@ -12,6 +12,8 @@ import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import { setUserByToken } from './store/actions/authActions';
 import { useEffect } from 'react';
+import GoUpButton from './components/buttons/GoUpButton';
+import ShoppingCartPage from './pages/ShoppingCartPage';
 
 
 function App() {
@@ -61,6 +63,10 @@ function App() {
 
         <Route path="/login">
           <LoginPage/>
+        </Route>
+
+        <Route path="/cart">
+          <ShoppingCartPage/>
         </Route>
 
       </Switch>
