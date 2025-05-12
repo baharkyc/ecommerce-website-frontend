@@ -11,7 +11,7 @@ const ShoppingCartPage = () => {
     <div>
         <Header/>
         <PageContent>
-            <div className="w-full flex flex-row gap-x-16 items-start justify-center  p-4">
+            <div className="w-full flex flex-col items-center gap-x-4 md:flex-row md:gap-x-16 md:items-start md:justify-center p-4">
                 <ShoppingCartList/>
                 <OrderSummaryBox/>
             </div>

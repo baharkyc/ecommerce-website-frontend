@@ -46,7 +46,7 @@ const ShoppingCartList = () => {
   }
 
   return (
-    <div className="bg-white p-4 shadow-lg rounded-md w-[800px] text-sm  space-y-4">
+    <div className="bg-white p-4 shadow-lg rounded-md md:w-[800px] text-sm  space-y-4">
 
       <div className="text-text-color flex flex-row justify-between">
         <h2 className="text-lg font-semibold">My Shopping Cart</h2>
@@ -57,7 +57,7 @@ const ShoppingCartList = () => {
       {cart.map((item) => (
         <div
           key={item.product.id}
-          className="min-h-[150px] border rounded-md p-4 flex flex-col md:flex-row items-center justify-between gap-4 bg-white shadow-sm"
+          className="md:min-h-[150px] border rounded-md p-4 flex flex-col md:flex-row items-center justify-between gap-4 bg-white shadow-sm"
         >
 
           {/* Checkbox */}
@@ -116,20 +116,12 @@ const ShoppingCartList = () => {
       ))}
 
       {/* Cart Total */}
-      <div className="flex justify-end gap-16 items-center pt-4 border-t font-semibold text-base">
+      <div className="flex justify-center md:justify-end gap-16 items-center pt-4 border-t font-semibold text-base">
         <span>Total:</span>
         <span className="text-primary-color">₺{totalPrice.toFixed(2)}</span>
       </div>
 
-      {/* Complete Order Button */}
-      <div className="w-full flex items-center justify-end pt-2">
-        <div className="w-48">
-          <ButtonMd onClick={() => history.push("/checkout")} isFilled={true}>
-            Complete Order
-          </ButtonMd>
-        </div>
-        
-      </div>
+      
     </div>
   );
 };
