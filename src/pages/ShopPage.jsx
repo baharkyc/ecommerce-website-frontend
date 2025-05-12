@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts, setOffset } from "../store/actions/productActions";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { ChevronUp } from "lucide-react";
+import GoUpButton from "../components/buttons/GoUpButton";
 
 
 const ShopPage = () => {
@@ -75,6 +77,7 @@ const ShopPage = () => {
                 />)
                 }
                 <Clients />
+                <GoUpButton/>
             </PageContent>
             <Footer />
         </div>
