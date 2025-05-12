@@ -31,7 +31,7 @@ const BestSellers = () => {
             {products.slice(0, visibleProducts).map(product => (
                 <ProductCardBordered key={product.id} product={product} />
             ))}
-            <div className="col-span-3 flex justify-center w-full">
+            <div className="col-span-3 flex justify-center w-64">
                 <ButtonMd onClick={loadMore} isHidden={isDisabled}>
                 LOAD MORE PRODUCTS
                 </ButtonMd>
