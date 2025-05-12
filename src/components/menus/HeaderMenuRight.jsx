@@ -92,7 +92,7 @@ const HeaderMenuRight = () => {
                 </button>
 
                 {showCart && (
-                    <div className="absolute top-full right-0 mt-6 w-96 z-50 bg-white">
+                    <div className="absolute top-full right-0 mt-6 w-96 z-50">
                         <ShoppingCartDropdown/>
                     </div>
                     
