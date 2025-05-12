@@ -5,6 +5,7 @@ import PageContent from "../layout/PageContent"
 import exampleTeam from "../data/exampleTeam";
 import TeamBanner from "../components/banners/TeamBanner";
 import ClickToAction from "../components/banners/ClickToAction";
+import GoUpButton from "../components/buttons/GoUpButton";
 
 const TeamPage = () => {
     return (
@@ -19,6 +20,7 @@ const TeamPage = () => {
                     buttonText={"Try now free"}
                 />
             </PageContent>
+            <GoUpButton/>
             <Footer/>
         </div>
     )

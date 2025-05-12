@@ -7,7 +7,10 @@ const AboutBanner = () => {
                 <h4 className="font-bold text-sm tracking-wider ">ABOUT COMPANY</h4>
                 <h2 className="font-bold text-4xl tracking-wider">ABOUT US</h2>
                 <p className="font-semibold text-sm tracking-wide text-second-text-color">Come and explore the latest trends in fashion and sustainibility. Be slow, be respectful and in style at the same time.</p>
-                <ButtonMd isFilled={true}> Learn More </ButtonMd>
+                <div className="w-48">
+                    <ButtonMd isFilled={true}> Learn More </ButtonMd>
+                </div>
+                
             </div>
                 
             <div className="md:w-2/3 h-[500px] md:h-full">

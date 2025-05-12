@@ -15,7 +15,7 @@ const ContactBanner = ()=> {
                     <h1 className="text-3xl font-bold">CONTACT US</h1>
                     <p className="text-sm font-medium">Reach us anywhere anytime.</p>
                     <ButtonMd isFilled="true">
-                        CONTACT US
+                        Contact Us
                     </ButtonMd>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-32 text-sm md:text-base">
