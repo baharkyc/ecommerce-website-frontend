@@ -57,7 +57,7 @@ const ShoppingCartList = () => {
       {cart.map((item) => (
         <div
           key={item.product.id}
-          className="border rounded-md p-4 flex flex-col md:flex-row items-center justify-between gap-4 bg-white shadow-sm"
+          className="min-h-[150px] border rounded-md p-4 flex flex-col md:flex-row items-center justify-between gap-4 bg-white shadow-sm"
         >
 
           {/* Checkbox */}
