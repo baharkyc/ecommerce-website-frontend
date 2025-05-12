@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
 import ButtonMd from "./buttons/ButtonMd";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const ShoppingCartDropdown = () => {
 
   const { cart } = useSelector((state) => state.shoppingCart);
+
+  const history = useHistory();
 
   if (cart.length === 0) {
     return (
@@ -56,7 +59,7 @@ const ShoppingCartDropdown = () => {
 
       {/* Buttons */}
       <div className="flex flex-row gap-2 mt-4">
-        <ButtonMd onClick={() => {}} isFilled={false}>
+        <ButtonMd onClick={() => {history.push("/cart")}} isFilled={false}>
           Go to Cart
         </ButtonMd>
         <ButtonMd onClick={() => {}} isFilled={true}>
