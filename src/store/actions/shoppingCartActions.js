@@ -106,3 +106,27 @@ export const toggleChecked = (productId) => (dispatch, getState) => {
 
     dispatch(setCart(updatedCart));
 };
+
+export const selectAllProducts = () => (dispatch, getState) => {
+    const state = getState();
+    const {cart} = state.shoppingCart;
+
+    const updatedCart = cart.map(item =>
+        ({ ...item, checked: true})
+    );
+
+
+    dispatch(setCart(updatedCart));
+}
+
+export const deselectProducts = () => (dispatch, getState) => {
+    const state = getState();
+    const {cart} = state.shoppingCart;
+
+    const updatedCart = cart.map(item =>
+        ({ ...item, checked: false})
+    );
+
+
+    dispatch(setCart(updatedCart));
+}
