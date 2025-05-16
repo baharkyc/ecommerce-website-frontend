@@ -1,6 +1,8 @@
 import { ToastContainer } from 'react-toastify'
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { setUserByToken } from './store/actions/authActions';
+import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ShopPage from './pages/ShopPage';
 import HomePage from './pages/HomePage'
@@ -10,10 +12,8 @@ import TeamPage from './pages/TeamPage';
 import AboutPage from './pages/AboutPage';
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
-import { setUserByToken } from './store/actions/authActions';
-import { useEffect } from 'react';
-import GoUpButton from './components/buttons/GoUpButton';
 import ShoppingCartPage from './pages/ShoppingCartPage';
+import CreateOrderPage from './pages/CreateOrderPage';
 
 
 function App() {
@@ -67,6 +67,10 @@ function App() {
 
         <Route path="/cart">
           <ShoppingCartPage/>
+        </Route>
+
+        <Route path="/createOrder">
+          <CreateOrderPage/>
         </Route>
 
       </Switch>
