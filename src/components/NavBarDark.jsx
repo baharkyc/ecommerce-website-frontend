@@ -3,7 +3,7 @@ import SocialLinks from "./buttons/SocialLinks";
 
 const NavBarDark = () => {
     return (
-        <div className="nav-bar-dark hidden sm:flex justify-between items-center h-[46px] px-6 text-xs text-light-text-color font-semibold bg-dark-background-color">
+        <div className="z-0 nav-bar-dark hidden sm:flex justify-between items-center h-[46px] px-6 text-xs text-light-text-color font-semibold bg-dark-background-color">
             {/* Left - Contact Info */}
             <div className="flex flex-row items-center gap-6 truncate">
                 <div className="flex items-center">

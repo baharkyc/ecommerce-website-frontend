@@ -7,7 +7,7 @@ const NavBarLight = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="w-full md:h-16 md:flex-row flex-col  place-content-center">
+        <nav className="w-full md:h-16 md:flex-row flex-col place-content-center">
             <div className="flex items-center justify-between  flex-nowrap h-full w-full min-h-16">
                 {/* Logo */}
                 <Link
