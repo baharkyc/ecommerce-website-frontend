@@ -1,0 +1,99 @@
+import { useForm } from "react-hook-form";
+import ButtonMd from "../buttons/ButtonMd";
+import { useDispatch } from "react-redux";
+import { saveAddress } from "../../store/actions/clientActions";
+
+
+const AddressForm = () => {
+
+    const dispatch = useDispatch();
+
+    const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid },
+    } = useForm({ mode: "onChange" });
+
+    const onSubmit = async (data) => {
+        dispatch(saveAddress(data));
+    };
+
+    return (
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="bg-white p-4 space-y-4 w-full max-w-xl mx-auto"
+        >
+            <h2 className="text-xl pb-2 font-bold text-primary-color text-center">New Address</h2>
+
+            <input
+                placeholder="Address Header (Home, Work...)"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color"
+                {...register("title", { required: "Enter a header for address" })}
+            />
+                {errors.title && <p className="text-red-500 text-sm">{errors.title.message}</p>}
+
+            <input
+                placeholder="Name"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color"
+                {...register("name", { required: "Name required" })}
+            />
+            {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+
+            <input
+                placeholder="Surname"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color"
+                {...register("surname", { required: "Surname required" })}
+                />
+            {errors.surname && <p className="text-red-500 text-sm">{errors.surname.message}</p>}
+
+            <input
+                placeholder="Phone number"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color"
+                {...register("phone", {
+                    required: "Phone required",
+                    pattern: {
+                    value: /^05\d{9}$/,
+                    message: "Please enter a valid phone number (05XXXXXXXXX)",
+                    },
+                })}
+                />
+            {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+
+            <input
+                placeholder="City"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color"
+                {...register("city", { required: "City required" })}
+                />
+            {errors.city && <p className="text-red-500 text-sm">{errors.city.message}</p>}
+
+            <input
+                placeholder="District"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color"
+                {...register("district", { required: "District required" })}
+                />
+            {errors.district && <p className="text-red-500 text-sm">{errors.district.message}</p>}
+
+            <textarea
+                placeholder="Neighborhood"
+                className="w-full p-2 border-b focus:outline-none focus:border-primary-color"
+                rows={3}
+                {...register("neighborhood", { required: "Address detail required" })}
+            />
+            {errors.neighborhood && <p className="text-red-500 text-sm">{errors.neighborhood.message}</p>}
+
+            <div className="pt-4 flex justify-center">
+                <div className="w-40">
+                    <ButtonMd
+                        isFilled={isValid}
+                        isDisabled={!isValid}
+                    >
+                    Save
+                    </ButtonMd>
+                </div>
+            </div>
+        </form>
+    );
+    };
+
+    export default AddressForm;
