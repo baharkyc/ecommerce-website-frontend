@@ -1,7 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-
-import ButtonMd from "./buttons/ButtonMd";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Trash } from "lucide-react";
 
@@ -116,6 +113,7 @@ const ShoppingCartList = () => {
 
       <div className="grid grid-cols-2 justify-between items-center text-normal py-2 px-6">
         <div className=" flex gap-1 md:gap-4">
+
           {/* Select All */}
           <div className=" hover:text-primary-color">
             <button onClick={() => dispatch(selectAllProducts())}>
