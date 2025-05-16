@@ -1,11 +1,13 @@
 import { useState } from "react";
+import OrderPaymentTab from "./OrderPaymentTab";
+import OrderAddressTab from "./OrderAddressTab";
 
 const CreateOrderDetailTabs = () => {
 
     const [selectedTab, setSelectedTab] = useState("address");
 
     return (
-        <div className="flex flex-col gap-y-8">
+        <div className="flex flex-col gap-y-8 ">
 
             {/* Tab Selection */}
             <div className="flex flex-row items-end justify-between bg-white border border-light-gray-2 pt-4 gap-x-4 md:w-[800px] md:mt-16 rounded-md text-lg font-bold">
@@ -31,15 +33,11 @@ const CreateOrderDetailTabs = () => {
 
             {/* Tabs */}
             {selectedTab == "address" && (
-                <div className="bg-white p-4 border rounded-md md:w-[800px] border-light-gray-2 text-sm space-y-4">
-                    Adres
-                </div>
+                <OrderAddressTab/>
             )}
 
             {selectedTab == "payment" && (
-                <div className="bg-white p-4 srounded-md md:w-[800px] text-sm  space-y-4">
-                    Ödeme
-                </div>
+                <OrderPaymentTab/>
             )}
             
         </div>
