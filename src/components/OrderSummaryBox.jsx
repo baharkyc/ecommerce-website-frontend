@@ -1,11 +1,14 @@
 import { useSelector } from "react-redux";
 import ButtonMd from "./buttons/ButtonMd";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const OrderSummaryBox = () => {
 
     const [freeShipping, setFreeShipping] = useState(false);
     const { cart } = useSelector(state => state.shoppingCart);
+
+    const history = useHistory();
 
     const totalPrice = cart
         .filter((item) => item.checked)
@@ -51,7 +54,9 @@ const OrderSummaryBox = () => {
             </div>
 
             <div className="w-full">
-                <ButtonMd isFilled={true}>
+                <ButtonMd 
+                    onClick={() => history.push("/createOrder")}
+                    isFilled={true}>
                     Complete Order!
                 </ButtonMd>
             </div>
