@@ -2,7 +2,8 @@ import {
     SET_USER,
     SET_ROLE,
     SET_THEME,
-    SET_LANGUAGE
+    SET_LANGUAGE,
+    SET_ADDRESS
 }   from "../actions/clientActions";
 
 const clientInitial = {
@@ -43,6 +44,11 @@ const clientReducer = (state = clientInitial, action) => {
             return {
                 ...state,
                 language: action.payload
+            };
+        case SET_ADDRESS:
+            return {
+                ...state,
+                addressList: action.payload
             };
         default:
             return state;
