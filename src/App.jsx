@@ -14,6 +14,7 @@ import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import ShoppingCartPage from './pages/ShoppingCartPage';
 import CreateOrderPage from './pages/CreateOrderPage';
+import PrivateRoute from './components/PrivateRoute';
 
 
 function App() {
@@ -69,10 +70,10 @@ function App() {
           <ShoppingCartPage/>
         </Route>
 
-        <Route path="/createOrder">
+        <PrivateRoute path="/createOrder">
           <CreateOrderPage/>
-        </Route>
-
+        </PrivateRoute>
+  
       </Switch>
       
       <ToastContainer/>
