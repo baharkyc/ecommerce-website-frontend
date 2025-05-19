@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     dispatch(setUserByToken());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
