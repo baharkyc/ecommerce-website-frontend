@@ -34,7 +34,7 @@ const OrderSummaryBox = () => {
                 {totalPrice > 0 && (
                     <div className="text-sm flex flex-row w-full justify-between pt-2">
                         <span>Shipping:</span>
-                        <span className="font-semibold">{shippingFee} ₺</span>
+                        <span className="font-semibold">49₺</span>
                     </div>
                 )}
 
