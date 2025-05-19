@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OrderPaymentTab from "./OrderPaymentTab";
 import OrderAddressTab from "./OrderAddressTab";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAddresses } from "../store/actions/clientActions";
 
 const CreateOrderDetailTabs = () => {
 
     const [selectedTab, setSelectedTab] = useState("address");
+    const dispatch = useDispatch();
+    const { addressList } = useSelector(state => state.client);
+
+    useEffect(() => {
+        dispatch(fetchAddresses());
+        console.log(addressList);
+
+    }, []);
 
     return (
         <div className="flex flex-col gap-y-8 ">
@@ -33,7 +43,9 @@ const CreateOrderDetailTabs = () => {
 
             {/* Tabs */}
             {selectedTab == "address" && (
-                <OrderAddressTab/>
+                <OrderAddressTab 
+                    addressList={addressList}
+                />
             )}
 
             {selectedTab == "payment" && (
