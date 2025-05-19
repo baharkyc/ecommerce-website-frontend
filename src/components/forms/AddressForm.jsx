@@ -1,22 +1,45 @@
 import { useForm } from "react-hook-form";
 import ButtonMd from "../buttons/ButtonMd";
 import { useDispatch } from "react-redux";
-import { saveAddress } from "../../store/actions/clientActions";
+import { saveAddress, updateAddress } from "../../store/actions/clientActions";
+import { getCityNames } from "turkey-neighbourhoods"
+import { useEffect } from "react";
 
 
-const AddressForm = () => {
+const AddressForm = ({ onSuccess, initialValues = {} }) => {
 
     const dispatch = useDispatch();
+    const cities = getCityNames();
 
     const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isValid },
-    } = useForm({ mode: "onChange" });
+    } = useForm({ 
+        mode: "onChange",
+        defaultValues: initialValues,
+    });
+
+  
+    useEffect(() => {
+        reset(initialValues);
+      }, [initialValues]);
+
+
 
     const onSubmit = async (data) => {
-        dispatch(saveAddress(data));
+        
+        if (initialValues.id) {
+            await dispatch(updateAddress({ ...data, id: initialValues.id }));
+
+        } else {
+            await dispatch(saveAddress(data));
+        }
+    
+        if (onSuccess) {
+            onSuccess();
+        }
     };
 
     return (
@@ -60,11 +83,20 @@ const AddressForm = () => {
                 />
             {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
 
-            <input
-                placeholder="City"
+            <select
                 className="w-full p-2 border-b focus:outline-none focus:border-primary-color"
                 {...register("city", { required: "City required" })}
-                />
+                defaultValue=""
+                >
+                    <option value="" disabled>
+                        Select a city
+                    </option>
+                    {cities.map((city) => (
+                        <option key={city} value={city}>
+                        {city}
+                    </option>
+                ))}
+            </select>
             {errors.city && <p className="text-red-500 text-sm">{errors.city.message}</p>}
 
             <input
@@ -94,6 +126,6 @@ const AddressForm = () => {
             </div>
         </form>
     );
-    };
+};
 
-    export default AddressForm;
+export default AddressForm;
