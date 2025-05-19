@@ -3,7 +3,9 @@ import {
     SET_ROLE,
     SET_THEME,
     SET_LANGUAGE,
-    SET_ADDRESS
+    SET_ADDRESS,
+    SET_SELECTED_ADDRESS_ID,
+    SET_SELECTED_BILLING_ADDRESS_ID,
 }   from "../actions/clientActions";
 
 const clientInitial = {
@@ -17,6 +19,8 @@ const clientInitial = {
     roles: [],
     theme: "",
     language: "",
+    selectedAddressId: "",
+    selectedBillingAddressId: "",
 }
 
 const clientReducer = (state = clientInitial, action) => {
@@ -49,6 +53,16 @@ const clientReducer = (state = clientInitial, action) => {
             return {
                 ...state,
                 addressList: action.payload
+            };
+        case SET_SELECTED_ADDRESS_ID:
+            return {
+                ...state,
+                selectedAddressId: action.payload
+            };
+        case SET_SELECTED_BILLING_ADDRESS_ID:
+            return {
+                ...state,
+                selectedBillingAddressId: action.payload
             };
         default:
             return state;

@@ -1,7 +1,7 @@
-import { LOGOUT_USER } from "../actions/authActions";
+import { LOGOUT_USER, SET_AUTHENTICATED } from "../actions/authActions";
 
 const initialState = {
-  isAuthenticated: false,
+  isAuthenticated: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -11,6 +11,13 @@ const authReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: false,
       };
+    
+    case SET_AUTHENTICATED:
+      return {
+        ...state,
+        isAuthenticated: action.payload,
+      };
+    
     default:
       return state;
   }

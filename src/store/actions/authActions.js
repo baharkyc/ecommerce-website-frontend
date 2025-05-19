@@ -4,6 +4,14 @@ import { toast } from "react-toastify";
 import { setLoading } from "./globalActions";
 
 export const LOGOUT_USER = "LOGOUT_USER";
+export const SET_AUTHENTICATED = "SET_AUTHENTICATED";
+
+export const setAuthenticated = (isAuthenticated) => {
+    return {
+        type: SET_AUTHENTICATED,
+        payload: isAuthenticated,
+    }
+}
 
 // thunk function (async)
 export const loginUser = (data, history) => async (dispatch) => {
@@ -14,8 +22,11 @@ export const loginUser = (data, history) => async (dispatch) => {
     console.log("Login successful");
 
     dispatch(setUser(response.data)); // Save user data to redux
+    dispatch(setAuthenticated(true));
 
     const token = response.data.token; 
+
+    axiosInstance.defaults.headers["Authorization"] = token; //Add token to axios headers
     
     if(data.remember)
       localStorage.setItem("token", token);
@@ -47,10 +58,12 @@ export const logoutUser = () => {
   
       // Clear user from Redux
       dispatch(setUser(null));
+      dispatch(setAuthenticated(false));
     };
 };
 
 export const setUserByToken = () => {return async (dispatch) => {
+
     const token = localStorage.getItem("token");
 
     if (token) {
@@ -71,17 +84,21 @@ export const setUserByToken = () => {return async (dispatch) => {
           localStorage.setItem("token", newToken);
           axiosInstance.defaults.headers["Authorization"] = newToken;
           dispatch(setUser(user));
+          dispatch(setAuthenticated(true));
 
       } catch (err) {
 
           console.log("Error verifying token:", err);
           localStorage.removeItem("token");
           delete axiosInstance.defaults.headers["Authorization"];
+          
+
       } finally {
         dispatch(setLoading(false));
       }
 
     } else {
+      dispatch(setAuthenticated(false));
       console.log("No token found.");
     }
   };

@@ -6,6 +6,8 @@ export const SET_ROLE = "SET_ROLE";
 export const SET_THEME = "SET_THEME";
 export const SET_LANGUAGE = "SET_LANGUAGE";
 export const SET_ADDRESS = "SET_ADDRESS";
+export const SET_SELECTED_ADDRESS_ID = "SET_SELECTED_ADDRESS_ID";
+export const SET_SELECTED_BILLING_ADDRESS_ID = "SET_SELECTED_BILLING_ADDRESS_ID";
 
 export const setUser = (user) => {
     return {
@@ -43,18 +45,27 @@ export const setAddress = (address) => {
     }
 }
 
-export const fetchAddresses = () => async (dispatch) => {
+export const setSelectedAddressId = (addressId) => {
+    return {
+        type: SET_SELECTED_ADDRESS_ID,
+        payload: addressId,
+    }
+}
 
-    const token = localStorage.getItem("token") ;
+export const setSelectedBillingAddressId = (billingAddressId) => {
+    return {
+        type: SET_SELECTED_BILLING_ADDRESS_ID,
+        payload: billingAddressId,
+    }
+}
+
+export const fetchAddresses = () => async (dispatch) => {
 
     dispatch(setLoading(true));
 
     try {
-        const response = await axiosInstance.get("/user/address", {
-            headers: {
-                Authorization: token, //token for Authorization
-            }
-        });
+        const response = await axiosInstance.get("/user/address");
+        
         console.log("Address fetch success");
         dispatch(setAddress(response.data));
 
@@ -68,18 +79,12 @@ export const fetchAddresses = () => async (dispatch) => {
 
 export const saveAddress = (addressData) => async (dispatch) => {
 
-    const token = localStorage.getItem("token") ;
-
     dispatch(setLoading(true));
 
     try {
         await axiosInstance.post("/user/address", 
-            addressData,
-            {
-            headers: {
-                Authorization: token, //token for Authorization
-            }
-        });
+            addressData);
+        dispatch(fetchAddresses());
         console.log("Address save success");
     
 
@@ -93,18 +98,13 @@ export const saveAddress = (addressData) => async (dispatch) => {
 
 export const updateAddress = (addressData) => async (dispatch) => {
 
-    const token = localStorage.getItem("token") ;
-
     dispatch(setLoading(true));
 
     try {
         await axiosInstance.put("/user/address", 
-            addressData,
-            {
-            headers: {
-                Authorization: token, //token for Authorization
-            }
-        });
+        addressData);
+
+        dispatch(fetchAddresses());
         console.log("Address update success");
     
 
@@ -118,18 +118,14 @@ export const updateAddress = (addressData) => async (dispatch) => {
 
 export const deleteAddress = (addressId) => async (dispatch) => {
 
-    const token = localStorage.getItem("token") ;
-
     dispatch(setLoading(true));
 
     try {
-        await axiosInstance.delete(`/user/address/${addressId}`, 
-            {
-            headers: {
-                Authorization: token, //token for Authorization
-            }
-        });
+        await axiosInstance.delete(`/user/address/${addressId}`);
+        
+        dispatch(fetchAddresses());
         console.log("Address delete success");
+
     } catch (error) {
         console.error("Delete address error", error.message);       
 
