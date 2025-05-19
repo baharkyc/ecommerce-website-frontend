@@ -62,7 +62,7 @@ const ShoppingCartDropdown = () => {
         <ButtonMd onClick={() => {history.push("/cart")}} isFilled={false}>
           Go to Cart
         </ButtonMd>
-        <ButtonMd onClick={() => {}} isFilled={true}>
+        <ButtonMd onClick={() => {history.push("/createOrder")}} isFilled={true}>
           Complete Order
         </ButtonMd>
       </div>
