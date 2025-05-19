@@ -5,15 +5,15 @@ import { Redirect, Route } from "react-router-dom/cjs/react-router-dom.min";
 
 const PrivateRoute = ({children, ...rest}) => {
 
-    const { user } = useSelector(state => state.client);
+    const { isAuthenticated } = useSelector(state => state.auth);
 
-    const isAuthenticated = !!(
-        user &&
-        typeof user === 'object' &&
-        user.email && user.email.trim() !== '' &&
-        user.name && user.name.trim() !== ''
-      );
-
+    if (isAuthenticated === null) {
+        return (
+            <div className="w-full h-screen flex items-center justify-center text-gray-600">
+                <span>Loading...</span>
+            </div>
+        );
+    }
 
     return (
         <Route 
