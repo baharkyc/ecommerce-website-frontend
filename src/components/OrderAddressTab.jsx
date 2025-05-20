@@ -5,7 +5,7 @@ import AddressCard from "./cards/AddressCard";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedAddressId, setSelectedBillingAddressId } from "../store/actions/clientActions";
 
-const OrderAddressTab = ({ addressList, onAddressSaved }) => {
+const OrderAddressTab = ({ addressList, onAddressSaved}) => {
 
     const [showAddressForm, setShowAddressForm] = useState(false);
     const [billingSameAsShipping, setBillingSameAsShipping] = useState(false);
@@ -18,6 +18,7 @@ const OrderAddressTab = ({ addressList, onAddressSaved }) => {
     const { selectedAddressId, selectedBillingAddressId } = useSelector(state => state.client);
 
     const handleAddressSelection = (addressId) => {
+
         dispatch(setSelectedAddressId(addressId));
         
         if(billingSameAsShipping) {
@@ -34,11 +35,13 @@ const OrderAddressTab = ({ addressList, onAddressSaved }) => {
     };
     
     useEffect(() => {
+
         if (billingSameAsShipping) {
             dispatch(setSelectedBillingAddressId(selectedAddressId));
         } else {
             dispatch(setSelectedBillingAddressId(null));
         }
+
     }, [billingSameAsShipping, selectedAddressId, dispatch]);
 
     const handleAddressEdit = (address) => {
@@ -49,43 +52,58 @@ const OrderAddressTab = ({ addressList, onAddressSaved }) => {
 
 
     return (
-        <div className="flex flex-col items-end bg-white p-4 border rounded-md md:w-[800px] border-light-gray-2 text-sm space-y-4">
+        <div className="bg-white p-4 border rounded-md md:w-[800px] border-light-gray-2 text-sm space-y-4">
 
             {/* Shipping Addresses */}
-            <div className="w-16 text-2xl mb-4">
-                <ButtonMd 
-                    onClick={() => {
-                        setShowAddressForm(true)
-                        setSelectedAddressForEdit(null);}}>
-                    +
-                </ButtonMd>
+            <div className="w-full flex justify-between px-2 pt-2 text-2xl mb-4">
+                <div className="font-bold text-md">
+                    Select Address
+                </div>
+                <div className="w-16">
+                    <ButtonMd 
+                        onClick={() => {
+                            setShowAddressForm(true)
+                            setSelectedAddressForEdit(null);}}>
+                        +
+                    </ButtonMd>
+                </div>
+                
             </div>
 
+            {!hasAddresses && (
+                <div className="text-second-text-color">Please Add an Address</div>
+            )}
+
             {hasAddresses && (
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    {addressList.map((address) => (
-                        <AddressCard
-                            key={address.id}
-                            name={"shipping address"}
-                            address={address}
-                            selectedAddressId={selectedAddressId}
-                            onSelect={handleAddressSelection}
-                            onEdit={handleAddressEdit}
+                <div>
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        {addressList.map((address) => (
+                            <AddressCard
+                                key={address.id}
+                                name={"shipping address"}
+                                address={address}
+                                selectedAddressId={selectedAddressId}
+                                onSelect={handleAddressSelection}
+                                onEdit={handleAddressEdit}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Checkbox: Billing same as Shipping */}
+                    <label className="mb-4 flex items-center space-x-2 self-start cursor-pointer">
+                        <input
+                            type="checkbox"
+                            checked={!!billingSameAsShipping}
+                            onChange={handleBillingSameChange}
+                            className="form-checkbox h-4 w-4 text-primary-color"
                         />
-                    ))}
+                        <span>Billing address is same as Shipping</span>
+                    </label>
+
                 </div>
             )}
 
-            {/* Checkbox: Billing same as Shipping */}
-            <label className="mb-4 flex items-center space-x-2 self-start cursor-pointer">
-                <input
-                    type="checkbox"
-                    checked={!!billingSameAsShipping}
-                    onChange={handleBillingSameChange}
-                    className="form-checkbox h-4 w-4 text-primary-color"
-                />
-                <span>Billing address is same as Shipping</span>
-            </label>
+            
 
             {/* Billing Addresses only if checkbox unchecked */}
             {!billingSameAsShipping && hasAddresses && (

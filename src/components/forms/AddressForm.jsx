@@ -29,8 +29,8 @@ const AddressForm = ({ onSuccess, initialValues = {} }) => {
 
 
     const onSubmit = async (data) => {
-        
-        if (initialValues.id) {
+
+        if (initialValues && initialValues.id) {
             await dispatch(updateAddress({ ...data, id: initialValues.id }));
 
         } else {

@@ -9,7 +9,7 @@ const AddressCard = ({ address, selectedAddressId, onSelect, name, onEdit }) => 
     if (!address) return null;
     
     return (
-        <div className="bg-gray-50 border border-light-gray-2 rounded-md p-4 text-sm space-y-2 text-nowrap">
+        <div className="bg-gray-50 border border-light-gray-2 rounded-md p-4 text-sm space-y-2 text-wrap">
 
             <div className="flex gap-2 mb-4">
                 <input
@@ -19,7 +19,7 @@ const AddressCard = ({ address, selectedAddressId, onSelect, name, onEdit }) => 
                     onChange={() => onSelect(address.id)}
                     className="mt-1 accent-primary-color"
                 />
-                <span className="text-base font-semibold">{address.title}</span>
+                <span className="text-base font-semibold ">{address.title}</span>
             </div>
             
             {/* Name - Phone */}
@@ -35,11 +35,14 @@ const AddressCard = ({ address, selectedAddressId, onSelect, name, onEdit }) => 
             </div>
 
         {/* Address */}
-        <div className="flex flex-row justify-between items-end text-gray-800 leading-5 text-xs font-normal">
-            {address.neighborhood} {address.address && `${address.address}`}<br />
-            {address.district}/{address.city}
+        <div className="flex flex-row justify-between items-end text-gray-800 leading-5 text-xs font-normal break-words">
+            <div >
+                {address.neighborhood} {address.address && `${address.address}`}<br />
+                {address.district}/{address.city}
+            </div>
+            
 
-            <div className="space-x-4">
+            <div className="space-x-4 min-w-12">
 
                 <button onClick={() => onEdit(address)}> { /* Update Form will be added */}
                     <Pencil size={16}/>
