@@ -6,7 +6,9 @@ export const SET_ROLE = "SET_ROLE";
 export const SET_THEME = "SET_THEME";
 export const SET_LANGUAGE = "SET_LANGUAGE";
 export const SET_ADDRESS = "SET_ADDRESS";
+export const SET_CARD = "SET_CARD";
 export const SET_SELECTED_ADDRESS_ID = "SET_SELECTED_ADDRESS_ID";
+export const SET_SELECTED_CARD_ID = "SET_SELECTED_CARD_ID";
 export const SET_SELECTED_BILLING_ADDRESS_ID = "SET_SELECTED_BILLING_ADDRESS_ID";
 
 export const setUser = (user) => {
@@ -45,10 +47,24 @@ export const setAddress = (address) => {
     }
 }
 
+export const setCard = (card) => {
+    return {
+        type: SET_CARD,
+        payload: card,
+    }
+}
+
 export const setSelectedAddressId = (addressId) => {
     return {
         type: SET_SELECTED_ADDRESS_ID,
         payload: addressId,
+    }
+}
+
+export const setSelectedCardId = (cardId) => {
+    return {
+        type: SET_SELECTED_CARD_ID,
+        payload: cardId,
     }
 }
 
@@ -128,6 +144,61 @@ export const deleteAddress = (addressId) => async (dispatch) => {
 
     } catch (error) {
         console.error("Delete address error", error.message);       
+
+    } finally {
+        dispatch(setLoading(false));
+    }
+}
+
+export const fetchCards = () => async (dispatch) => {
+
+    dispatch(setLoading(true));
+
+    try {
+        const response = await axiosInstance.get("/user/card");
+        
+        console.log("Card fetch success");
+        dispatch(setCard(response.data));
+
+    } catch (error) {
+        console.error("Fetch cards error", error.message);       
+
+    } finally {
+        dispatch(setLoading(false));
+    }
+}
+
+export const saveCreditCard = (cardData) => async (dispatch) => {
+
+    dispatch(setLoading(true));
+
+    try {
+        await axiosInstance.post("/user/card", 
+            cardData);
+        dispatch(fetchCards());
+        console.log("Card save success");
+    
+
+    } catch (error) {
+        console.error("Save card error", error.message);       
+
+    } finally {
+        dispatch(setLoading(false));
+    }
+}
+
+export const deleteCard = (cardId) => async (dispatch) => {
+
+    dispatch(setLoading(true));
+
+    try {
+        await axiosInstance.delete(`/user/card/${cardId}`);
+        
+        dispatch(fetchCards());
+        console.log("Card delete success");
+
+    } catch (error) {
+        console.error("Delete card error", error.message);       
 
     } finally {
         dispatch(setLoading(false));

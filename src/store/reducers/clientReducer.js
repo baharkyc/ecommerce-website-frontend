@@ -4,7 +4,9 @@ import {
     SET_THEME,
     SET_LANGUAGE,
     SET_ADDRESS,
+    SET_CARD,
     SET_SELECTED_ADDRESS_ID,
+    SET_SELECTED_CARD_ID,
     SET_SELECTED_BILLING_ADDRESS_ID,
 }   from "../actions/clientActions";
 
@@ -20,6 +22,7 @@ const clientInitial = {
     theme: "",
     language: "",
     selectedAddressId: "",
+    selectedCardId:"",
     selectedBillingAddressId: "",
 }
 
@@ -54,10 +57,20 @@ const clientReducer = (state = clientInitial, action) => {
                 ...state,
                 addressList: action.payload
             };
+        case SET_CARD:
+            return {
+                ...state,
+                creditCards: action.payload
+            };
         case SET_SELECTED_ADDRESS_ID:
             return {
                 ...state,
                 selectedAddressId: action.payload
+            };
+        case SET_SELECTED_CARD_ID:
+            return {
+                ...state,
+                selectedCardId: action.payload
             };
         case SET_SELECTED_BILLING_ADDRESS_ID:
             return {
