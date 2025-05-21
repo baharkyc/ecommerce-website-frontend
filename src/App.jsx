@@ -15,6 +15,7 @@ import LoginPage from './pages/LoginPage';
 import ShoppingCartPage from './pages/ShoppingCartPage';
 import CreateOrderPage from './pages/CreateOrderPage';
 import PrivateRoute from './components/PrivateRoute';
+import OrderSuccessPage from './pages/OrderSuccessPage';
 
 
 function App() {
@@ -72,6 +73,10 @@ function App() {
 
         <PrivateRoute path="/createOrder">
           <CreateOrderPage/>
+        </PrivateRoute>
+
+        <PrivateRoute path="/orderSuccess">
+          <OrderSuccessPage/>
         </PrivateRoute>
   
       </Switch>
