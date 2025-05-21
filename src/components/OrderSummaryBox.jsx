@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ButtonMd from "./buttons/ButtonMd";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { createOrder } from "../store/actions/shoppingCartActions";
 
 const OrderSummaryBox = () => {
 
@@ -9,6 +10,8 @@ const OrderSummaryBox = () => {
     const { cart } = useSelector(state => state.shoppingCart);
 
     const history = useHistory();
+    const dispatch = useDispatch();
+    const location = useLocation();
 
     const totalPrice = cart
         .filter((item) => item.checked)
@@ -20,6 +23,15 @@ const OrderSummaryBox = () => {
 
     const shippingFee = freeShipping || totalPrice === 0 ? 0 : 49;
     const sum = (totalPrice + shippingFee).toFixed(2);
+
+    const handleCompleteOrderClick = () => {
+        if(location.pathname === "/cart") {
+            history.push("/createOrder");
+        } else {
+            dispatch(createOrder());
+            history.push("/orderSuccess");
+        }
+    }
 
     return(
         <div className="flex flex-col justify-between gap-8 pt-16">
@@ -55,7 +67,7 @@ const OrderSummaryBox = () => {
 
             <div className="w-full">
                 <ButtonMd 
-                    onClick={() => history.push("/createOrder")}
+                    onClick={handleCompleteOrderClick}
                     isFilled={true}>
                     Complete Order!
                 </ButtonMd>
