@@ -10,6 +10,7 @@ export const SET_CARD = "SET_CARD";
 export const SET_SELECTED_ADDRESS_ID = "SET_SELECTED_ADDRESS_ID";
 export const SET_SELECTED_CARD_ID = "SET_SELECTED_CARD_ID";
 export const SET_SELECTED_BILLING_ADDRESS_ID = "SET_SELECTED_BILLING_ADDRESS_ID";
+export const SET_PAST_ORDERS = "SET_PAST_ORDERS";
 
 export const setUser = (user) => {
     return {
@@ -72,6 +73,13 @@ export const setSelectedBillingAddressId = (billingAddressId) => {
     return {
         type: SET_SELECTED_BILLING_ADDRESS_ID,
         payload: billingAddressId,
+    }
+}
+
+export const setPastOrders = (order) => {
+    return {
+        type: SET_PAST_ORDERS,
+        payload: order,
     }
 }
 

@@ -1,7 +1,10 @@
+import axiosInstance from "../../api/axiosInstance";
+import { setPastOrders } from "./clientActions";
+import { setLoading } from "./globalActions";
+
 export const SET_CART = "SET_CART";
 export const SET_PAYMENT = "SET_PAYMENT";
 export const SET_ADDRESS = "SET_ADDRESS";
-
 
 
 export const setCart = (cart) => {
@@ -129,4 +132,60 @@ export const deselectProducts = () => (dispatch, getState) => {
 
 
     dispatch(setCart(updatedCart));
+}
+
+export const createOrder = () => async(dispatch, getState) => {
+
+    dispatch(setLoading(true));
+
+    const state = getState();
+
+    const {cart} = state.shoppingCart;
+    const { selectedAddressId, selectedCardId, creditCards, pastOrders } = state.client;
+
+    const checkedItems = cart.filter(item => item.checked); //Take checked items in account for order
+    if (checkedItems.length === 0) return; //If none checked 
+
+    const selectedCard = creditCards.find(card => card.id === selectedCardId); //Selected card information
+
+    if (!selectedCard || !selectedAddressId) { //Make sure address and card info selected
+        console.error("Card or address information not selected");
+        return;
+    }
+
+    const totalPrice = checkedItems.reduce((acc, item) => { //Total price of cart
+        return acc + (item.product.price * item.count);
+    }, 0);
+
+    const order = {
+        address_id: selectedAddressId,
+        order_date: new Date().toISOString(), // şu anki zaman
+        card_no: selectedCard.card_no,
+        card_name: selectedCard.id,
+        card_expire_month: selectedCard.expire_month,
+        card_expire_year: selectedCard.expire_year,
+        card_ccv: "***",
+        price: totalPrice,
+        products: checkedItems.map(item => ({
+            product_id: item.product.id,
+            count: item.count,
+            detail: item.product.name,
+        }))
+    };
+
+    try {
+        const response = await axiosInstance.post("/order", 
+            order);
+        console.log("Order create success");
+
+        dispatch(setCart([]));
+        dispatch(setPastOrders(order));
+
+    } catch (error) {
+        console.error("Order create error", error.message);       
+
+    } finally {
+        dispatch(setLoading(false));
+    }
+
 }

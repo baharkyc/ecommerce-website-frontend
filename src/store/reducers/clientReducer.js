@@ -8,6 +8,7 @@ import {
     SET_SELECTED_ADDRESS_ID,
     SET_SELECTED_CARD_ID,
     SET_SELECTED_BILLING_ADDRESS_ID,
+    SET_PAST_ORDERS,
 }   from "../actions/clientActions";
 
 const clientInitial = {
@@ -24,6 +25,7 @@ const clientInitial = {
     selectedAddressId: "",
     selectedCardId:"",
     selectedBillingAddressId: "",
+    pastOrders: [],
 }
 
 const clientReducer = (state = clientInitial, action) => {
@@ -76,6 +78,11 @@ const clientReducer = (state = clientInitial, action) => {
             return {
                 ...state,
                 selectedBillingAddressId: action.payload
+            };
+        case SET_PAST_ORDERS:
+            return {
+                ...state,
+                pastOrders: [...state.pastOrders, action.payload]
             };
         default:
             return state;

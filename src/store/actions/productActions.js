@@ -89,9 +89,7 @@ export const fetchCategories = () => async (dispatch, getState) => {
         } finally {
             dispatch(setLoading(false)); //end of loading
         }
-    } else {
-        console.log("Categories already fetched, skipped fetch.")
-    }
+    } 
   }
 
 export const fetchProducts = (categoryId, sort, filter= {}, offset) => async (dispatch, getState) => {
