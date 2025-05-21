@@ -19,6 +19,7 @@ const ShoppingCartList = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+
   const totalPrice = cart
   .filter((item) => item.checked)  // Filter only checked items
   .reduce((acc, item) => acc + item.count * item.product.price, 0); 
