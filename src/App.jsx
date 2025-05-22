@@ -16,6 +16,7 @@ import ShoppingCartPage from './pages/ShoppingCartPage';
 import CreateOrderPage from './pages/CreateOrderPage';
 import PrivateRoute from './components/PrivateRoute';
 import OrderSuccessPage from './pages/OrderSuccessPage';
+import PreviousOrdersPage from './pages/PreviousOrdersPage';
 
 
 function App() {
@@ -77,6 +78,10 @@ function App() {
 
         <PrivateRoute path="/orderSuccess">
           <OrderSuccessPage/>
+        </PrivateRoute>
+
+        <PrivateRoute path="/previousOrders">
+          <PreviousOrdersPage/>
         </PrivateRoute>
   
       </Switch>
