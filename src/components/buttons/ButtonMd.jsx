@@ -6,10 +6,16 @@ const ButtonMd = ({children, onClick, isDisabled, isHidden, isFilled = false, is
             onClick={onClick}
             disabled={isDisabled}
             className={`text-s col-span-3 py-2 px-4 border-1 w-full rounded-md  hover:shadow-xs transition-all duration-300 
-                ${isHidden ? 'hidden' : ''} 
-                ${isDisabled ? 'bg-white text-gray-300 cursor-not-allowed' : 'hover:scale-105 text-primary-color border-primary-color'} 
-            transition-all duration-300
-                ${isFilled ? 'bg-primary-color text-white' : ''} 
+                ${isHidden ? 'hidden' : ''}
+                ${
+                isFilled && isDisabled
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : isDisabled
+                    ? 'bg-white text-gray-300 cursor-not-allowed'
+                    : isFilled
+                    ? 'bg-primary-color text-white hover:scale-105'
+                    : 'text-primary-color border-primary-color hover:scale-105'
+                }
                  `}
             >
             {isLoading ? (
