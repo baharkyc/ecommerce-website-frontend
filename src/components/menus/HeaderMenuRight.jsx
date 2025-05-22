@@ -12,7 +12,7 @@ const HeaderMenuRight = () => {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    const [showForm, setShowForm] = useState(false);
+    const [ showForm, setShowForm ] = useState(false);
     const [ showCart, setShowCart ] = useState(false);
 
     const user = useSelector((state) => state.client.user); //retrieve user from store
@@ -20,6 +20,7 @@ const HeaderMenuRight = () => {
     const {cart} = useSelector(state => state.shoppingCart) ;
 
     const handleClick = () => {
+        
         if (!isLoggedIn) {
             history.push("/login");
         } 
@@ -34,13 +35,27 @@ const HeaderMenuRight = () => {
 
     };
 
+    const handleMyOrdersClick = () => {
+
+        setShowForm(false); // Close menu on navigating
+        history.push("/previousOrders");
+
+      };
+
 
     return (
         <div className="flex items-center space-x-4 mx-4 text-sm ">
             <div
                 className="relative"
-                onMouseEnter={() => !showCart && setShowForm(true)}
-                onMouseLeave={() => setShowForm(false)}
+                onClick={() => {
+                    setShowForm(prev => {
+                        const newState = !prev;
+                        if (newState) {
+                            setShowCart(false);  // Form açılırken cart kapanır
+                        }
+                        return newState;
+                    });
+                }}
             >
                 
                 <button
@@ -54,19 +69,30 @@ const HeaderMenuRight = () => {
                 </button>
 
                 {showForm && (
-                    <div className="text-text-color absolute top-full right-0 w-72  z-50 bg-transparent">
+                    <div className="text-text-color absolute top-full right-0 w-72 z-50 bg-transparent">
                         {!isLoggedIn ? (
                             <div className="overflow-hidden shadow-lg ">
                                 <LoginForm />
                             </div>
                         ): (
-                            <div className="w-full pl-48 flex justify-center py-2">
-                                <ButtonMd
-                                    onClick={handleLogout}
-                                    isFilled={true}
-                                >
-                                    Logout
-                                </ButtonMd>
+                            <div className="w-full pl-28 flex flex-col items-end py-4 gap-y-4">
+                               <div className="bg-white w-full px-4 py-4 flex flex-col gap-4 rounded-md shadow-md border border-gray-200">
+                                    <button
+                                        onClick={handleMyOrdersClick}
+                                        className=" text-second-text-color text-nowrap text-right font-semibold px-4 rounded-md hover:text-primary-color  transition-colors duration-200"
+                                    >
+                                        My Orders
+                                    </button>
+                                    <button
+                                        onClick={handleLogout}
+                                        className="w-full text-red-500 text-right px-4 hover:text-primary-color  transition-colors duration-200"
+                                        
+                                    >
+                                        Logout
+                                    </button>
+                                    </div>
+
+                                
                             </div>
                             
                           )}
@@ -81,7 +107,15 @@ const HeaderMenuRight = () => {
             <div className="relative top-0 z-50">
                 <button 
                     className=" text-primary-color rounded-full hover:bg-gray-100 relative"
-                    onClick={() => setShowCart(!showCart)}
+                    onClick={() => {
+                        setShowCart(prev => {
+                            const newState = !prev;
+                            if (newState) {
+                                setShowForm(false); // Cart açılırken form kapanacak
+                            }
+                            return newState;
+                        });
+                    }}
                 >
                     <ShoppingCart className="w-5 h-5" />
                     { cart.length > 0 && (

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const NavBarLight = () => {
+    
     const [isOpen, setIsOpen] = useState(false);
 
     return (
