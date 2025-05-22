@@ -10,8 +10,6 @@ const ShoppingCartPage = () => {
 
   const {cart} = useSelector(state => state.shoppingCart);
 
-
-
   return (
     <div>
         <Header/>
