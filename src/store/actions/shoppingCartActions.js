@@ -1,5 +1,5 @@
 import axiosInstance from "../../api/axiosInstance";
-import { setPastOrders } from "./clientActions";
+import { setLastOrder, setPastOrders } from "./clientActions";
 import { setLoading } from "./globalActions";
 
 export const SET_CART = "SET_CART";
@@ -141,7 +141,7 @@ export const createOrder = () => async(dispatch, getState) => {
     const state = getState();
 
     const {cart} = state.shoppingCart;
-    const { selectedAddressId, selectedCardId, creditCards, pastOrders } = state.client;
+    const { selectedAddressId, selectedCardId, creditCards } = state.client;
 
     const checkedItems = cart.filter(item => item.checked); //Take checked items in account for order
     if (checkedItems.length === 0) return; //If none checked 
@@ -153,9 +153,11 @@ export const createOrder = () => async(dispatch, getState) => {
         return;
     }
 
-    const totalPrice = checkedItems.reduce((acc, item) => { //Total price of cart
-        return acc + (item.product.price * item.count);
-    }, 0);
+    const productsTotalPrice = checkedItems.reduce((acc, item) => {
+        return acc + item.product.price * item.count;
+      }, 0);
+      
+      const totalPrice = productsTotalPrice < 1000 ? productsTotalPrice + 49 : productsTotalPrice;
 
     const order = {
         address_id: selectedAddressId,
@@ -176,10 +178,11 @@ export const createOrder = () => async(dispatch, getState) => {
     try {
         const response = await axiosInstance.post("/order", 
             order);
+            
         console.log("Order create success");
 
         dispatch(setCart([]));
-        dispatch(setPastOrders(order));
+        dispatch(setLastOrder(order));
 
     } catch (error) {
         console.error("Order create error", error.message);       

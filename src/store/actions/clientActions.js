@@ -10,6 +10,7 @@ export const SET_CARD = "SET_CARD";
 export const SET_SELECTED_ADDRESS_ID = "SET_SELECTED_ADDRESS_ID";
 export const SET_SELECTED_CARD_ID = "SET_SELECTED_CARD_ID";
 export const SET_SELECTED_BILLING_ADDRESS_ID = "SET_SELECTED_BILLING_ADDRESS_ID";
+export const SET_LAST_ORDER = "SET_LAST_ORDER";
 export const SET_PAST_ORDERS = "SET_PAST_ORDERS";
 
 export const setUser = (user) => {
@@ -76,10 +77,17 @@ export const setSelectedBillingAddressId = (billingAddressId) => {
     }
 }
 
-export const setPastOrders = (order) => {
+export const setLastOrder = (order) => {
+    return {
+        type: SET_LAST_ORDER,
+        payload: order,
+    }
+}
+
+export const setPastOrders = (pastOrdersList) => {
     return {
         type: SET_PAST_ORDERS,
-        payload: order,
+        payload: pastOrdersList,
     }
 }
 
@@ -195,18 +203,43 @@ export const saveCreditCard = (cardData) => async (dispatch) => {
     }
 }
 
-export const deleteCard = (cardId) => async (dispatch) => {
+export const deleteCard = (cardId) => async (dispatch, getState) => {
 
     dispatch(setLoading(true));
 
+    const state = getState();
+    const selectedCardId = state.client.selectedCardId;
+
     try {
         await axiosInstance.delete(`/user/card/${cardId}`);
+
+        if(selectedCardId === cardId) {
+            dispatch(setSelectedCardId(""));
+        }
         
         dispatch(fetchCards());
         console.log("Card delete success");
 
     } catch (error) {
         console.error("Delete card error", error.message);       
+
+    } finally {
+        dispatch(setLoading(false));
+    }
+}
+
+export const fetchPastOrders = () => async (dispatch) => {
+    
+    dispatch(setLoading(true));
+
+    try {
+        const response = await axiosInstance.get("/order");
+        
+        console.log("Past orders fetch success");
+        dispatch(setPastOrders(response.data));
+
+    } catch (error) {
+        console.error("Fetch past orders error", error.message);       
 
     } finally {
         dispatch(setLoading(false));
