@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { createOrder } from "../store/actions/shoppingCartActions";
 
-const OrderSummaryBox = () => {
+const OrderSummaryBox = ( { canOrder }) => {
 
     const [freeShipping, setFreeShipping] = useState(false);
+    const [ isDisabled, setDisabled ] = useState(true);
     const { cart } = useSelector(state => state.shoppingCart);
 
     const history = useHistory();
@@ -21,13 +22,29 @@ const OrderSummaryBox = () => {
         setFreeShipping(totalPrice >= 1000);
     }, [totalPrice]);
 
+    useEffect(() => {
+
+        if (location.pathname === "/cart") {
+
+            const hasCheckedItems = cart.some(item => item.checked);
+            setDisabled(!hasCheckedItems); // If no product checked, make disabled
+
+        } else if (location.pathname === "/createOrder") {
+            
+            setDisabled(!canOrder); // if canOrder is false disable
+        }
+    }, [location.pathname, cart, canOrder]);
+
+ 
+
     const shippingFee = freeShipping || totalPrice === 0 ? 0 : 49;
+    
     const sum = (totalPrice + shippingFee).toFixed(2);
 
     const handleCompleteOrderClick = () => {
         if(location.pathname === "/cart") {
             history.push("/createOrder");
-        } else {
+        } else if (canOrder && location.pathname === "/createOrder") {
             dispatch(createOrder());
             history.push("/orderSuccess");
         }
@@ -68,7 +85,9 @@ const OrderSummaryBox = () => {
             <div className="w-full">
                 <ButtonMd 
                     onClick={handleCompleteOrderClick}
-                    isFilled={true}>
+                    isFilled={true}
+                    isDisabled={isDisabled}>
+                    
                     Complete Order!
                 </ButtonMd>
             </div>

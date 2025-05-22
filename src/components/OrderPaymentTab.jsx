@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ButtonMd from "./buttons/ButtonMd";
 import CreditCardInformation from "./forms/CreditCardInformation.jsx";
 import CreditCardCard from "./cards/CreditCardCard.jsx";
-import { setSelectedAddressId, setSelectedCardId } from "../store/actions/clientActions.js";
+import { setSelectedCardId } from "../store/actions/clientActions.js";
 import { useDispatch, useSelector } from "react-redux";
 
 const OrderPaymentTab = ({cardList}) => {
