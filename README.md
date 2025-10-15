@@ -23,7 +23,6 @@ FizzyStore is a modern e-commerce platform designed to provide users with a seam
   - React.js: Component-based architecture for building the user interface.
   - React Router: For seamless navigation between pages.
   - Tailwind CSS: Utility-first CSS framework for styling.
-  - Bootstrap: Additional styling and responsive design components.
   - React Hook Form: For managing form validation and submission.
 
 - **State Management**:
