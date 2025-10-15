@@ -1,3 +1,6 @@
+//HomePage.jsx
+//Main page of the website.
+
 import Hero from "../components/Hero.jsx";
 import Header from "../layout/Header.jsx";
 import PageContent from "../layout/PageContent.jsx";

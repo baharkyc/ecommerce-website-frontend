@@ -1,9 +1,11 @@
+//App.jsx
+//Defines the main routes and initializes user authentication state.
+
 import { ToastContainer } from 'react-toastify'
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUserByToken } from './store/actions/authActions';
 import { useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ShopPage from './pages/ShopPage';
 import HomePage from './pages/HomePage'
 import ProductDetailPage from './pages/ProductDetailPage';
@@ -25,6 +27,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    //Restore user session if a valid token exists in local storage
     dispatch(setUserByToken());
   }, [dispatch]);
 
