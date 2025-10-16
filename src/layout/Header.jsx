@@ -1,4 +1,6 @@
-import React from "react";
+//Header.jsx
+//Includes light and dark versions of navigation bar
+
 import NavBarLight from "../components/NavBarLight";
 import NavBarDark from "../components/NavBarDark";
 

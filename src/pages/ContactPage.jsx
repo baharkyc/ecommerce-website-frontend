@@ -1,3 +1,8 @@
+// ContactPage.jsx
+//
+// Displays the contact page layout.
+// Composed of Header, main content (ContactBanner), and Footer.
+
 import ContactBanner from "../components/banners/ContactBanner"
 import Footer from "../layout/Footer"
 import Header from "../layout/Header"

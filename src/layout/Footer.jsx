@@ -1,3 +1,6 @@
+//Footer.jsx
+//Includes brand name, social links and footer menu.
+
 import SocialLinks from "../components/buttons/SocialLinks";
 import FooterMenu from "../components/menus/FooterMenu";
 

@@ -1,3 +1,9 @@
+// CreateOrderPage.jsx
+//
+// Handles the order creation.
+// Checks if all required details(adress, card, billing) are selected before creating the order.
+// Displays order details and summary.
+
 import { useSelector } from "react-redux";
 import CreateOrderDetailTabs from "../components/CreateOrderDetailTabs";
 import OrderSummaryBox from "../components/OrderSummaryBox";
@@ -8,12 +14,13 @@ import { useEffect, useState } from "react";
 
 const CreateOrderPage = () => {
 
+    //Get necessary info from global store.
     const {selectedAddressId, selectedCardId, selectedBillingAddressId} = useSelector(state => state.client);
     const [ canOrder, setCanOrder ] = useState(false);
 
+    //Check if all information selected to order properly
     useEffect(() => {
-
-        const allSelected = selectedAddressId && selectedCardId && selectedBillingAddressId; //Is all information selected to order properly
+        const allSelected = selectedAddressId && selectedCardId && selectedBillingAddressId; 
         setCanOrder(allSelected);
 
     }, [selectedAddressId, selectedCardId, selectedBillingAddressId]);
